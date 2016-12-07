@@ -13,7 +13,16 @@
 		5AEF49FE1DF8C8B000AD3DF1 /* Dropship.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF49FC1DF8C8B000AD3DF1 /* Dropship.xcdatamodeld */; };
 		5AEF4A001DF8C8B000AD3DF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AEF49FF1DF8C8B000AD3DF1 /* Assets.xcassets */; };
 		5AEF4A031DF8C8B000AD3DF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AEF4A011DF8C8B000AD3DF1 /* LaunchScreen.storyboard */; };
-		5AEF4A0E1DF8C8B000AD3DF1 /* DropshipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF4A0D1DF8C8B000AD3DF1 /* DropshipTests.swift */; };
+		5AEF4A0E1DF8C8B000AD3DF1 /* UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF4A0D1DF8C8B000AD3DF1 /* UnitTests.swift */; };
+		5AEF4A1C1DF8C94000AD3DF1 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF4A1B1DF8C94000AD3DF1 /* Unit.swift */; };
+		5AEF4A1F1DF8C95500AD3DF1 /* Damageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF4A1E1DF8C95500AD3DF1 /* Damageable.swift */; };
+		5AEF4A211DF8C96E00AD3DF1 /* Attributable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF4A201DF8C96E00AD3DF1 /* Attributable.swift */; };
+		5AEF4A231DF8C98C00AD3DF1 /* Activatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF4A221DF8C98C00AD3DF1 /* Activatable.swift */; };
+		5AEF4A251DF8C9B000AD3DF1 /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF4A241DF8C9B000AD3DF1 /* Health.swift */; };
+		5AEF4A271DF8C9C000AD3DF1 /* Shields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF4A261DF8C9C000AD3DF1 /* Shields.swift */; };
+		5AEF4A291DF8C9D100AD3DF1 /* DamageBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF4A281DF8C9D100AD3DF1 /* DamageBar.swift */; };
+		5AEF4A2B1DF8D14E00AD3DF1 /* Damage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF4A2A1DF8D14E00AD3DF1 /* Damage.swift */; };
+		5AEF4A2E1DF8D18300AD3DF1 /* DamageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF4A2D1DF8D18300AD3DF1 /* DamageType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +45,17 @@
 		5AEF4A021DF8C8B000AD3DF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5AEF4A041DF8C8B000AD3DF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AEF4A091DF8C8B000AD3DF1 /* DropshipTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DropshipTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5AEF4A0D1DF8C8B000AD3DF1 /* DropshipTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropshipTests.swift; sourceTree = "<group>"; };
+		5AEF4A0D1DF8C8B000AD3DF1 /* UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTests.swift; sourceTree = "<group>"; };
 		5AEF4A0F1DF8C8B000AD3DF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AEF4A1B1DF8C94000AD3DF1 /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
+		5AEF4A1E1DF8C95500AD3DF1 /* Damageable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Damageable.swift; sourceTree = "<group>"; };
+		5AEF4A201DF8C96E00AD3DF1 /* Attributable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attributable.swift; sourceTree = "<group>"; };
+		5AEF4A221DF8C98C00AD3DF1 /* Activatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activatable.swift; sourceTree = "<group>"; };
+		5AEF4A241DF8C9B000AD3DF1 /* Health.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Health.swift; sourceTree = "<group>"; };
+		5AEF4A261DF8C9C000AD3DF1 /* Shields.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shields.swift; sourceTree = "<group>"; };
+		5AEF4A281DF8C9D100AD3DF1 /* DamageBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DamageBar.swift; sourceTree = "<group>"; };
+		5AEF4A2A1DF8D14E00AD3DF1 /* Damage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Damage.swift; sourceTree = "<group>"; };
+		5AEF4A2D1DF8D18300AD3DF1 /* DamageType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DamageType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +97,16 @@
 		5AEF49F41DF8C8B000AD3DF1 /* Dropship */ = {
 			isa = PBXGroup;
 			children = (
-				5AEF49F51DF8C8B000AD3DF1 /* AppDelegate.swift */,
-				5AEF49F71DF8C8B000AD3DF1 /* ViewController.swift */,
-				5AEF49F91DF8C8B000AD3DF1 /* Main.storyboard */,
-				5AEF49FF1DF8C8B000AD3DF1 /* Assets.xcassets */,
-				5AEF4A011DF8C8B000AD3DF1 /* LaunchScreen.storyboard */,
-				5AEF4A041DF8C8B000AD3DF1 /* Info.plist */,
-				5AEF49FC1DF8C8B000AD3DF1 /* Dropship.xcdatamodeld */,
+				5AEF4A181DF8C8F500AD3DF1 /* Controllers */,
+				5AEF4A191DF8C90300AD3DF1 /* Views */,
+				5AEF4A1A1DF8C91300AD3DF1 /* Support */,
+				5AEF4A1B1DF8C94000AD3DF1 /* Unit.swift */,
+				5AEF4A241DF8C9B000AD3DF1 /* Health.swift */,
+				5AEF4A261DF8C9C000AD3DF1 /* Shields.swift */,
+				5AEF4A281DF8C9D100AD3DF1 /* DamageBar.swift */,
+				5AEF4A2A1DF8D14E00AD3DF1 /* Damage.swift */,
+				5AEF4A2C1DF8D17C00AD3DF1 /* Enums */,
+				5AEF4A1D1DF8C94C00AD3DF1 /* Protocols */,
 			);
 			path = Dropship;
 			sourceTree = "<group>";
@@ -93,10 +114,56 @@
 		5AEF4A0C1DF8C8B000AD3DF1 /* DropshipTests */ = {
 			isa = PBXGroup;
 			children = (
-				5AEF4A0D1DF8C8B000AD3DF1 /* DropshipTests.swift */,
+				5AEF4A0D1DF8C8B000AD3DF1 /* UnitTests.swift */,
 				5AEF4A0F1DF8C8B000AD3DF1 /* Info.plist */,
 			);
 			path = DropshipTests;
+			sourceTree = "<group>";
+		};
+		5AEF4A181DF8C8F500AD3DF1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5AEF49F71DF8C8B000AD3DF1 /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		5AEF4A191DF8C90300AD3DF1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5AEF49F91DF8C8B000AD3DF1 /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		5AEF4A1A1DF8C91300AD3DF1 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				5AEF49F51DF8C8B000AD3DF1 /* AppDelegate.swift */,
+				5AEF49FF1DF8C8B000AD3DF1 /* Assets.xcassets */,
+				5AEF4A011DF8C8B000AD3DF1 /* LaunchScreen.storyboard */,
+				5AEF4A041DF8C8B000AD3DF1 /* Info.plist */,
+				5AEF49FC1DF8C8B000AD3DF1 /* Dropship.xcdatamodeld */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
+		5AEF4A1D1DF8C94C00AD3DF1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5AEF4A221DF8C98C00AD3DF1 /* Activatable.swift */,
+				5AEF4A1E1DF8C95500AD3DF1 /* Damageable.swift */,
+				5AEF4A201DF8C96E00AD3DF1 /* Attributable.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		5AEF4A2C1DF8D17C00AD3DF1 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				5AEF4A2D1DF8D18300AD3DF1 /* DamageType.swift */,
+			);
+			name = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,9 +271,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AEF4A2E1DF8D18300AD3DF1 /* DamageType.swift in Sources */,
+				5AEF4A211DF8C96E00AD3DF1 /* Attributable.swift in Sources */,
 				5AEF49FE1DF8C8B000AD3DF1 /* Dropship.xcdatamodeld in Sources */,
+				5AEF4A231DF8C98C00AD3DF1 /* Activatable.swift in Sources */,
+				5AEF4A1C1DF8C94000AD3DF1 /* Unit.swift in Sources */,
 				5AEF49F81DF8C8B000AD3DF1 /* ViewController.swift in Sources */,
+				5AEF4A251DF8C9B000AD3DF1 /* Health.swift in Sources */,
+				5AEF4A291DF8C9D100AD3DF1 /* DamageBar.swift in Sources */,
+				5AEF4A271DF8C9C000AD3DF1 /* Shields.swift in Sources */,
 				5AEF49F61DF8C8B000AD3DF1 /* AppDelegate.swift in Sources */,
+				5AEF4A1F1DF8C95500AD3DF1 /* Damageable.swift in Sources */,
+				5AEF4A2B1DF8D14E00AD3DF1 /* Damage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,7 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AEF4A0E1DF8C8B000AD3DF1 /* DropshipTests.swift in Sources */,
+				5AEF4A0E1DF8C8B000AD3DF1 /* UnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
