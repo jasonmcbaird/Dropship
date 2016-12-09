@@ -10,7 +10,7 @@ import Foundation
 
 class Health: Damageable {
 	
-	public var attributes: [String: Int] {
+	var attributes: [String: Int] {
 		var result = healthBar.attributes
 		if(result["health"]! < 0) {
 			result.updateValue(1, forKey: "dead")
@@ -19,6 +19,12 @@ class Health: Damageable {
 		}
 		return result
 	}
+	var health: Int {
+		return attributes["health"]!
+	}
+	var healthMax: Int {
+		return attributes["healthMax"]!
+	}
 	
 	private let healthBar: DamageBar
 	
@@ -26,7 +32,7 @@ class Health: Damageable {
 		self.healthBar = DamageBar(name: "health", max: maxHealth)
 	}
 	
-	public func damage(damage: Damage) {
+	func damage(damage: Damage) {
 		healthBar.damage(damage: damage)
 	}
 }

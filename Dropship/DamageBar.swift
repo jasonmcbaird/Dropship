@@ -10,16 +10,16 @@ import Foundation
 
 class DamageBar: Damageable {
 	
-	public var attributes: [String: Int] = [:]
+	var attributes: [String: Int] = [:]
 	
-	public var current: Int {
+	var current: Int {
 		get {
 			return attributes[name]!
 		} set {
 			attributes.updateValue(newValue, forKey: name)
 		}
 	}
-	public var max: Int {
+	var max: Int {
 		get {
 			return attributes[maxName]!
 		} set {
@@ -37,11 +37,11 @@ class DamageBar: Damageable {
 		self.max = max
 	}
 	
-	public func damage(amount: Int, type: DamageType) {
+	func damage(amount: Int, type: DamageType) {
 		damage(damage: Damage(amount: amount, type: type))
 	}
 	
-	public func damage(damage: Damage) {
+	func damage(damage: Damage) {
 		current -= damage.amount
 		if(current < 0) {
 			let result = -current

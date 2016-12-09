@@ -10,7 +10,7 @@ import Foundation
 
 class Shields: Damageable, Activatable {
 	
-	public var attributes: [String: Int] {
+	var attributes: [String: Int] {
 		return shieldBar.attributes
 	}
 	
@@ -26,14 +26,14 @@ class Shields: Damageable, Activatable {
 		self.shieldBar = DamageBar(name: "shields", max: maxShields)
 	}
 	
-	public func damage(damage: Damage) {
+	func damage(damage: Damage) {
 		if(damage.amount > 0) {
 			rechargeCounter = rechargeDelay
 		}
 		shieldBar.damage(damage: damage)
 	}
 	
-	public func activate() {
+	func activate() {
 		if(rechargeCounter <= 0) {
 			recharge()
 		} else {
