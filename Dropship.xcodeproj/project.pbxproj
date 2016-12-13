@@ -29,6 +29,8 @@
 		96026ED21DFF9CAC00535785 /* SquadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96026ED11DFF9CAC00535785 /* SquadTests.swift */; };
 		96026ED41DFFB14700535785 /* Combat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96026ED31DFFB14700535785 /* Combat.swift */; };
 		96026ED61DFFB15E00535785 /* CombatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96026ED51DFFB15D00535785 /* CombatTests.swift */; };
+		96DCE2DC1E00381300AB32C3 /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DCE2DB1E00381300AB32C3 /* Inventory.swift */; };
+		96DCE2DE1E00387B00AB32C3 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DCE2DD1E00387B00AB32C3 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		96026ED11DFF9CAC00535785 /* SquadTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquadTests.swift; sourceTree = "<group>"; };
 		96026ED31DFFB14700535785 /* Combat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Combat.swift; sourceTree = "<group>"; };
 		96026ED51DFFB15D00535785 /* CombatTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombatTests.swift; sourceTree = "<group>"; };
+		96DCE2DB1E00381300AB32C3 /* Inventory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
+		96DCE2DD1E00387B00AB32C3 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,8 @@
 				5AEF4A191DF8C90300AD3DF1 /* Views */,
 				5AEF4A1A1DF8C91300AD3DF1 /* Support */,
 				5AEF4A1B1DF8C94000AD3DF1 /* Unit.swift */,
+				96DCE2DB1E00381300AB32C3 /* Inventory.swift */,
+				96DCE2DD1E00387B00AB32C3 /* Item.swift */,
 				96026ED31DFFB14700535785 /* Combat.swift */,
 				96026ECF1DFF9C9E00535785 /* Squad.swift */,
 				5AEF4A241DF8C9B000AD3DF1 /* Health.swift */,
@@ -293,6 +299,7 @@
 				5AEF4A2E1DF8D18300AD3DF1 /* DamageType.swift in Sources */,
 				5AEF49FE1DF8C8B000AD3DF1 /* Dropship.xcdatamodeld in Sources */,
 				5AEF4A231DF8C98C00AD3DF1 /* Activatable.swift in Sources */,
+				96DCE2DE1E00387B00AB32C3 /* Item.swift in Sources */,
 				5AEF4A1C1DF8C94000AD3DF1 /* Unit.swift in Sources */,
 				5AEF49F81DF8C8B000AD3DF1 /* ViewController.swift in Sources */,
 				5AEF4A251DF8C9B000AD3DF1 /* Health.swift in Sources */,
@@ -301,6 +308,7 @@
 				5AEF49F61DF8C8B000AD3DF1 /* AppDelegate.swift in Sources */,
 				5AEF4A1F1DF8C95500AD3DF1 /* Damageable.swift in Sources */,
 				96026ECC1DFF968A00535785 /* Armor.swift in Sources */,
+				96DCE2DC1E00381300AB32C3 /* Inventory.swift in Sources */,
 				5AEF4A2B1DF8D14E00AD3DF1 /* Damage.swift in Sources */,
 				96026ED41DFFB14700535785 /* Combat.swift in Sources */,
 			);
