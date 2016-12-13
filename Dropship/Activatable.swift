@@ -9,7 +9,11 @@
 import Foundation
 
 protocol Activatable {
+    
+    var ready: Bool { get }
 	
 	func activate()
+    
+    func readyUp()
 	
 }

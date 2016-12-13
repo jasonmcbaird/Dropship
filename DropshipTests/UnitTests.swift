@@ -12,49 +12,67 @@ import XCTest
 class UnitTests: XCTestCase {
 	
 	func testDamageReducesHealth() {
-		let testObject = Unit(name: "Jason", health: 5, damageResponders: [], activationResponders: [])
+		let testObject = Unit(name: "Jason", health: 5)
 		
 		testObject.damage(amount: 3)
 		
-		XCTAssertEqual(testObject.attributes["health"], 2)
+		XCTAssertEqual(testObject.health, 2)
 	}
     
     func testDamageDoesntReduceHealthBelowZero() {
-		let testObject = Unit(name: "Jason", health: 5, damageResponders: [], activationResponders: [])
+		let testObject = Unit(name: "Jason", health: 5)
 		
 		testObject.damage(amount: 3)
 		testObject.damage(amount: 3)
 		
-		XCTAssertEqual(testObject.attributes["health"], 0)
+		XCTAssertEqual(testObject.health, 0)
     }
     
     func testDamageReducesCustomDamageBarsBeforeDefaultHealth() {
-		let testObject = Unit(name: "Jason", health: 5, damageResponders: [DamageBar(name: "cover", max: 5)], activationResponders: [])
+        let cover = DamageBar(max: 5)
+        let testObject = Unit(name: "Jason", health: 5, damageResponders: [cover])
 		
 		testObject.damage(amount: 3)
 		testObject.damage(amount: 3)
 		testObject.damage(amount: 3)
 		
-		XCTAssertEqual(testObject.attributes["cover"], 0)
-		XCTAssertEqual(testObject.attributes["health"], 1)
+		XCTAssertEqual(cover.current, 0)
+		XCTAssertEqual(testObject.health, 1)
     }
 	
 	func testActivationRespondersActivate() {
-		let mock = MockActivatable()
-		let testObject = Unit(name: "Jason", health: 5, damageResponders: [], activationResponders: [mock])
+		let mockActivatable = MockActivatable()
+		let testObject = Unit(name: "Jason", health: 5, damageResponders: [], activationResponders: [mockActivatable])
 		
 		testObject.activate()
 		
-		XCTAssertTrue(mock.activated)
+		XCTAssertEqual(mockActivatable.activationCount, 1)
 	}
     
-}
-
-class MockActivatable: Activatable {
-	
-	var activated: Bool = false
-	
-	func activate() {
-		activated = true
-	}
+    func testHealthBelowZeroMeansDead() {
+        let testObject = Unit(name: "Jason", health: 5)
+        
+        testObject.damage(amount: 3)
+        testObject.damage(amount: 3)
+        
+        XCTAssertTrue(testObject.dead)
+    }
+    
+    func testActivateMakesUnready() {
+        let testObject = Unit(name: "Jason", health: 5)
+        
+        testObject.activate()
+        
+        XCTAssertFalse(testObject.ready)
+    }
+    
+    func readyUpMakesReady() {
+        let testObject = Unit(name: "Jason", health: 5)
+        
+        testObject.ready = false
+        testObject.readyUp()
+        
+        XCTAssertTrue(testObject.ready)
+    }
+    
 }

@@ -11,27 +11,22 @@ import Foundation
 class Unit: Damageable, Activatable {
 	
 	var name: String
-	var attributes: [String: Int] {
-		var result: [String: Int] = [:]
-		for responder in damageResponders {
-			for key in responder.attributes.keys {
-				result.updateValue(responder.attributes[key]!, forKey: key)
-			}
-		}
-		return result
-	}
 	var health: Int {
 		return healthResponder.health
 	}
 	var healthMax: Int {
 		return healthResponder.healthMax
 	}
+    var dead: Bool {
+        return healthResponder.dead
+    }
+    var ready = true
 	
 	private var healthResponder: Health
 	private var damageResponders: [Damageable]
 	private var activationResponders: [Activatable]
 	
-	init(name: String, health: Int, damageResponders: [Damageable], activationResponders: [Activatable]) {
+	init(name: String, health: Int, damageResponders: [Damageable] = [], activationResponders: [Activatable] = []) {
 		self.name = name
 		self.damageResponders = damageResponders
 		self.healthResponder = Health(maxHealth: health)
@@ -49,5 +44,10 @@ class Unit: Damageable, Activatable {
 		for responder in activationResponders {
 			responder.activate()
 		}
+        ready = false
 	}
+    
+    func readyUp() {
+        ready = true
+    }
 }

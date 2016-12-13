@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Damageable: Attributable {
+protocol Damageable {
 	
 	func damage(damage: Damage)
 	func damage(amount: Int)

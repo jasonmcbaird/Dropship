@@ -10,29 +10,16 @@ import Foundation
 
 class DamageBar: Damageable {
 	
-	var attributes: [String: Int] = [:]
-	
-	var current: Int {
-		get {
-			return attributes[name]!
-		} set {
-			attributes.updateValue(newValue, forKey: name)
-		}
-	}
-	var max: Int {
-		get {
-			return attributes[maxName]!
-		} set {
-			attributes.updateValue(newValue, forKey: maxName)
-		}
-	}
-	private let name: String
-	private var maxName: String {
-		return name + "Max"
-	}
-	
-	init(name: String, max: Int) {
-		self.name = name
+	var current: Int
+	var max: Int
+    var empty: Bool {
+        return current <= 0
+    }
+    var full: Bool {
+        return current >= max
+    }
+    
+	init(max: Int) {
 		current = max
 		self.max = max
 	}
