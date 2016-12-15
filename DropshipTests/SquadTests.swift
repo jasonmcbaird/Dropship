@@ -18,6 +18,7 @@ class SquadTests: XCTestCase {
     var testObject: Squad!
     
     override func setUp() {
+        super.setUp()
         jason = MockActivatable()
         cody = MockActivatable()
         cheyenne = MockActivatable()

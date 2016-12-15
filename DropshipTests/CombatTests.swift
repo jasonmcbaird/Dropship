@@ -17,6 +17,7 @@ class CombatTests: XCTestCase {
     var mock2: MockUnreadyActivatable!
     
     override func setUp() {
+        super.setUp()
         mock = MockUnreadyActivatable(activationsAvailable: 3)
         mock2 = MockUnreadyActivatable(activationsAvailable: 6)
         testObject = Combat(activatables: [mock, mock2])

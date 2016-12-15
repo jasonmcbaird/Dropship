@@ -15,6 +15,7 @@ class ShieldTests: XCTestCase {
     var testObject: Shields!
     
     override func setUp() {
+        super.setUp()
         testObject = Shields(maxShields: 10, rechargeDelay: 2, rechargeAmount: 3)
     }
     
