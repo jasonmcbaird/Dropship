@@ -12,8 +12,8 @@ protocol Activatable {
     
     var ready: Bool { get }
 	
-	func startTurn()
+	func activate()
     
-    func startRound()
+    func readyUp()
 	
 }

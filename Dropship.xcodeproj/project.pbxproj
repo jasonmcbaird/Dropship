@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A8AC2FB1E04700A00BCB35B /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC2FA1E04700A00BCB35B /* Ability.swift */; };
+		5A8AC2FD1E04703700BCB35B /* TargetStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC2FC1E04703700BCB35B /* TargetStrategy.swift */; };
+		5A8AC2FF1E04980800BCB35B /* Fire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC2FE1E04980800BCB35B /* Fire.swift */; };
+		5A8AC3011E0498A000BCB35B /* FireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC3001E0498A000BCB35B /* FireTests.swift */; };
+		5A8AC3031E049B6100BCB35B /* AbilityStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC3021E049B6100BCB35B /* AbilityStrategy.swift */; };
 		5AEF49F61DF8C8B000AD3DF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF49F51DF8C8B000AD3DF1 /* AppDelegate.swift */; };
 		5AEF49F81DF8C8B000AD3DF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF49F71DF8C8B000AD3DF1 /* ViewController.swift */; };
 		5AEF49FB1DF8C8B000AD3DF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AEF49F91DF8C8B000AD3DF1 /* Main.storyboard */; };
@@ -44,6 +49,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A8AC2FA1E04700A00BCB35B /* Ability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ability.swift; sourceTree = "<group>"; };
+		5A8AC2FC1E04703700BCB35B /* TargetStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetStrategy.swift; sourceTree = "<group>"; };
+		5A8AC2FE1E04980800BCB35B /* Fire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fire.swift; sourceTree = "<group>"; };
+		5A8AC3001E0498A000BCB35B /* FireTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireTests.swift; sourceTree = "<group>"; };
+		5A8AC3021E049B6100BCB35B /* AbilityStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbilityStrategy.swift; sourceTree = "<group>"; };
 		5AEF49F21DF8C8B000AD3DF1 /* Dropship.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dropship.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AEF49F51DF8C8B000AD3DF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AEF49F71DF8C8B000AD3DF1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +127,7 @@
 				5AEF4A191DF8C90300AD3DF1 /* Views */,
 				5AEF4A1A1DF8C91300AD3DF1 /* Support */,
 				5AEF4A1B1DF8C94000AD3DF1 /* Unit.swift */,
+				5A8AC2FE1E04980800BCB35B /* Fire.swift */,
 				96DCE2DB1E00381300AB32C3 /* Inventory.swift */,
 				96DCE2DD1E00387B00AB32C3 /* Item.swift */,
 				96026ED31DFFB14700535785 /* Combat.swift */,
@@ -136,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				5AEF4A0D1DF8C8B000AD3DF1 /* UnitTests.swift */,
+				5A8AC3001E0498A000BCB35B /* FireTests.swift */,
 				96026ED11DFF9CAC00535785 /* SquadTests.swift */,
 				96026EC91DFF94E300535785 /* ShieldTests.swift */,
 				96026ED51DFFB15D00535785 /* CombatTests.swift */,
@@ -176,8 +188,11 @@
 		5AEF4A1D1DF8C94C00AD3DF1 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				5A8AC2FA1E04700A00BCB35B /* Ability.swift */,
 				5AEF4A221DF8C98C00AD3DF1 /* Activatable.swift */,
 				5AEF4A1E1DF8C95500AD3DF1 /* Damageable.swift */,
+				5A8AC2FC1E04703700BCB35B /* TargetStrategy.swift */,
+				5A8AC3021E049B6100BCB35B /* AbilityStrategy.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -304,13 +319,17 @@
 				5AEF49F81DF8C8B000AD3DF1 /* ViewController.swift in Sources */,
 				5AEF4A251DF8C9B000AD3DF1 /* Health.swift in Sources */,
 				5AEF4A291DF8C9D100AD3DF1 /* DamageBar.swift in Sources */,
+				5A8AC3031E049B6100BCB35B /* AbilityStrategy.swift in Sources */,
 				5AEF4A271DF8C9C000AD3DF1 /* Shields.swift in Sources */,
 				5AEF49F61DF8C8B000AD3DF1 /* AppDelegate.swift in Sources */,
+				5A8AC2FB1E04700A00BCB35B /* Ability.swift in Sources */,
 				5AEF4A1F1DF8C95500AD3DF1 /* Damageable.swift in Sources */,
 				96026ECC1DFF968A00535785 /* Armor.swift in Sources */,
 				96DCE2DC1E00381300AB32C3 /* Inventory.swift in Sources */,
 				5AEF4A2B1DF8D14E00AD3DF1 /* Damage.swift in Sources */,
 				96026ED41DFFB14700535785 /* Combat.swift in Sources */,
+				5A8AC2FF1E04980800BCB35B /* Fire.swift in Sources */,
+				5A8AC2FD1E04703700BCB35B /* TargetStrategy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96026ED21DFF9CAC00535785 /* SquadTests.swift in Sources */,
+				5A8AC3011E0498A000BCB35B /* FireTests.swift in Sources */,
 				96026ECE1DFF96D900535785 /* ArmorTests.swift in Sources */,
 				96026ED61DFFB15E00535785 /* CombatTests.swift in Sources */,
 				96026ECA1DFF94E300535785 /* ShieldTests.swift in Sources */,

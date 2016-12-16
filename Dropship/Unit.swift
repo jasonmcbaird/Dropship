@@ -25,13 +25,15 @@ class Unit: Damageable, Activatable {
 	private var healthResponder: Health
 	private var damageResponders: [Damageable]
 	private var activationResponders: [Activatable]
+    private var abilityResponders: [Ability]
 	
-	init(name: String, health: Int, damageResponders: [Damageable] = [], activationResponders: [Activatable] = []) {
+    init(name: String, health: Int, damageResponders: [Damageable] = [], activationResponders: [Activatable] = [], abilityResponders: [Ability] = []) {
 		self.name = name
 		self.damageResponders = damageResponders
 		self.healthResponder = Health(maxHealth: health)
 		self.damageResponders.append(healthResponder)
 		self.activationResponders = activationResponders
+        self.abilityResponders = abilityResponders
 	}
 	
 	func damage(damage: Damage) {

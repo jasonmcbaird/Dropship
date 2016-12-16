@@ -14,7 +14,7 @@ class ArmorTests: XCTestCase {
     
     func testDamageReducesDamage() {
         let damage = Damage(amount: 3)
-        let testObject = Armor(strength: 1)
+        let testObject = Armor(amount: 1)
         
         testObject.damage(damage: damage)
         

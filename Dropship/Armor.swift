@@ -10,14 +10,14 @@ import Foundation
 
 class Armor: Damageable {
     
-    var strength: Int
+    var amount: Int
     var attributes: [String : Int] = [:]
     
-    init(strength: Int) {
-        self.strength = strength
+    init(amount: Int) {
+        self.amount = amount
     }
     
     func damage(damage: Damage) {
-        damage.amount -= strength
+        damage.amount -= amount
     }
 }
