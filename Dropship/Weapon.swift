@@ -13,6 +13,10 @@ class Weapon: Executable {
     var resource: Resource
     var damage: Int
     
+    convenience init(damage: Int) {
+        self.init(damage: damage, resource: FreeResource())
+    }
+    
     convenience init(damage: Int, battery: Int, rechargeAmount: Int) {
         let resource = Battery(max: battery, rechargeAmount: rechargeAmount)
         self.init(damage: damage, resource: resource)

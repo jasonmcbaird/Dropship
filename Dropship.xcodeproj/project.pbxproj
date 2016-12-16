@@ -135,7 +135,6 @@
 			children = (
 				5AEF4A181DF8C8F500AD3DF1 /* Controllers */,
 				5AEF4A191DF8C90300AD3DF1 /* Views */,
-				5AEF4A1A1DF8C91300AD3DF1 /* Support */,
 				5AEF4A1B1DF8C94000AD3DF1 /* Unit.swift */,
 				5A8AC3041E04A39B00BCB35B /* Weapon.swift */,
 				96026ED31DFFB14700535785 /* Combat.swift */,
@@ -150,6 +149,7 @@
 				5A8AC30C1E04AA2600BCB35B /* FreeResource.swift */,
 				5AEF4A2C1DF8D17C00AD3DF1 /* Enums */,
 				5AEF4A1D1DF8C94C00AD3DF1 /* Protocols */,
+				5AEF4A1A1DF8C91300AD3DF1 /* Support */,
 			);
 			path = Dropship;
 			sourceTree = "<group>";
