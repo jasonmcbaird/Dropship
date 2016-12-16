@@ -25,9 +25,9 @@ class Unit: Damageable, Activatable {
 	private var healthResponder: Health
 	private var damageResponders: [Damageable]
 	private var activationResponders: [Activatable]
-    private var abilityResponders: [Ability]
+    private var abilityResponders: [Executable]
 	
-    init(name: String, health: Int, damageResponders: [Damageable] = [], activationResponders: [Activatable] = [], abilityResponders: [Ability] = []) {
+    init(name: String, health: Int, damageResponders: [Damageable] = [], activationResponders: [Activatable] = [], abilityResponders: [Executable] = []) {
 		self.name = name
 		self.damageResponders = damageResponders
 		self.healthResponder = Health(maxHealth: health)

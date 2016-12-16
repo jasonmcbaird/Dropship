@@ -1,5 +1,5 @@
 //
-//  AbilityStrategy.swift
+//  Resource.swift
 //  Dropship
 //
 //  Created by dev1 on 12/16/16.
@@ -8,8 +8,10 @@
 
 import Foundation
 
-protocol AbilityStrategy {
+protocol Resource {
     
-    func chooseAbility() -> Ability
+    func canSpend(amount: Int) -> Bool
+    func spend(amount: Int)
+    func refresh()
     
 }

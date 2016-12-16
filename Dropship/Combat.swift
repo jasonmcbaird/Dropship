@@ -10,9 +10,9 @@ import Foundation
 
 class Combat {
     
-    var activatables: [Activatable]
+    var squads: [Activatable]
     var ready: Bool {
-        for activatable in activatables {
+        for activatable in squads {
             if(activatable.ready) {
                 return true
             }
@@ -20,13 +20,13 @@ class Combat {
         return false
     }
     
-    init(activatables: [Activatable]) {
-        self.activatables = activatables
+    init(squads: [Activatable]) {
+        self.squads = squads
     }
     
     func playRound() {
         while(ready) {
-            for activatable in activatables {
+            for activatable in squads {
                 if activatable.ready {
                     activatable.activate()
                 }
@@ -42,7 +42,7 @@ class Combat {
     }
     
     func newRound() {
-        for activatable in activatables {
+        for activatable in squads {
             activatable.readyUp()
         }
     }

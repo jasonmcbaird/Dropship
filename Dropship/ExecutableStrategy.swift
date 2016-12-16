@@ -1,5 +1,5 @@
 //
-//  Ability.swift
+//  AbilityStrategy.swift
 //  Dropship
 //
 //  Created by dev1 on 12/16/16.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-protocol Ability {
+protocol ExecutableStrategy {
     
-    func execute(targetStrategy: TargetStrategy)
+    func chooseExecutable() -> Executable
     
 }

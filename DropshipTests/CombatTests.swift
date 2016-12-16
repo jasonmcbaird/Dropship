@@ -20,7 +20,7 @@ class CombatTests: XCTestCase {
         super.setUp()
         mock = MockUnreadyActivatable(activationsAvailable: 3)
         mock2 = MockUnreadyActivatable(activationsAvailable: 6)
-        testObject = Combat(activatables: [mock, mock2])
+        testObject = Combat(squads: [mock, mock2])
     }
     
     func testPlayRoundActivatesActivatablesUntilNoneAreReady() {

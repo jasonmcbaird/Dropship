@@ -11,7 +11,6 @@ import Foundation
 class Armor: Damageable {
     
     var amount: Int
-    var attributes: [String : Int] = [:]
     
     init(amount: Int) {
         self.amount = amount
