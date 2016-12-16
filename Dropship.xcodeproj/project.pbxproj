@@ -16,7 +16,6 @@
 		5A8AC30B1E04A91200BCB35B /* BasicResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC30A1E04A91200BCB35B /* BasicResource.swift */; };
 		5A8AC30D1E04AA2600BCB35B /* FreeResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC30C1E04AA2600BCB35B /* FreeResource.swift */; };
 		5A8AC30F1E04AA4200BCB35B /* FreeResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC30E1E04AA4200BCB35B /* FreeResourceTests.swift */; };
-		5A8AC3111E04ABD700BCB35B /* WeaponFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC3101E04ABD700BCB35B /* WeaponFactory.swift */; };
 		5A8AC3141E04AD1500BCB35B /* BatteryResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC3131E04AD1500BCB35B /* BatteryResource.swift */; };
 		5A8AC3161E04AD4300BCB35B /* BatteryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC3151E04AD4300BCB35B /* BatteryTests.swift */; };
 		5A8AC3181E04AED000BCB35B /* WeaponTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC3171E04AED000BCB35B /* WeaponTests.swift */; };
@@ -64,7 +63,6 @@
 		5A8AC30A1E04A91200BCB35B /* BasicResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicResource.swift; sourceTree = "<group>"; };
 		5A8AC30C1E04AA2600BCB35B /* FreeResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeResource.swift; sourceTree = "<group>"; };
 		5A8AC30E1E04AA4200BCB35B /* FreeResourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeResourceTests.swift; sourceTree = "<group>"; };
-		5A8AC3101E04ABD700BCB35B /* WeaponFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeaponFactory.swift; sourceTree = "<group>"; };
 		5A8AC3131E04AD1500BCB35B /* BatteryResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryResource.swift; sourceTree = "<group>"; };
 		5A8AC3151E04AD4300BCB35B /* BatteryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryTests.swift; sourceTree = "<group>"; };
 		5A8AC3171E04AED000BCB35B /* WeaponTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeaponTests.swift; sourceTree = "<group>"; };
@@ -114,14 +112,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5A8AC3121E04ABDD00BCB35B /* Factories */ = {
-			isa = PBXGroup;
-			children = (
-				5A8AC3101E04ABD700BCB35B /* WeaponFactory.swift */,
-			);
-			name = Factories;
-			sourceTree = "<group>";
-		};
 		5AEF49E91DF8C8B000AD3DF1 = {
 			isa = PBXGroup;
 			children = (
@@ -146,7 +136,6 @@
 				5AEF4A181DF8C8F500AD3DF1 /* Controllers */,
 				5AEF4A191DF8C90300AD3DF1 /* Views */,
 				5AEF4A1A1DF8C91300AD3DF1 /* Support */,
-				5A8AC3121E04ABDD00BCB35B /* Factories */,
 				5AEF4A1B1DF8C94000AD3DF1 /* Unit.swift */,
 				5A8AC3041E04A39B00BCB35B /* Weapon.swift */,
 				96026ED31DFFB14700535785 /* Combat.swift */,
@@ -343,7 +332,6 @@
 				5AEF4A1C1DF8C94000AD3DF1 /* Unit.swift in Sources */,
 				5AEF49F81DF8C8B000AD3DF1 /* ViewController.swift in Sources */,
 				5AEF4A251DF8C9B000AD3DF1 /* Health.swift in Sources */,
-				5A8AC3111E04ABD700BCB35B /* WeaponFactory.swift in Sources */,
 				5AEF4A291DF8C9D100AD3DF1 /* DamageBar.swift in Sources */,
 				5A8AC3031E049B6100BCB35B /* ExecutableStrategy.swift in Sources */,
 				5AEF4A271DF8C9C000AD3DF1 /* Shields.swift in Sources */,
