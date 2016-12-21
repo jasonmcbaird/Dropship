@@ -8,12 +8,12 @@
 
 import Foundation
 
-class Shields: Damageable, Activatable {
+class Shields: Damageable, Activatable, Bar {
     
-    var shields: Int {
+    var current: Int {
         return shieldBar.current
     }
-    var shieldsMax: Int {
+    var max: Int {
         return shieldBar.max
     }
 	

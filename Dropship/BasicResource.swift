@@ -8,10 +8,10 @@
 
 import Foundation
 
-class BasicResource: Resource {
+class BasicResource: Resource, Bar {
     
-    private var current: Int
-    private var max: Int
+    var current: Int
+    var max: Int
     
     init(max: Int) {
         self.max = max

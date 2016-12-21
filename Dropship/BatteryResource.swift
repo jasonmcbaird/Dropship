@@ -8,10 +8,10 @@
 
 import Foundation
 
-class Battery: Resource, Activatable {
+class Battery: Resource, Activatable, Bar {
     
-    private var current: Int
-    private var max: Int
+    var current: Int
+    var max: Int
     private var rechargeAmount: Int
     
     init(max: Int, rechargeAmount: Int) {

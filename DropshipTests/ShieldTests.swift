@@ -22,14 +22,14 @@ class ShieldTests: XCTestCase {
     func testDamageReducesShields() {
         testObject.damage(amount: 3)
         
-        XCTAssertEqual(testObject.shields, 7)
+        XCTAssertEqual(testObject.current, 7)
     }
     
     func testFirstActivateDoesntRestoreShields() {
         testObject.damage(amount: 3)
         testObject.startTurn()
         
-        XCTAssertEqual(testObject.shields, 7)
+        XCTAssertEqual(testObject.current, 7)
     }
     
     func testThirdActivateRestoresShields() {
@@ -38,7 +38,7 @@ class ShieldTests: XCTestCase {
         testObject.startTurn()
         testObject.startTurn()
         
-        XCTAssertEqual(testObject.shields, 10)
+        XCTAssertEqual(testObject.current, 10)
     }
     
 }

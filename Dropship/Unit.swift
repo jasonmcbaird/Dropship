@@ -12,17 +12,17 @@ class Unit: Damageable, Readyable {
 	
 	var name: String
 	var health: Int {
-		return healthBar.health
+		return healthBar.current
 	}
 	var healthMax: Int {
-		return healthBar.healthMax
+		return healthBar.max
 	}
     var dead: Bool {
-        return healthBar.dead
+        return healthBar.empty
     }
     var ready = true
 	
-	private var healthBar: Health
+	private var healthBar: DamageBar
 	private var damageables: [Damageable]
 	private var activatables: [Activatable]
     private var executables: [Executable]
@@ -40,7 +40,7 @@ class Unit: Damageable, Readyable {
         self.executionStrategy = executionStrategy
         self.targetStrategy = targetStrategy
         
-        self.healthBar = Health(maxHealth: maxHealth)
+        self.healthBar = DamageBar(max: maxHealth)
         self.damageables.append(healthBar)
 	}
 	

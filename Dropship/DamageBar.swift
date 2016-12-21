@@ -8,16 +8,10 @@
 
 import Foundation
 
-class DamageBar: Damageable {
+class DamageBar: Damageable, Bar {
 	
 	var current: Int
 	var max: Int
-    var empty: Bool {
-        return current <= 0
-    }
-    var full: Bool {
-        return current >= max
-    }
     
 	init(max: Int) {
 		current = max
