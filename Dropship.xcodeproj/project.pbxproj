@@ -12,6 +12,7 @@
 		5A05EA011E0AF86400DC2A1C /* RandomTargetStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05EA001E0AF86400DC2A1C /* RandomTargetStrategy.swift */; };
 		5A05EA051E0B092600DC2A1C /* Vulnerability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05EA041E0B092600DC2A1C /* Vulnerability.swift */; };
 		5A05EA071E0B09C600DC2A1C /* VulnerabilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05EA061E0B09C600DC2A1C /* VulnerabilityTests.swift */; };
+		5A05EA0A1E0B0F8E00DC2A1C /* Project Goals in Resources */ = {isa = PBXBuildFile; fileRef = 5A05EA091E0B0F8E00DC2A1C /* Project Goals */; };
 		5A8AC2FB1E04700A00BCB35B /* Executable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC2FA1E04700A00BCB35B /* Executable.swift */; };
 		5A8AC2FD1E04703700BCB35B /* TargetStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC2FC1E04703700BCB35B /* TargetStrategy.swift */; };
 		5A8AC3031E049B6100BCB35B /* ExecutionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC3021E049B6100BCB35B /* ExecutionStrategy.swift */; };
@@ -64,6 +65,7 @@
 		5A05EA001E0AF86400DC2A1C /* RandomTargetStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomTargetStrategy.swift; sourceTree = "<group>"; };
 		5A05EA041E0B092600DC2A1C /* Vulnerability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vulnerability.swift; sourceTree = "<group>"; };
 		5A05EA061E0B09C600DC2A1C /* VulnerabilityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VulnerabilityTests.swift; sourceTree = "<group>"; };
+		5A05EA091E0B0F8E00DC2A1C /* Project Goals */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Project Goals"; sourceTree = "<group>"; };
 		5A8AC2FA1E04700A00BCB35B /* Executable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Executable.swift; sourceTree = "<group>"; };
 		5A8AC2FC1E04703700BCB35B /* TargetStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetStrategy.swift; sourceTree = "<group>"; };
 		5A8AC3021E049B6100BCB35B /* ExecutionStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutionStrategy.swift; sourceTree = "<group>"; };
@@ -131,6 +133,14 @@
 			name = Strategies;
 			sourceTree = "<group>";
 		};
+		5A05EA081E0B0F6400DC2A1C /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				5A05EA091E0B0F8E00DC2A1C /* Project Goals */,
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
 		5AEF49E91DF8C8B000AD3DF1 = {
 			isa = PBXGroup;
 			children = (
@@ -152,8 +162,7 @@
 		5AEF49F41DF8C8B000AD3DF1 /* Dropship */ = {
 			isa = PBXGroup;
 			children = (
-				5AEF4A181DF8C8F500AD3DF1 /* Controllers */,
-				5AEF4A191DF8C90300AD3DF1 /* Views */,
+				5A05EA081E0B0F6400DC2A1C /* Documentation */,
 				5AEF4A1B1DF8C94000AD3DF1 /* Unit.swift */,
 				5A8AC3041E04A39B00BCB35B /* Weapon.swift */,
 				96026ED31DFFB14700535785 /* Initiative.swift */,
@@ -168,8 +177,10 @@
 				5A8AC30C1E04AA2600BCB35B /* FreeResource.swift */,
 				5A05EA041E0B092600DC2A1C /* Vulnerability.swift */,
 				5A05E9FD1E0AF03C00DC2A1C /* Strategies */,
-				5AEF4A2C1DF8D17C00AD3DF1 /* Enums */,
 				5AEF4A1D1DF8C94C00AD3DF1 /* Protocols */,
+				5AEF4A2C1DF8D17C00AD3DF1 /* Enums */,
+				5AEF4A181DF8C8F500AD3DF1 /* Controllers */,
+				5AEF4A191DF8C90300AD3DF1 /* Views */,
 				5AEF4A1A1DF8C91300AD3DF1 /* Support */,
 			);
 			path = Dropship;
@@ -330,6 +341,7 @@
 			files = (
 				5AEF4A031DF8C8B000AD3DF1 /* LaunchScreen.storyboard in Resources */,
 				5AEF4A001DF8C8B000AD3DF1 /* Assets.xcassets in Resources */,
+				5A05EA0A1E0B0F8E00DC2A1C /* Project Goals in Resources */,
 				5AEF49FB1DF8C8B000AD3DF1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

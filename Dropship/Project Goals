@@ -1,0 +1,10 @@
+Dropship is a sci-fi turn-based tactics game for iOS.
+
+Its core goals as a product are:
+1. Simple controls
+2. Interesting out-of-combat management
+
+Its core goals for learning are:
+1. TDD
+2. TDD best-practices (dependency injection, mocking)
+3. Minimize inheritance

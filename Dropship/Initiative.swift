@@ -34,7 +34,7 @@ class Initiative {
         }
     }
     
-    func playInitiative() {
+    func playCombat() {
         while(ready) {
             playRound()
             newRound()
