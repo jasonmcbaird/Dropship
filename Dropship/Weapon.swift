@@ -33,7 +33,7 @@ class Weapon: Executable {
     }
     
     func canExecute(targetStrategy: TargetStrategy) -> Bool {
-        return (resource.canSpend(amount: 1) && targetStrategy.chooseDamageable() != nil)
+        return targetStrategy.chooseDamageable() != nil
     }
     
     func execute(targetStrategy: TargetStrategy) {
