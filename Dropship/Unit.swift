@@ -20,7 +20,12 @@ class Unit: Damageable, Readyable {
     var dead: Bool {
         return healthBar.empty
     }
-    var ready = true
+    var ready: Bool {
+        return !dead && privateReady
+    }
+    var targetStrategy: TargetStrategy
+    
+    private var privateReady = true
 	
 	private var healthBar: DamageBar
 	private var damageables: [Damageable]
@@ -28,7 +33,6 @@ class Unit: Damageable, Readyable {
     private var executables: [Executable]
     
     private var executionStrategy: ExecutionStrategy
-    private var targetStrategy: TargetStrategy
 	
     init(name: String, maxHealth: Int, damageables: [Damageable] = [], activatables: [Activatable] = [], executables: [Executable] = [], executionStrategy: ExecutionStrategy = RandomExecutionStrategy(), targetStrategy: TargetStrategy = EmptyTargetStrategy()) {
 		self.name = name
@@ -58,10 +62,10 @@ class Unit: Damageable, Readyable {
             return executable.canExecute(targetStrategy: targetStrategy)
         }
         executionStrategy.chooseExecutable(executables: possibleExecutables)?.execute(targetStrategy: targetStrategy)
-        ready = false
+        privateReady = false
 	}
     
     func readyUp() {
-        ready = true
+        privateReady = true
     }
 }

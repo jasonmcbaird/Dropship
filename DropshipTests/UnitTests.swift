@@ -69,7 +69,7 @@ class UnitTests: XCTestCase {
     func testReadyUpMakesReady() {
         let testObject = Unit(name: "Jason", maxHealth: 5)
         
-        testObject.ready = false
+        testObject.startTurn()
         testObject.readyUp()
         
         XCTAssertTrue(testObject.ready)
