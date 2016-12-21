@@ -10,6 +10,8 @@ import Foundation
 
 protocol Executable {
     
+    func canExecute(targetStrategy: TargetStrategy) -> Bool
+    
     func execute(targetStrategy: TargetStrategy)
     
 }

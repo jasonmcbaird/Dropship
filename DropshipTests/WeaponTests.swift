@@ -50,7 +50,7 @@ class MockTargetStrategy: TargetStrategy {
         self.damageable = damageable
     }
     
-    func chooseDamageable() -> Damageable {
+    func chooseDamageable() -> Damageable? {
         return damageable
     }
 }

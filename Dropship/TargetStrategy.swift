@@ -10,6 +10,6 @@ import Foundation
 
 protocol TargetStrategy {
     
-    func chooseDamageable() -> Damageable
+    func chooseDamageable() -> Damageable?
     
 }

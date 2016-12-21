@@ -26,28 +26,38 @@ class Unit: Damageable, Readyable {
 	private var damageables: [Damageable]
 	private var activatables: [Activatable]
     private var executables: [Executable]
+    
+    private var executionStrategy: ExecutionStrategy
+    private var targetStrategy: TargetStrategy
 	
-    init(name: String, maxHealth: Int, damageables: [Damageable] = [], activatables: [Activatable] = [], executables: [Executable] = []) {
+    init(name: String, maxHealth: Int, damageables: [Damageable] = [], activatables: [Activatable] = [], executables: [Executable] = [], executionStrategy: ExecutionStrategy = RandomExecutionStrategy(), targetStrategy: TargetStrategy = EmptyTargetStrategy()) {
 		self.name = name
         
 		self.damageables = damageables
 		self.activatables = activatables
         self.executables = executables
         
+        self.executionStrategy = executionStrategy
+        self.targetStrategy = targetStrategy
+        
         self.healthBar = Health(maxHealth: maxHealth)
         self.damageables.append(healthBar)
 	}
 	
 	func damage(damage: Damage) {
-		for responder in damageables {
-			responder.damage(damage: damage)
+		for damageable in damageables {
+			damageable.damage(damage: damage)
 		}
 	}
 	
 	func startTurn() {
-		for responder in activatables {
-			responder.startTurn()
+		for activatable in activatables {
+			activatable.startTurn()
 		}
+        let possibleExecutables = executables.filter() { executable in
+            return executable.canExecute(targetStrategy: targetStrategy)
+        }
+        executionStrategy.chooseExecutable(executables: possibleExecutables)?.execute(targetStrategy: targetStrategy)
         ready = false
 	}
     

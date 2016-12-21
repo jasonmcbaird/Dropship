@@ -8,8 +8,8 @@
 
 import Foundation
 
-protocol ExecutableStrategy {
+protocol ExecutionStrategy {
     
-    func chooseExecutable() -> Executable
+    func chooseExecutable(executables: [Executable]) -> Executable?
     
 }

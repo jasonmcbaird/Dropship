@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		5A05E9FC1E0AE93400DC2A1C /* Readyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05E9FB1E0AE93400DC2A1C /* Readyable.swift */; };
+		5A05E9FF1E0AF1AE00DC2A1C /* RandomExecutionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05E9FE1E0AF1AE00DC2A1C /* RandomExecutionStrategy.swift */; };
+		5A05EA011E0AF86400DC2A1C /* RandomTargetStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05EA001E0AF86400DC2A1C /* RandomTargetStrategy.swift */; };
 		5A8AC2FB1E04700A00BCB35B /* Executable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC2FA1E04700A00BCB35B /* Executable.swift */; };
 		5A8AC2FD1E04703700BCB35B /* TargetStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC2FC1E04703700BCB35B /* TargetStrategy.swift */; };
-		5A8AC3031E049B6100BCB35B /* ExecutableStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC3021E049B6100BCB35B /* ExecutableStrategy.swift */; };
+		5A8AC3031E049B6100BCB35B /* ExecutionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC3021E049B6100BCB35B /* ExecutionStrategy.swift */; };
 		5A8AC3051E04A39B00BCB35B /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC3041E04A39B00BCB35B /* Weapon.swift */; };
 		5A8AC3071E04A85000BCB35B /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC3061E04A85000BCB35B /* Resource.swift */; };
 		5A8AC3091E04A8A800BCB35B /* BasicResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC3081E04A8A800BCB35B /* BasicResourceTests.swift */; };
@@ -56,9 +58,11 @@
 
 /* Begin PBXFileReference section */
 		5A05E9FB1E0AE93400DC2A1C /* Readyable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Readyable.swift; sourceTree = "<group>"; };
+		5A05E9FE1E0AF1AE00DC2A1C /* RandomExecutionStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomExecutionStrategy.swift; sourceTree = "<group>"; };
+		5A05EA001E0AF86400DC2A1C /* RandomTargetStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomTargetStrategy.swift; sourceTree = "<group>"; };
 		5A8AC2FA1E04700A00BCB35B /* Executable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Executable.swift; sourceTree = "<group>"; };
 		5A8AC2FC1E04703700BCB35B /* TargetStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetStrategy.swift; sourceTree = "<group>"; };
-		5A8AC3021E049B6100BCB35B /* ExecutableStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutableStrategy.swift; sourceTree = "<group>"; };
+		5A8AC3021E049B6100BCB35B /* ExecutionStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutionStrategy.swift; sourceTree = "<group>"; };
 		5A8AC3041E04A39B00BCB35B /* Weapon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 		5A8AC3061E04A85000BCB35B /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		5A8AC3081E04A8A800BCB35B /* BasicResourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicResourceTests.swift; sourceTree = "<group>"; };
@@ -114,6 +118,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A05E9FD1E0AF03C00DC2A1C /* Strategies */ = {
+			isa = PBXGroup;
+			children = (
+				5A05E9FE1E0AF1AE00DC2A1C /* RandomExecutionStrategy.swift */,
+				5A05EA001E0AF86400DC2A1C /* RandomTargetStrategy.swift */,
+			);
+			name = Strategies;
+			sourceTree = "<group>";
+		};
 		5AEF49E91DF8C8B000AD3DF1 = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +162,7 @@
 				5A8AC30A1E04A91200BCB35B /* BasicResource.swift */,
 				5A8AC3131E04AD1500BCB35B /* BatteryResource.swift */,
 				5A8AC30C1E04AA2600BCB35B /* FreeResource.swift */,
+				5A05E9FD1E0AF03C00DC2A1C /* Strategies */,
 				5AEF4A2C1DF8D17C00AD3DF1 /* Enums */,
 				5AEF4A1D1DF8C94C00AD3DF1 /* Protocols */,
 				5AEF4A1A1DF8C91300AD3DF1 /* Support */,
@@ -210,7 +224,7 @@
 				5AEF4A1E1DF8C95500AD3DF1 /* Damageable.swift */,
 				5A8AC2FC1E04703700BCB35B /* TargetStrategy.swift */,
 				5A8AC3061E04A85000BCB35B /* Resource.swift */,
-				5A8AC3021E049B6100BCB35B /* ExecutableStrategy.swift */,
+				5A8AC3021E049B6100BCB35B /* ExecutionStrategy.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -335,8 +349,9 @@
 				5AEF4A1C1DF8C94000AD3DF1 /* Unit.swift in Sources */,
 				5AEF49F81DF8C8B000AD3DF1 /* ViewController.swift in Sources */,
 				5AEF4A251DF8C9B000AD3DF1 /* Health.swift in Sources */,
+				5A05EA011E0AF86400DC2A1C /* RandomTargetStrategy.swift in Sources */,
 				5AEF4A291DF8C9D100AD3DF1 /* DamageBar.swift in Sources */,
-				5A8AC3031E049B6100BCB35B /* ExecutableStrategy.swift in Sources */,
+				5A8AC3031E049B6100BCB35B /* ExecutionStrategy.swift in Sources */,
 				5AEF4A271DF8C9C000AD3DF1 /* Shields.swift in Sources */,
 				5AEF49F61DF8C8B000AD3DF1 /* AppDelegate.swift in Sources */,
 				5A8AC2FB1E04700A00BCB35B /* Executable.swift in Sources */,
@@ -344,6 +359,7 @@
 				5A8AC3071E04A85000BCB35B /* Resource.swift in Sources */,
 				96026ECC1DFF968A00535785 /* Armor.swift in Sources */,
 				5A05E9FC1E0AE93400DC2A1C /* Readyable.swift in Sources */,
+				5A05E9FF1E0AF1AE00DC2A1C /* RandomExecutionStrategy.swift in Sources */,
 				5A8AC30D1E04AA2600BCB35B /* FreeResource.swift in Sources */,
 				5AEF4A2B1DF8D14E00AD3DF1 /* Damage.swift in Sources */,
 				5A8AC3051E04A39B00BCB35B /* Weapon.swift in Sources */,

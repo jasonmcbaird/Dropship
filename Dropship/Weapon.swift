@@ -32,10 +32,14 @@ class Weapon: Executable {
         self.resource = resource
     }
     
+    func canExecute(targetStrategy: TargetStrategy) -> Bool {
+        return (resource.canSpend(amount: 1) && targetStrategy.chooseDamageable() != nil)
+    }
+    
     func execute(targetStrategy: TargetStrategy) {
         if(resource.canSpend(amount: 1)) {
             resource.spend(amount: 1)
-            targetStrategy.chooseDamageable().damage(amount: damage)
+            targetStrategy.chooseDamageable()?.damage(amount: damage)
         } else {
             resource.refresh()
         }
