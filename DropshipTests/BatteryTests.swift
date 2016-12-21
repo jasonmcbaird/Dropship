@@ -40,7 +40,7 @@ class BatteryResourceTests: XCTestCase {
     
     func testActivateRechargesTwo() {
         testObject.spend(amount: 3)
-        testObject.activate()
+        testObject.startTurn()
         
         XCTAssertTrue(testObject.canSpend(amount: 4))
         XCTAssertFalse(testObject.canSpend(amount: 5))
@@ -48,7 +48,7 @@ class BatteryResourceTests: XCTestCase {
     
     func testActivateCannotRechargeAboveMax() {
         testObject.spend(amount: 1)
-        testObject.activate()
+        testObject.startTurn()
         
         XCTAssertTrue(testObject.canSpend(amount: 5))
         XCTAssertFalse(testObject.canSpend(amount: 6))

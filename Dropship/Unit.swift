@@ -12,39 +12,41 @@ class Unit: Damageable, Readyable {
 	
 	var name: String
 	var health: Int {
-		return healthResponder.health
+		return healthBar.health
 	}
 	var healthMax: Int {
-		return healthResponder.healthMax
+		return healthBar.healthMax
 	}
     var dead: Bool {
-        return healthResponder.dead
+        return healthBar.dead
     }
     var ready = true
 	
-	private var healthResponder: Health
-	private var damageResponders: [Damageable]
-	private var activationResponders: [Activatable]
-    private var abilityResponders: [Executable]
+	private var healthBar: Health
+	private var damageables: [Damageable]
+	private var activatables: [Activatable]
+    private var executables: [Executable]
 	
-    init(name: String, health: Int, damageResponders: [Damageable] = [], activationResponders: [Activatable] = [], executableResponders: [Executable] = []) {
+    init(name: String, maxHealth: Int, damageables: [Damageable] = [], activatables: [Activatable] = [], executables: [Executable] = []) {
 		self.name = name
-		self.damageResponders = damageResponders
-		self.healthResponder = Health(maxHealth: health)
-		self.damageResponders.append(healthResponder)
-		self.activationResponders = activationResponders
-        self.abilityResponders = executableResponders
+        
+		self.damageables = damageables
+		self.activatables = activatables
+        self.executables = executables
+        
+        self.healthBar = Health(maxHealth: maxHealth)
+        self.damageables.append(healthBar)
 	}
 	
 	func damage(damage: Damage) {
-		for responder in damageResponders {
+		for responder in damageables {
 			responder.damage(damage: damage)
 		}
 	}
 	
-	func activate() {
-		for responder in activationResponders {
-			responder.activate()
+	func startTurn() {
+		for responder in activatables {
+			responder.startTurn()
 		}
         ready = false
 	}

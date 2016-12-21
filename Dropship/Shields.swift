@@ -36,7 +36,7 @@ class Shields: Damageable, Activatable {
 		shieldBar.damage(damage: damage)
 	}
 	
-	func activate() {
+	func startTurn() {
 		if(rechargeCounter <= 1) {
 			recharge()
 		} else {

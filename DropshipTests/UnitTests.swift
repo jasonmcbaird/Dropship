@@ -12,7 +12,7 @@ import XCTest
 class UnitTests: XCTestCase {
 	
 	func testDamageReducesHealth() {
-		let testObject = Unit(name: "Jason", health: 5)
+		let testObject = Unit(name: "Jason", maxHealth: 5)
 		
 		testObject.damage(amount: 3)
 		
@@ -20,7 +20,7 @@ class UnitTests: XCTestCase {
 	}
     
     func testDamageDoesntReduceHealthBelowZero() {
-		let testObject = Unit(name: "Jason", health: 5)
+		let testObject = Unit(name: "Jason", maxHealth: 5)
 		
 		testObject.damage(amount: 3)
 		testObject.damage(amount: 3)
@@ -30,7 +30,7 @@ class UnitTests: XCTestCase {
     
     func testDamageReducesCustomDamageBarsBeforeDefaultHealth() {
         let cover = DamageBar(max: 5)
-        let testObject = Unit(name: "Jason", health: 5, damageResponders: [cover])
+        let testObject = Unit(name: "Jason", maxHealth: 5, damageables: [cover])
 		
 		testObject.damage(amount: 3)
 		testObject.damage(amount: 3)
@@ -40,17 +40,17 @@ class UnitTests: XCTestCase {
 		XCTAssertEqual(testObject.health, 1)
     }
 	
-	func testActivationRespondersActivate() {
+	func testActivationRespondersstartTurn() {
 		let mockActivatable = MockReadyable()
-		let testObject = Unit(name: "Jason", health: 5, damageResponders: [], activationResponders: [mockActivatable])
+		let testObject = Unit(name: "Jason", maxHealth: 5, activatables: [mockActivatable])
 		
-		testObject.activate()
+		testObject.startTurn()
 		
 		XCTAssertEqual(mockActivatable.activationCount, 1)
 	}
     
     func testHealthBelowZeroMeansDead() {
-        let testObject = Unit(name: "Jason", health: 5)
+        let testObject = Unit(name: "Jason", maxHealth: 5)
         
         testObject.damage(amount: 3)
         testObject.damage(amount: 3)
@@ -59,21 +59,19 @@ class UnitTests: XCTestCase {
     }
     
     func testActivateMakesUnready() {
-        let testObject = Unit(name: "Jason", health: 5)
+        let testObject = Unit(name: "Jason", maxHealth: 5)
         
-        testObject.activate()
+        testObject.startTurn()
         
         XCTAssertFalse(testObject.ready)
     }
     
     func testReadyUpMakesReady() {
-        let testObject = Unit(name: "Jason", health: 5)
+        let testObject = Unit(name: "Jason", maxHealth: 5)
         
         testObject.ready = false
         testObject.readyUp()
         
         XCTAssertTrue(testObject.ready)
     }
-    
 }
-

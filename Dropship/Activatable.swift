@@ -10,6 +10,6 @@ import Foundation
 
 protocol Activatable {
 	
-	func activate()
+	func startTurn()
 	
 }

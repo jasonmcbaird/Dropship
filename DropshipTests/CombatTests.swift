@@ -52,7 +52,7 @@ class MockUnreadyReadyable: Readyable {
     var ready = true
     var resetCount = 0
     
-    func activate() {
+    func startTurn() {
         activationCount += 1
         if(activationCount >= activationsAvailable) {
             resetCount += 1

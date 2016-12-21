@@ -28,7 +28,7 @@ class Combat {
         while(ready) {
             for readyable in squads {
                 if readyable.ready {
-                    readyable.activate()
+                    readyable.startTurn()
                 }
             }
         }

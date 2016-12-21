@@ -35,7 +35,7 @@ class Battery: Resource, Activatable {
         
     }
     
-    func activate() {
+    func startTurn() {
         current += rechargeAmount
         if(current > max) {
             current = max

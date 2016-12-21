@@ -26,7 +26,7 @@ class SquadTests: XCTestCase {
     }
     
     func testActivateActivatesAllActivatables() {
-        testObject.activate()
+        testObject.startTurn()
         
         XCTAssertEqual(jason.activationCount, 1)
         XCTAssertEqual(cody.activationCount, 1)
@@ -61,7 +61,7 @@ class MockReadyable: Readyable {
     var ready: Bool = true
     var readyCount: Int = 0
     
-    func activate() {
+    func startTurn() {
         activationCount += 1
     }
     
