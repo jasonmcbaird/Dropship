@@ -10,4 +10,5 @@ import Foundation
 
 enum DamageType {
 	case physical
+    case energy
 }

@@ -1,5 +1,5 @@
 //
-//  Combat.swift
+//  Initiative.swift
 //  Dropship
 //
 //  Created by Jason Baird on 12/12/16.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Combat {
+class Initiative {
     
     var squads: [Readyable]
     var ready: Bool {
@@ -34,7 +34,7 @@ class Combat {
         }
     }
     
-    func playCombat() {
+    func playInitiative() {
         while(ready) {
             playRound()
             newRound()
