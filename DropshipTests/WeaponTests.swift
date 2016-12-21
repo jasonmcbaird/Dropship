@@ -41,12 +41,34 @@ class WeaponTests: XCTestCase {
         
         XCTAssertEqual(mockResource.spending, [1])
     }
+    
+    func testWhenAccuracyIsLowDamageIsHitOrMiss() {
+        let testObject = Weapon(damage: 3, accuracy: 50)
+        let mockDamageable = DamageBar(max: 10000)
+        let strategy = MockTargetStrategy(damageable: mockDamageable)
+        var missCount = 0
+        var hitCount = 0
+        
+        for _ in 0...100 {
+            let old = mockDamageable.current
+            testObject.execute(targetStrategy: strategy)
+            if(mockDamageable.current < old) {
+                hitCount += 1
+            } else {
+                missCount += 1
+            }
+        }
+        
+        XCTAssertGreaterThan(hitCount, 20)
+        XCTAssertGreaterThan(missCount, 20)
+    }
 }
 
 class MockTargetStrategy: TargetStrategy {
-    let damageable: Damageable
     
-    init(damageable: Damageable) {
+    let damageable: Damageable?
+    
+    init(damageable: Damageable? = nil) {
         self.damageable = damageable
     }
     
