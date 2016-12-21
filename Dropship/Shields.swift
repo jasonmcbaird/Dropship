@@ -16,7 +16,6 @@ class Shields: Damageable, Activatable {
     var shieldsMax: Int {
         return shieldBar.max
     }
-    var ready: Bool = true
 	
 	private var shieldBar: DamageBar
 	private var rechargeDelay: Int
@@ -44,10 +43,6 @@ class Shields: Damageable, Activatable {
 			rechargeCounter -= 1
 		}
 	}
-    
-    func readyUp() {
-        
-    }
 	
 	private func recharge() {
 		shieldBar.current += rechargeAmount

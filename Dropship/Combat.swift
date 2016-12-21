@@ -10,25 +10,25 @@ import Foundation
 
 class Combat {
     
-    var squads: [Activatable]
+    var squads: [Readyable]
     var ready: Bool {
-        for activatable in squads {
-            if(activatable.ready) {
+        for readyable in squads {
+            if(readyable.ready) {
                 return true
             }
         }
         return false
     }
     
-    init(squads: [Activatable]) {
+    init(squads: [Readyable]) {
         self.squads = squads
     }
     
     func playRound() {
         while(ready) {
-            for activatable in squads {
-                if activatable.ready {
-                    activatable.activate()
+            for readyable in squads {
+                if readyable.ready {
+                    readyable.activate()
                 }
             }
         }

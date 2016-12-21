@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A05E9FC1E0AE93400DC2A1C /* Readyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05E9FB1E0AE93400DC2A1C /* Readyable.swift */; };
 		5A8AC2FB1E04700A00BCB35B /* Executable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC2FA1E04700A00BCB35B /* Executable.swift */; };
 		5A8AC2FD1E04703700BCB35B /* TargetStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC2FC1E04703700BCB35B /* TargetStrategy.swift */; };
 		5A8AC3031E049B6100BCB35B /* ExecutableStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC3021E049B6100BCB35B /* ExecutableStrategy.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A05E9FB1E0AE93400DC2A1C /* Readyable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Readyable.swift; sourceTree = "<group>"; };
 		5A8AC2FA1E04700A00BCB35B /* Executable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Executable.swift; sourceTree = "<group>"; };
 		5A8AC2FC1E04703700BCB35B /* TargetStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetStrategy.swift; sourceTree = "<group>"; };
 		5A8AC3021E049B6100BCB35B /* ExecutableStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutableStrategy.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			children = (
 				5A8AC2FA1E04700A00BCB35B /* Executable.swift */,
 				5AEF4A221DF8C98C00AD3DF1 /* Activatable.swift */,
+				5A05E9FB1E0AE93400DC2A1C /* Readyable.swift */,
 				5AEF4A1E1DF8C95500AD3DF1 /* Damageable.swift */,
 				5A8AC2FC1E04703700BCB35B /* TargetStrategy.swift */,
 				5A8AC3061E04A85000BCB35B /* Resource.swift */,
@@ -340,6 +343,7 @@
 				5AEF4A1F1DF8C95500AD3DF1 /* Damageable.swift in Sources */,
 				5A8AC3071E04A85000BCB35B /* Resource.swift in Sources */,
 				96026ECC1DFF968A00535785 /* Armor.swift in Sources */,
+				5A05E9FC1E0AE93400DC2A1C /* Readyable.swift in Sources */,
 				5A8AC30D1E04AA2600BCB35B /* FreeResource.swift in Sources */,
 				5AEF4A2B1DF8D14E00AD3DF1 /* Damage.swift in Sources */,
 				5A8AC3051E04A39B00BCB35B /* Weapon.swift in Sources */,

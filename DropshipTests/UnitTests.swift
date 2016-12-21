@@ -41,7 +41,7 @@ class UnitTests: XCTestCase {
     }
 	
 	func testActivationRespondersActivate() {
-		let mockActivatable = MockActivatable()
+		let mockActivatable = MockReadyable()
 		let testObject = Unit(name: "Jason", health: 5, damageResponders: [], activationResponders: [mockActivatable])
 		
 		testObject.activate()

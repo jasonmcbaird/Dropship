@@ -9,8 +9,6 @@
 import Foundation
 
 class Battery: Resource, Activatable {
-
-    var ready = true
     
     private var current: Int
     private var max: Int
@@ -42,10 +40,6 @@ class Battery: Resource, Activatable {
         if(current > max) {
             current = max
         }
-    }
-    
-    func readyUp() {
-        
     }
     
 }

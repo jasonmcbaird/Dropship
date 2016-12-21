@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Unit: Damageable, Activatable {
+class Unit: Damageable, Readyable {
 	
 	var name: String
 	var health: Int {
@@ -27,13 +27,13 @@ class Unit: Damageable, Activatable {
 	private var activationResponders: [Activatable]
     private var abilityResponders: [Executable]
 	
-    init(name: String, health: Int, damageResponders: [Damageable] = [], activationResponders: [Activatable] = [], abilityResponders: [Executable] = []) {
+    init(name: String, health: Int, damageResponders: [Damageable] = [], activationResponders: [Activatable] = [], executableResponders: [Executable] = []) {
 		self.name = name
 		self.damageResponders = damageResponders
 		self.healthResponder = Health(maxHealth: health)
 		self.damageResponders.append(healthResponder)
 		self.activationResponders = activationResponders
-        self.abilityResponders = abilityResponders
+        self.abilityResponders = executableResponders
 	}
 	
 	func damage(damage: Damage) {

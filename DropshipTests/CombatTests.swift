@@ -13,13 +13,13 @@ import XCTest
 class CombatTests: XCTestCase {
     
     var testObject: Combat!
-    var mock: MockUnreadyActivatable!
-    var mock2: MockUnreadyActivatable!
+    var mock: MockUnreadyReadyable!
+    var mock2: MockUnreadyReadyable!
     
     override func setUp() {
         super.setUp()
-        mock = MockUnreadyActivatable(activationsAvailable: 3)
-        mock2 = MockUnreadyActivatable(activationsAvailable: 6)
+        mock = MockUnreadyReadyable(activationsAvailable: 3)
+        mock2 = MockUnreadyReadyable(activationsAvailable: 6)
         testObject = Combat(squads: [mock, mock2])
     }
     
@@ -40,7 +40,7 @@ class CombatTests: XCTestCase {
     }
 }
 
-class MockUnreadyActivatable: Activatable {
+class MockUnreadyReadyable: Readyable {
     
     var activationsAvailable: Int
     var activationCount = 0

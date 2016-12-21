@@ -8,11 +8,11 @@
 
 import Foundation
 
-class Squad: Activatable {
+class Squad: Readyable {
     
-    var activatables: [Activatable]
+    var readyables: [Readyable]
     var ready: Bool {
-        for activatable in activatables {
+        for activatable in readyables {
             if(activatable.ready) {
                 return true
             }
@@ -20,18 +20,18 @@ class Squad: Activatable {
         return false
     }
     
-    init(activatables: [Activatable]) {
-        self.activatables = activatables
+    init(readyables: [Readyable]) {
+        self.readyables = readyables
     }
     
     func activate() {
-        for activatable in activatables {
+        for activatable in readyables {
             activatable.activate()
         }
     }
     
     func readyUp() {
-        for activatable in activatables {
+        for activatable in readyables {
             activatable.readyUp()
         }
     }

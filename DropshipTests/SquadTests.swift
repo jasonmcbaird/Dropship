@@ -12,17 +12,17 @@ import XCTest
 
 class SquadTests: XCTestCase {
     
-    var jason: MockActivatable!
-    var cody: MockActivatable!
-    var cheyenne: MockActivatable!
+    var jason: MockReadyable!
+    var cody: MockReadyable!
+    var cheyenne: MockReadyable!
     var testObject: Squad!
     
     override func setUp() {
         super.setUp()
-        jason = MockActivatable()
-        cody = MockActivatable()
-        cheyenne = MockActivatable()
-        testObject = Squad(activatables: [jason, cody, cheyenne])
+        jason = MockReadyable()
+        cody = MockReadyable()
+        cheyenne = MockReadyable()
+        testObject = Squad(readyables: [jason, cody, cheyenne])
     }
     
     func testActivateActivatesAllActivatables() {
@@ -55,7 +55,7 @@ class SquadTests: XCTestCase {
     
 }
 
-class MockActivatable: Activatable {
+class MockReadyable: Readyable {
     
     var activationCount: Int = 0
     var ready: Bool = true
