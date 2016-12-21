@@ -19,6 +19,15 @@ class Initiative {
         }
         return false
     }
+    var victory: Bool {
+        var readyCount = 0
+        for readyable in squads {
+            if(readyable.ready) {
+                readyCount += 1
+            }
+        }
+        return readyCount <= 1
+    }
     
     init(squads: [Readyable]) {
         self.squads = squads
@@ -35,7 +44,7 @@ class Initiative {
     }
     
     func playCombat() {
-        while(ready) {
+        while(!victory) {
             playRound()
             newRound()
         }
