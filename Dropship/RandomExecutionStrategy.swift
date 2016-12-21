@@ -12,10 +12,9 @@ class RandomExecutionStrategy: ExecutionStrategy {
     
     func chooseExecutable(executables: [Executable]) -> Executable? {
         if(executables.count > 0) {
-            return executables[Int(arc4random_uniform(UInt32(executables.count)))]
+            return executables[Randomizer.rollRange(0, executables.count - 1)]
         } else {
             return nil
         }
     }
-    
 }
