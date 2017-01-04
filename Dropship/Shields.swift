@@ -16,7 +16,10 @@ class Shields: Damageable, Activatable, Bar {
     var max: Int {
         return shieldBar.max
     }
-	
+    var name: String {
+        return shieldBar.name
+    }
+    
 	private var shieldBar: DamageBar
 	private var rechargeDelay: Int
 	private var rechargeAmount: Int
@@ -26,7 +29,7 @@ class Shields: Damageable, Activatable, Bar {
 		self.rechargeDelay = rechargeDelay
 		self.rechargeAmount = rechargeAmount
 		self.rechargeCounter = 0
-		self.shieldBar = DamageBar(max: maxShields)
+        self.shieldBar = DamageBar(name: "Shields", max: maxShields)
 	}
 	
 	func damage(damage: Damage) {

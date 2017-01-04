@@ -10,10 +10,12 @@ import Foundation
 
 class DamageBar: Damageable, Bar {
 	
+    var name: String
 	var current: Int
 	var max: Int
     
-	init(max: Int) {
+    init(name: String = "Damage Bar", max: Int) {
+        self.name = name
 		current = max
 		self.max = max
 	}

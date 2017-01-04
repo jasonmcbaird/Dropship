@@ -10,6 +10,6 @@ import Foundation
 
 protocol ExecutionStrategy {
     
-    func chooseExecutable(executables: [Executable]) -> Executable?
+    func chooseAbility(abilities: [Ability]) -> Ability?
     
 }

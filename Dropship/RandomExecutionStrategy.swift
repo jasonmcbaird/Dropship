@@ -10,9 +10,9 @@ import Foundation
 
 class RandomExecutionStrategy: ExecutionStrategy {
     
-    func chooseExecutable(executables: [Executable]) -> Executable? {
-        if(executables.count > 0) {
-            return executables[Randomizer.rollRange(0, executables.count - 1)]
+    func chooseAbility(abilities: [Ability]) -> Ability? {
+        if(abilities.count > 0) {
+            return abilities[Randomizer.rollRange(0, abilities.count - 1)]
         } else {
             return nil
         }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Weapon: Executable {
+class Weapon: Ability {
     
     var resource: Resource
     var damage: Int

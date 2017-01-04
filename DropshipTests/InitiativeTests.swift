@@ -20,7 +20,7 @@ class InitiativeTests: XCTestCase {
         super.setUp()
         mock = MockUnreadyReadyable(activationsAvailable: 3)
         mock2 = MockUnreadyReadyable(activationsAvailable: 6)
-        testObject = Initiative(squads: [mock, mock2])
+        testObject = Initiative(squads: [Squad(readyables: [mock]), Squad(readyables: [mock2])])
     }
     
     func testPlayRoundActivatesActivatablesUntilNoneAreReady() {

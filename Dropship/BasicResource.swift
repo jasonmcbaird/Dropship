@@ -10,10 +10,12 @@ import Foundation
 
 class BasicResource: Resource, Bar {
     
+    var name: String
     var current: Int
     var max: Int
     
-    init(max: Int) {
+    init(name: String = "Ammo", max: Int) {
+        self.name = name
         self.max = max
         self.current = max
     }

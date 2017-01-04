@@ -8,10 +8,9 @@
 
 import Foundation
 
-protocol Executable {
+protocol Ability {
     
     func canExecute(targetStrategy: TargetStrategy) -> Bool
-    
     func execute(targetStrategy: TargetStrategy)
     
 }

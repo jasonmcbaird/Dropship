@@ -10,6 +10,7 @@ import Foundation
 
 class Battery: Resource, Activatable, Bar {
     
+    var name = "Battery"
     var current: Int
     var max: Int
     private var rechargeAmount: Int

@@ -13,16 +13,16 @@ import XCTest
 class RandomExecutionStrategyTests: XCTestCase {
     
     func testChoosesAllValuesEventually() {
-        var executables: [MockExecutable] = []
+        var abilities: [MockAbility] = []
         for _ in 0...4 {
-            executables.append(MockExecutable())
+            abilities.append(MockAbility())
         }
         let testObject = RandomExecutionStrategy()
         for _ in 0...100 {
-            testObject.chooseExecutable(executables: executables)!.execute(targetStrategy: MockTargetStrategy())
+            testObject.chooseAbility(abilities: abilities)!.execute(targetStrategy: MockTargetStrategy())
         }
         for i in 0...4 {
-            XCTAssertGreaterThan(executables[i].executionCount, 1)
+            XCTAssertGreaterThan(abilities[i].executionCount, 1)
         }
     }
 }

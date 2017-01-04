@@ -8,10 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CombatController: UIViewController {
+    
+    var combatModel: Initiative!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+        combatModel = CombatFactory().createCombat(type: .gulch)
 		// Do any additional setup after loading the view, typically from a nib.
 	}
 

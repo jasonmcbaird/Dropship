@@ -36,3 +36,17 @@ class Squad: Readyable {
         }
     }
 }
+
+extension Squad: SquadModel {
+    
+    var creatures: [CreatureModel] {
+        var result: [CreatureModel] = []
+        for readyable in readyables {
+            if let creature = readyable as? Creature {
+                result.append(creature)
+            }
+        }
+        return result
+    }
+    
+}
