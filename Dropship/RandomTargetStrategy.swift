@@ -2,18 +2,25 @@
 //  RandomTargetStrategy.swift
 //  Dropship
 //
-//  Created by dev1 on 12/21/16.
-//  Copyright © 2016 North Forge. All rights reserved.
+//  Created by dev1 on 1/4/17.
+//  Copyright © 2017 North Forge. All rights reserved.
 //
 
 import Foundation
 
-class EmptyTargetStrategy: TargetStrategy {
+class RandomTargetStrategy: TargetStrategy {
     
-    func chooseDamageable() -> Damageable? {
-        // TODO: Figure out how to get possible targets
-        // TODO: Make this random
-        return nil
+    var damageables: [Damageable]
+    
+    init(damageables: [Damageable]) {
+        self.damageables = damageables
     }
     
+    func chooseDamageable() -> Damageable? {
+        if damageables.count > 0 {
+            return damageables[Randomizer.rollRange(0, damageables.count - 1)]
+        } else {
+            return nil
+        }
+    }
 }
