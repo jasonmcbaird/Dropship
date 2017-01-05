@@ -24,6 +24,7 @@
 		5A0CE6931E1D7E120046C809 /* RandomTargetStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE6921E1D7E120046C809 /* RandomTargetStrategy.swift */; };
 		5A0CE6951E1D80430046C809 /* CombatModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE6941E1D80430046C809 /* CombatModels.swift */; };
 		5A0CE6971E1DBE2F0046C809 /* CombatSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE6961E1DBE2F0046C809 /* CombatSystemTests.swift */; };
+		5A0CE69A1E1ED0DD0046C809 /* CreatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE6991E1ED0DD0046C809 /* CreatureCell.swift */; };
 		5A8AC2FB1E04700A00BCB35B /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC2FA1E04700A00BCB35B /* Ability.swift */; };
 		5A8AC2FD1E04703700BCB35B /* TargetStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC2FC1E04703700BCB35B /* TargetStrategy.swift */; };
 		5A8AC3031E049B6100BCB35B /* ExecutionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC3021E049B6100BCB35B /* ExecutionStrategy.swift */; };
@@ -86,6 +87,7 @@
 		5A0CE6921E1D7E120046C809 /* RandomTargetStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomTargetStrategy.swift; sourceTree = "<group>"; };
 		5A0CE6941E1D80430046C809 /* CombatModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombatModels.swift; sourceTree = "<group>"; };
 		5A0CE6961E1DBE2F0046C809 /* CombatSystemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombatSystemTests.swift; sourceTree = "<group>"; };
+		5A0CE6991E1ED0DD0046C809 /* CreatureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatureCell.swift; sourceTree = "<group>"; };
 		5A8AC2FA1E04700A00BCB35B /* Ability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ability.swift; sourceTree = "<group>"; };
 		5A8AC2FC1E04703700BCB35B /* TargetStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetStrategy.swift; sourceTree = "<group>"; };
 		5A8AC3021E049B6100BCB35B /* ExecutionStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutionStrategy.swift; sourceTree = "<group>"; };
@@ -202,6 +204,14 @@
 			name = Utilities;
 			sourceTree = "<group>";
 		};
+		5A0CE6981E1ED0CE0046C809 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5A0CE6991E1ED0DD0046C809 /* CreatureCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		5AEF49E91DF8C8B000AD3DF1 = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +234,8 @@
 			isa = PBXGroup;
 			children = (
 				5AEF49F51DF8C8B000AD3DF1 /* AppDelegate.swift */,
+				5AEF4A181DF8C8F500AD3DF1 /* Controllers */,
+				5A0CE6981E1ED0CE0046C809 /* Views */,
 				5A05EA081E0B0F6400DC2A1C /* Documentation */,
 				5A05EA0C1E0B112600DC2A1C /* Combat */,
 				5A05EA0B1E0B111300DC2A1C /* Creature */,
@@ -232,7 +244,6 @@
 				5AEF4A1D1DF8C94C00AD3DF1 /* Protocols */,
 				5AEF4A2C1DF8D17C00AD3DF1 /* Enums */,
 				5A05EA141E0B1EF600DC2A1C /* Utilities */,
-				5AEF4A181DF8C8F500AD3DF1 /* Controllers */,
 				5AEF4A1A1DF8C91300AD3DF1 /* Support */,
 			);
 			path = Dropship;
@@ -432,6 +443,7 @@
 				5A05E9FC1E0AE93400DC2A1C /* Readyable.swift in Sources */,
 				5A05E9FF1E0AF1AE00DC2A1C /* RandomExecutionStrategy.swift in Sources */,
 				5A8AC30D1E04AA2600BCB35B /* FreeResource.swift in Sources */,
+				5A0CE69A1E1ED0DD0046C809 /* CreatureCell.swift in Sources */,
 				5A05EA111E0B13EA00DC2A1C /* Bar.swift in Sources */,
 				5AEF4A2B1DF8D14E00AD3DF1 /* Damage.swift in Sources */,
 				5A8AC3051E04A39B00BCB35B /* Weapon.swift in Sources */,

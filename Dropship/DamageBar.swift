@@ -25,6 +25,7 @@ class DamageBar: Damageable, Bar {
 	}
 	
 	func damage(damage: Damage) {
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "Creature Changed"), object: self)
 		current -= damage.amount
 		if(current < 0) {
 			let result = -current

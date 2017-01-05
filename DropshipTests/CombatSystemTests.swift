@@ -25,9 +25,11 @@ class CombatSystemTests: XCTestCase {
             combat.playCombat()
             
             if(!jason.dead) {
+                XCTAssert(cody.dead)
                 jasonWins += 1
             }
             if(!cody.dead) {
+                XCTAssert(jason.dead)
                 codyWins += 1
             }
         }
