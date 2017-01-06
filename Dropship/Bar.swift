@@ -15,6 +15,7 @@ protocol Bar {
     var max: Int { get }
     var empty: Bool { get }
     var full: Bool { get }
+    var percent: Float { get }
     
 }
 
@@ -26,6 +27,12 @@ extension Bar {
     
     var full: Bool {
         return current >= max
+    }
+    
+    var percent: Float {
+        get {
+            return Float(current) / Float(max)
+        }
     }
     
 }

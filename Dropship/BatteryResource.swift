@@ -11,8 +11,16 @@ import Foundation
 class Battery: Resource, Activatable, Bar {
     
     var name = "Battery"
-    var current: Int
-    var max: Int
+    var current: Int {
+        didSet {
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "Current Changed"), object: self)
+        }
+    }
+    var max: Int {
+        didSet {
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "Current Changed"), object: self)
+        }
+    }
     private var rechargeAmount: Int
     
     init(max: Int, rechargeAmount: Int) {

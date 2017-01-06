@@ -11,9 +11,10 @@ import Foundation
 class Initiative {
 
     var squads: [Squad]
+    let loopTime: Double
     var ready: Bool {
-        for readyable in squads {
-            if(readyable.ready) {
+        for squad in squads {
+            if(squad.ready) {
                 return true
             }
         }
@@ -21,33 +22,38 @@ class Initiative {
     }
     var victory: Bool {
         var readyCount = 0
-        for readyable in squads {
-            if(readyable.ready) {
+        for squad in squads {
+            if(squad.ready) {
                 readyCount += 1
             }
         }
         return readyCount <= 1
     }
     
-    init(squads: [Squad]) {
+    init(squads: [Squad], loopTime: Double = 0.5) {
         self.squads = squads
+        self.loopTime = loopTime
     }
     
     func playRound() {
         while(ready) {
-            for readyable in squads {
-                if readyable.ready {
-                    readyable.startTurn()
+            for squad in squads {
+                if squad.ready {
+                    squad.startTurn()
                 }
             }
         }
     }
     
     func playCombat() {
-        while(!victory) {
-            playRound()
-            newRound()
-        }
+        Timer.scheduledTimer(withTimeInterval: loopTime, repeats: true, block: { timer in
+            if(!self.victory) {
+                self.playRound()
+                self.newRound()
+            } else {
+                timer.invalidate()
+            }
+        })
     }
     
     func newRound() {

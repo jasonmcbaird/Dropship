@@ -11,8 +11,16 @@ import Foundation
 class BasicResource: Resource, Bar {
     
     var name: String
-    var current: Int
-    var max: Int
+    var current: Int {
+        didSet {
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "Current Changed"), object: self)
+        }
+    }
+    var max: Int {
+        didSet {
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "Current Changed"), object: self)
+        }
+    }
     
     init(name: String = "Ammo", max: Int) {
         self.name = name

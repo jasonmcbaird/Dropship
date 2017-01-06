@@ -212,6 +212,15 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		5A0CE69B1E2018560046C809 /* ProtocolExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				5AEF4A1E1DF8C95500AD3DF1 /* Damageable.swift */,
+				5A05EA101E0B13EA00DC2A1C /* Bar.swift */,
+			);
+			name = ProtocolExtensions;
+			sourceTree = "<group>";
+		};
 		5AEF49E91DF8C8B000AD3DF1 = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +251,7 @@
 				5A05EA0D1E0B114D00DC2A1C /* Executable */,
 				5A05E9FD1E0AF03C00DC2A1C /* Strategies */,
 				5AEF4A1D1DF8C94C00AD3DF1 /* Protocols */,
+				5A0CE69B1E2018560046C809 /* ProtocolExtensions */,
 				5AEF4A2C1DF8D17C00AD3DF1 /* Enums */,
 				5A05EA141E0B1EF600DC2A1C /* Utilities */,
 				5AEF4A1A1DF8C91300AD3DF1 /* Support */,
@@ -298,11 +308,9 @@
 				5A0CE6941E1D80430046C809 /* CombatModels.swift */,
 				5AEF4A221DF8C98C00AD3DF1 /* Activatable.swift */,
 				5A05E9FB1E0AE93400DC2A1C /* Readyable.swift */,
-				5AEF4A1E1DF8C95500AD3DF1 /* Damageable.swift */,
 				5A8AC2FC1E04703700BCB35B /* TargetStrategy.swift */,
 				5A8AC3061E04A85000BCB35B /* Resource.swift */,
 				5A8AC3021E049B6100BCB35B /* ExecutionStrategy.swift */,
-				5A05EA101E0B13EA00DC2A1C /* Bar.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";

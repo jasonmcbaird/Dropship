@@ -11,8 +11,16 @@ import Foundation
 class DamageBar: Damageable, Bar {
 	
     var name: String
-	var current: Int
-	var max: Int
+    var current: Int {
+        didSet {
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "Current Changed"), object: self)
+        }
+    }
+    var max: Int {
+        didSet {
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "Current Changed"), object: self)
+        }
+    }
     
     init(name: String = "Damage Bar", max: Int) {
         self.name = name
@@ -25,7 +33,6 @@ class DamageBar: Damageable, Bar {
 	}
 	
 	func damage(damage: Damage) {
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "Creature Changed"), object: self)
 		current -= damage.amount
 		if(current < 0) {
 			let result = -current

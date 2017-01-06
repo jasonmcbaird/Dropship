@@ -27,7 +27,7 @@ class CombatController: UIViewController {
             tableView.rowHeight = 150
             for creature in squad.creatures {
                 for bar in creature.bars {
-                    NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "Creature Changed"), object: bar, queue: nil) { _ in
+                    NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "Current Changed"), object: bar, queue: nil) { _ in
                         tableView.reloadData()
                     }
                 }
@@ -59,7 +59,7 @@ extension CombatController: UITableViewDelegate, UITableViewDataSource {
         if let creature = teams[tableView]?.creatures[indexPath.row] {
             var bars: [String: Float] = [:]
             for bar in creature.bars {
-                bars[bar.name] = Float(bar.current) / Float(bar.max)
+                bars[bar.name] = bar.percent
             }
             cell.set(name: creature.name, bars: bars)
         }
