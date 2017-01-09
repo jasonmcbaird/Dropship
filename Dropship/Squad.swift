@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Squad: Readyable {
+class Squad {
     
     var readyables: [Readyable]
     var ready: Bool {
