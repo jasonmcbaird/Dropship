@@ -24,9 +24,12 @@ class Squad: Readyable {
         self.readyables = readyables
     }
     
-    func startTurn() {
+    func startNext() {
         for activatable in readyables {
-            activatable.startTurn()
+            if(activatable.ready) {
+                activatable.startTurn()
+                return
+            }
         }
     }
     

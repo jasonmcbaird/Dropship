@@ -30,30 +30,27 @@ class Initiative {
         return readyCount <= 1
     }
     
-    init(squads: [Squad], loopTime: Double = 0.5) {
+    init(squads: [Squad], loopTime: Double = 1) {
         self.squads = squads
         self.loopTime = loopTime
     }
     
-    func playRound() {
-        while(ready) {
-            for squad in squads {
-                if squad.ready {
-                    squad.startTurn()
+    func playCombat() {
+        Timer.scheduledTimer(withTimeInterval: loopTime, repeats: true) { timer in
+            if(self.ready) {
+                for squad in self.squads {
+                    if(squad.ready) {
+                        squad.startNext()
+                        return
+                    }
                 }
             }
-        }
-    }
-    
-    func playCombat() {
-        Timer.scheduledTimer(withTimeInterval: loopTime, repeats: true, block: { timer in
+            timer.invalidate()
+            self.newRound()
             if(!self.victory) {
-                self.playRound()
-                self.newRound()
-            } else {
-                timer.invalidate()
+                self.playCombat()
             }
-        })
+        }
     }
     
     func newRound() {

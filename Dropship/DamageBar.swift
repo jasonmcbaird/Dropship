@@ -21,6 +21,9 @@ class DamageBar: Damageable, Bar {
             NotificationCenter.default.post(name: Notification.Name(rawValue: "Current Changed"), object: self)
         }
     }
+    var canDamage: Bool {
+        return !empty
+    }
     
     init(name: String = "Damage Bar", max: Int) {
         self.name = name

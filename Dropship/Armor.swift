@@ -11,6 +11,7 @@ import Foundation
 class Armor: Damageable {
     
     var amount: Int
+    let canDamage = false
     
     init(amount: Int) {
         self.amount = amount

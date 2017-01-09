@@ -10,6 +10,7 @@ import Foundation
 
 protocol Damageable {
 	
+    var canDamage: Bool { get }
 	func damage(damage: Damage)
 	func damage(amount: Int)
 	func damage(amount: Int, type: DamageType)

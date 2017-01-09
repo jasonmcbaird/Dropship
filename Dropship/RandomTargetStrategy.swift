@@ -17,8 +17,9 @@ class RandomTargetStrategy: TargetStrategy {
     }
     
     func chooseDamageable() -> Damageable? {
-        if damageables.count > 0 {
-            return damageables[Randomizer.rollRange(0, damageables.count - 1)]
+        let possibleTargets = damageables.filter({ $0.canDamage })
+        if possibleTargets.count > 0 {
+            return possibleTargets[Randomizer.rollRange(0, possibleTargets.count - 1)]
         } else {
             return nil
         }

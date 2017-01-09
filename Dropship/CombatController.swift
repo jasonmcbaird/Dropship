@@ -13,10 +13,12 @@ class CombatController: UIViewController {
     var startButton: UIButton = UIButton()
     var combat: Initiative!
     var teams: [UITableView: SquadModel] = [:]
+    var teamColors: [UITableView: UIColor] = [:]
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
         combat = CombatFactory().createCombat(type: .gulch)
+        var teamCount = 0
         for squad in combat.teams {
             let tableView = UITableView()
             teams[tableView] = squad
@@ -25,12 +27,12 @@ class CombatController: UIViewController {
             tableView.register(CreatureCell.self, forCellReuseIdentifier: "CreatureCell")
             view.addSubview(tableView)
             tableView.rowHeight = 150
-            for creature in squad.creatures {
-                for bar in creature.bars {
-                    NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "Current Changed"), object: bar, queue: nil) { _ in
-                        tableView.reloadData()
-                    }
-                }
+            teamCount += 1
+            switch(teamCount) {
+            case 1:
+                teamColors[tableView] = UIColor(red: 65.0 / 255.0, green: 105.0 / 255.0, blue: 225.0 / 255.0, alpha: 1.0)
+            default:
+                teamColors[tableView] = UIColor.darkGray
             }
         }
         let width = view.frame.width / CGFloat(teams.keys.count)
@@ -60,8 +62,11 @@ extension CombatController: UITableViewDelegate, UITableViewDataSource {
             var bars: [String: Float] = [:]
             for bar in creature.bars {
                 bars[bar.name] = bar.percent
+                NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "Current Changed"), object: bar, queue: nil) { _ in
+                    cell.update(barName: bar.name, percent: bar.percent)
+                }
             }
-            cell.set(name: creature.name, bars: bars)
+            cell.set(teamColor: teamColors[tableView] ?? UIColor.darkGray, name: creature.name, bars: bars)
         }
         return cell
     }

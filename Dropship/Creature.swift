@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Creature: Damageable, Readyable {
+class Creature: Readyable {
 	
 	var name: String
 	var health: Int {
@@ -48,12 +48,6 @@ class Creature: Damageable, Readyable {
         self.damageables.append(healthBar)
 	}
 	
-	func damage(damage: Damage) {
-		for damageable in damageables {
-			damageable.damage(damage: damage)
-		}
-	}
-	
 	func startTurn() {
 		for activatable in activatables {
 			activatable.startTurn()
@@ -70,7 +64,12 @@ class Creature: Damageable, Readyable {
     }
 }
 
-extension Creature: CreatureModel {
+extension Creature: CreatureModel, Damageable {
+    
+    var canDamage: Bool {
+        return !dead
+    }
+    
     var bars: [Bar] {
         var result: [Bar] = []
         for damageable in damageables {
@@ -84,5 +83,11 @@ extension Creature: CreatureModel {
             }
         }
         return result
+    }
+    
+    func damage(damage: Damage) {
+        for damageable in damageables {
+            damageable.damage(damage: damage)
+        }
     }
 }

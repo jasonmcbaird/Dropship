@@ -19,6 +19,9 @@ class Shields: Damageable, Activatable, Bar {
     var name: String {
         return shieldBar.name
     }
+    var canDamage: Bool {
+        return !empty
+    }
     
 	private var shieldBar: DamageBar
 	private var rechargeDelay: Int
