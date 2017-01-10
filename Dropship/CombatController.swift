@@ -17,6 +17,26 @@ class CombatController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+        startButton.setTitle("Start", for: UIControlState.normal)
+        startButton.frame = CGRect(x: view.frame.width / 2 - 25, y: 50, width: 100, height: 50)
+        startButton.addTarget(self, action: #selector(self.startCombat), for: .touchUpInside)
+        view.addSubview(startButton)
+        newCombat()
+	}
+    
+    func startCombat(sender: UIButton!) {
+        if(combat.victory) {
+            newCombat()
+        }
+        combat.playCombat()
+    }
+    
+    func newCombat() {
+        for tableView in teams.keys {
+            tableView.removeFromSuperview()
+            teams.removeValue(forKey: tableView)
+            teamColors.removeValue(forKey: tableView)
+        }
         combat = CombatFactory().createCombat(type: .gulch)
         var teamCount = 0
         for squad in combat.teams {
@@ -39,14 +59,6 @@ class CombatController: UIViewController {
         for i in 0...teams.keys.count - 1 {
             Array(teams.keys)[i].frame = CGRect(x: CGFloat(i) * width, y: 150, width: width, height: self.view.frame.height)
         }
-        startButton.setTitle("Start", for: UIControlState.normal)
-        startButton.frame = CGRect(x: view.frame.width / 2 - 25, y: 50, width: 100, height: 50)
-        startButton.addTarget(self, action: #selector(self.startCombat), for: .touchUpInside)
-        view.addSubview(startButton)
-	}
-    
-    func startCombat(sender: UIButton!) {
-        combat.playCombat()
     }
 }
 
