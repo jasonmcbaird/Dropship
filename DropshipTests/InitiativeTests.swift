@@ -20,14 +20,7 @@ class InitiativeTests: XCTestCase {
         super.setUp()
         mock = MockUnreadyReadyable(activationsAvailable: 3)
         mock2 = MockUnreadyReadyable(activationsAvailable: 6)
-        testObject = Initiative(squads: [Squad(readyables: [mock]), Squad(readyables: [mock2])])
-    }
-    
-    func testPlayRoundActivatesActivatablesUntilNoneAreReady() {
-        testObject.playRound()
-        
-        XCTAssertEqual(mock.activationCount, 3)
-        XCTAssertEqual(mock2.activationCount, 6)
+        testObject = Initiative(squads: [Squad(readyables: [mock]), Squad(readyables: [mock2])], delayer: FakeDelayer())
     }
     
     func testPlayInitiativeLoopsAndResetsActivatablesUntilNoneAreReady() {
@@ -63,6 +56,16 @@ class MockUnreadyReadyable: Readyable {
     func readyUp() {
         if(resetCount <= 3) {
             ready = true
+        }
+    }
+    
+}
+
+class FakeDelayer: Delayer {
+    
+    func executeAfterDelay(completed: @escaping () -> (Bool)) {
+        if(!completed()) {
+            executeAfterDelay(completed: completed)
         }
     }
     

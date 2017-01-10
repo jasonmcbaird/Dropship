@@ -11,7 +11,7 @@ import Foundation
 class Initiative {
 
     var squads: [Squad]
-    let loopTime: Double
+    let delayer: Delayer
     var ready: Bool {
         for squad in squads {
             if(squad.ready) {
@@ -30,32 +30,32 @@ class Initiative {
         return readyCount <= 1
     }
     
-    init(squads: [Squad], loopTime: Double = 1) {
+    convenience init(squads: [Squad], loopTime: Int = 1) {
+        self.init(squads: squads, delayer: DelayTimer(loopTime: loopTime))
+    }
+    
+    init(squads: [Squad], delayer: Delayer) {
         self.squads = squads
-        self.loopTime = loopTime
+        self.delayer = delayer
     }
     
     func playCombat() {
-        Timer.scheduledTimer(withTimeInterval: loopTime, repeats: true) { timer in
+        delayer.executeAfterDelay {
             if(self.ready) {
                 for squad in self.squads {
                     if(squad.ready) {
                         squad.startNext()
-                        return
+                        return false
                     }
                 }
             }
-            timer.invalidate()
-            self.newRound()
+            for activatable in self.squads {
+                activatable.readyUp()
+            }
             if(!self.victory) {
                 self.playCombat()
             }
-        }
-    }
-    
-    func newRound() {
-        for activatable in squads {
-            activatable.readyUp()
+            return true
         }
     }
 }

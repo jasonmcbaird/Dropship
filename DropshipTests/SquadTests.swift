@@ -25,12 +25,14 @@ class SquadTests: XCTestCase {
         testObject = Squad(readyables: [jason, cody, cheyenne])
     }
     
-    func testActivateActivatesAllActivatables() {
-        testObject.startTurn()
+    func testStartNextActivatesNextUnactivated() {
+        jason.ready = false
         
-        XCTAssertEqual(jason.activationCount, 1)
+        testObject.startNext()
+        
+        XCTAssertEqual(jason.activationCount, 0)
         XCTAssertEqual(cody.activationCount, 1)
-        XCTAssertEqual(cheyenne.activationCount, 1)
+        XCTAssertEqual(cheyenne.activationCount, 0)
     }
     
     func testNotReadyIfNoActivatableIsReady() {

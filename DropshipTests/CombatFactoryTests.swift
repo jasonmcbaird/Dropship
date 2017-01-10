@@ -23,7 +23,7 @@ class CombatFactoryTests: XCTestCase {
         var redWins = 0
         var blueWins = 0
         for _ in 1...100 {
-            let initiative = CombatFactory().createCombat(type: .gulch)
+            let initiative = CombatFactory().createCombat(type: .gulch, delayer: FakeDelayer())
             
             initiative.playCombat()
             if(initiative.squads[0].ready) {
