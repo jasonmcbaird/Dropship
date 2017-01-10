@@ -8,22 +8,8 @@
 
 import Foundation
 
-class Shields: Damageable, Activatable, Bar {
+class Shields: DamageBar, Activatable {
     
-    var current: Int {
-        return shieldBar.current
-    }
-    var max: Int {
-        return shieldBar.max
-    }
-    var name: String {
-        return shieldBar.name
-    }
-    var canDamage: Bool {
-        return !empty
-    }
-    
-	private var shieldBar: DamageBar
 	private var rechargeDelay: Int
 	private var rechargeAmount: Int
 	private var rechargeCounter: Int
@@ -32,14 +18,15 @@ class Shields: Damageable, Activatable, Bar {
 		self.rechargeDelay = rechargeDelay
 		self.rechargeAmount = rechargeAmount
 		self.rechargeCounter = 0
-        self.shieldBar = DamageBar(name: "Shields", max: maxShields)
+        super.init(name: "Shields", max: maxShields)
+        
 	}
 	
-	func damage(damage: Damage) {
+	override func damage(damage: Damage) {
 		if(damage.amount > 0) {
 			rechargeCounter = rechargeDelay
 		}
-		shieldBar.damage(damage: damage)
+        super.damage(damage: damage)
 	}
 	
 	func startTurn() {
@@ -51,9 +38,9 @@ class Shields: Damageable, Activatable, Bar {
 	}
 	
 	private func recharge() {
-		shieldBar.current += rechargeAmount
-		if(shieldBar.current > shieldBar.max) {
-			shieldBar.current = shieldBar.max
+		current += rechargeAmount
+		if(current > max) {
+			current = max
 		}
 	}
 }

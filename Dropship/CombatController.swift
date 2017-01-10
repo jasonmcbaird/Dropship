@@ -61,9 +61,9 @@ extension CombatController: UITableViewDelegate, UITableViewDataSource {
         if let creature = teams[tableView]?.creatures[indexPath.row] {
             var bars: [String: Float] = [:]
             for bar in creature.bars {
-                bars[bar.name] = bar.percent
+                bars[bar.name] = bar.fraction
                 NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "Current Changed"), object: bar, queue: nil) { _ in
-                    cell.update(barName: bar.name, percent: bar.percent)
+                    cell.update(barName: bar.name, fraction: bar.fraction)
                 }
             }
             cell.set(teamColor: teamColors[tableView] ?? UIColor.darkGray, name: creature.name, bars: bars)
