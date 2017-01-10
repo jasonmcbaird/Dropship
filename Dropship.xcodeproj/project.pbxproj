@@ -25,6 +25,9 @@
 		5A0CE6951E1D80430046C809 /* CombatModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE6941E1D80430046C809 /* CombatModels.swift */; };
 		5A0CE6971E1DBE2F0046C809 /* CombatSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE6961E1DBE2F0046C809 /* CombatSystemTests.swift */; };
 		5A0CE69A1E1ED0DD0046C809 /* CreatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE6991E1ED0DD0046C809 /* CreatureCell.swift */; };
+		5A0CE69D1E2563610046C809 /* Delayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE69C1E2563610046C809 /* Delayer.swift */; };
+		5A0CE69F1E2563BE0046C809 /* DelayTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE69E1E2563BE0046C809 /* DelayTimer.swift */; };
+		5A0CE6A11E2568030046C809 /* DelayTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE6A01E2568030046C809 /* DelayTimerTests.swift */; };
 		5A8AC2FB1E04700A00BCB35B /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC2FA1E04700A00BCB35B /* Ability.swift */; };
 		5A8AC2FD1E04703700BCB35B /* TargetStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC2FC1E04703700BCB35B /* TargetStrategy.swift */; };
 		5A8AC3031E049B6100BCB35B /* ExecutionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC3021E049B6100BCB35B /* ExecutionStrategy.swift */; };
@@ -88,6 +91,9 @@
 		5A0CE6941E1D80430046C809 /* CombatModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombatModels.swift; sourceTree = "<group>"; };
 		5A0CE6961E1DBE2F0046C809 /* CombatSystemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombatSystemTests.swift; sourceTree = "<group>"; };
 		5A0CE6991E1ED0DD0046C809 /* CreatureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatureCell.swift; sourceTree = "<group>"; };
+		5A0CE69C1E2563610046C809 /* Delayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delayer.swift; sourceTree = "<group>"; };
+		5A0CE69E1E2563BE0046C809 /* DelayTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelayTimer.swift; sourceTree = "<group>"; };
+		5A0CE6A01E2568030046C809 /* DelayTimerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelayTimerTests.swift; sourceTree = "<group>"; };
 		5A8AC2FA1E04700A00BCB35B /* Ability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ability.swift; sourceTree = "<group>"; };
 		5A8AC2FC1E04703700BCB35B /* TargetStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetStrategy.swift; sourceTree = "<group>"; };
 		5A8AC3021E049B6100BCB35B /* ExecutionStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutionStrategy.swift; sourceTree = "<group>"; };
@@ -200,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				5A05EA151E0B1F0100DC2A1C /* Randomizer.swift */,
+				5A0CE69E1E2563BE0046C809 /* DelayTimer.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -277,6 +284,7 @@
 				5A8AC3151E04AD4300BCB35B /* BatteryTests.swift */,
 				5A05EA171E0B1F3D00DC2A1C /* RandomizerTests.swift */,
 				5A05EA191E0B20F100DC2A1C /* RandomExecutionStrategyTests.swift */,
+				5A0CE6A01E2568030046C809 /* DelayTimerTests.swift */,
 				5AEF4A0F1DF8C8B000AD3DF1 /* Info.plist */,
 			);
 			path = DropshipTests;
@@ -311,6 +319,7 @@
 				5A8AC2FC1E04703700BCB35B /* TargetStrategy.swift */,
 				5A8AC3061E04A85000BCB35B /* Resource.swift */,
 				5A8AC3021E049B6100BCB35B /* ExecutionStrategy.swift */,
+				5A0CE69C1E2563610046C809 /* Delayer.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -430,6 +439,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96026ED01DFF9C9E00535785 /* Squad.swift in Sources */,
+				5A0CE69F1E2563BE0046C809 /* DelayTimer.swift in Sources */,
 				5AEF4A2E1DF8D18300AD3DF1 /* DamageType.swift in Sources */,
 				5AEF49FE1DF8C8B000AD3DF1 /* Dropship.xcdatamodeld in Sources */,
 				5AEF4A231DF8C98C00AD3DF1 /* Activatable.swift in Sources */,
@@ -451,6 +461,7 @@
 				5A05E9FC1E0AE93400DC2A1C /* Readyable.swift in Sources */,
 				5A05E9FF1E0AF1AE00DC2A1C /* RandomExecutionStrategy.swift in Sources */,
 				5A8AC30D1E04AA2600BCB35B /* FreeResource.swift in Sources */,
+				5A0CE69D1E2563610046C809 /* Delayer.swift in Sources */,
 				5A0CE69A1E1ED0DD0046C809 /* CreatureCell.swift in Sources */,
 				5A05EA111E0B13EA00DC2A1C /* Bar.swift in Sources */,
 				5AEF4A2B1DF8D14E00AD3DF1 /* Damage.swift in Sources */,
@@ -471,6 +482,7 @@
 				5A0CE6971E1DBE2F0046C809 /* CombatSystemTests.swift in Sources */,
 				5A05EA071E0B09C600DC2A1C /* VulnerabilityTests.swift in Sources */,
 				96026ED21DFF9CAC00535785 /* SquadTests.swift in Sources */,
+				5A0CE6A11E2568030046C809 /* DelayTimerTests.swift in Sources */,
 				5A05EA181E0B1F3D00DC2A1C /* RandomizerTests.swift in Sources */,
 				5A8AC3091E04A8A800BCB35B /* BasicResourceTests.swift in Sources */,
 				96026ECE1DFF96D900535785 /* ArmorTests.swift in Sources */,
