@@ -13,7 +13,7 @@ import XCTest
 class WeaponTests: XCTestCase {
     
     func testExecuteDamagesChosenTarget() {
-        let testObject = Weapon(damage: 3, resource: FreeResource())
+        let testObject = Weapon(damage: 3)
         let mockDamageable = DamageBar(max: 4)
         
         testObject.execute(targetStrategy: MockTargetStrategy(damageable: mockDamageable))
@@ -62,6 +62,21 @@ class WeaponTests: XCTestCase {
         XCTAssertGreaterThan(hitCount, 20)
         XCTAssertGreaterThan(missCount, 20)
     }
+    
+    func testRapidFireHitsMultipleTimesAndSpendsMultipleAmmo() {
+        let testObject = Weapon(damage: 2, ammo: 4, rapidFire: 3)
+        let mockDamageable = MockDamageable()
+        
+        testObject.execute(targetStrategy: MockTargetStrategy(damageable: mockDamageable))
+        
+        XCTAssertEqual(mockDamageable.damageTaken, 6)
+        XCTAssertEqual(mockDamageable.callCount, 3)
+        XCTAssertEqual((testObject.resource as? BasicResource)?.current, 1)
+    }
+    
+    func testRapidFireSpendsAllAmmoAndHitsThatManyTimesIfNotEnough() {
+        
+    }
 }
 
 class MockTargetStrategy: TargetStrategy {
@@ -98,5 +113,16 @@ class MockFreeResource: FreeResource {
     
     override func spend(amount: Int) {
         spending.append(amount)
+    }
+}
+
+class MockDamageable: Damageable {
+    
+    var callCount: Int = 0
+    var damageTaken: Int = 0
+    
+    func damage(damage: Damage) {
+        callCount += 1
+        damageTaken += damage.amount
     }
 }

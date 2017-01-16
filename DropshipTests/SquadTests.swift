@@ -53,6 +53,16 @@ class SquadTests: XCTestCase {
         XCTAssertEqual(cheyenne.readyCount, 1)
     }
     
+    func testGetEnemiesReturnsAllSquadsInEnemyRelationships() {
+        let enemySquad = Squad(readyables: [])
+        let allySquad = Squad(readyables: [])
+        testObject.relationships.append(Relationship.enemy(enemySquad))
+        testObject.relationships.append(Relationship.ally(allySquad))
+        
+        XCTAssertEqual(testObject.enemySquads.count, 1)
+        XCTAssert(testObject.enemySquads[0] === enemySquad)
+    }
+    
 }
 
 class MockReadyable: Readyable {

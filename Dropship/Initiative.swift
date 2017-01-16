@@ -10,7 +10,7 @@ import Foundation
 
 class Initiative {
     
-    var squads: [Readyable]
+    var squads: [Squad]
     var ready: Bool {
         for readyable in squads {
             if(readyable.ready) {
@@ -29,7 +29,7 @@ class Initiative {
         return readyCount <= 1
     }
     
-    init(squads: [Readyable]) {
+    init(squads: [Squad]) {
         self.squads = squads
     }
     

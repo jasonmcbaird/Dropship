@@ -1,0 +1,34 @@
+{
+    "Assault Rifle": {
+        "damage": "3",
+        "rapidFire": "3",
+        "ammo": "12"
+    },
+    "SMG": {
+        "damage": "2",
+        "rapidFire": "4",
+        "ammo": "12"
+    },
+    "Pistol": {
+        "damage": "6",
+        "ammo": "6"
+    },
+    "Sniper Rifle": {
+        "damage": "12",
+        "ammo": "4"
+    },
+    "Shotgun": {
+        "damage": "7",
+        "rapidFire": "2",
+        "ammo": "6"
+    },
+    "Light Machine Gun": {
+        "damage": "3",
+        "rapidFire": "4",
+        "ammo": "20"
+    },
+    "RPG": {
+        "damage": "20",
+        "ammo": "1"
+    }
+}
