@@ -13,25 +13,27 @@ class Weapon: Ability {
     var resource: Resource
     var damage: Int
     var accuracy: Int
+    var rapidFire: Int
     
-    convenience init(damage: Int, accuracy: Int = 100) {
-        self.init(damage: damage, resource: FreeResource(), accuracy: accuracy)
+    convenience init(damage: Int, rapidFire: Int = 1, accuracy: Int = 100) {
+        self.init(damage: damage, resource: FreeResource(), rapidFire: rapidFire, accuracy: accuracy)
     }
     
-    convenience init(damage: Int, battery: Int, rechargeAmount: Int, accuracy: Int = 100) {
+    convenience init(damage: Int, battery: Int, rechargeAmount: Int, rapidFire: Int = 1, accuracy: Int = 100) {
         let resource = Battery(max: battery, rechargeAmount: rechargeAmount)
-        self.init(damage: damage, resource: resource, accuracy: accuracy)
+        self.init(damage: damage, resource: resource, rapidFire: rapidFire, accuracy: accuracy)
     }
     
-    convenience init(damage: Int, ammo: Int, accuracy: Int = 100) {
+    convenience init(damage: Int, ammo: Int, rapidFire: Int = 1, accuracy: Int = 100) {
         let resource = BasicResource(max: ammo)
-        self.init(damage: damage, resource: resource, accuracy: accuracy)
+        self.init(damage: damage, resource: resource, rapidFire: rapidFire, accuracy: accuracy)
     }
     
-    init(damage: Int, resource: Resource, accuracy: Int = 100) {
+    init(damage: Int, resource: Resource, rapidFire: Int = 1, accuracy: Int = 100) {
         self.damage = damage
         self.resource = resource
         self.accuracy = accuracy
+        self.rapidFire = rapidFire
     }
     
     func canExecute(targetStrategy: TargetStrategy) -> Bool {
@@ -40,10 +42,14 @@ class Weapon: Ability {
     
     func execute(targetStrategy: TargetStrategy) {
         if(resource.canSpend(amount: 1)) {
-            resource.spend(amount: 1)
-            let roll = Randomizer.rollDie(100)
-            if(accuracy >= roll) {
-                targetStrategy.chooseDamageable()?.damage(amount: damage)
+            for _ in 1...rapidFire {
+                if(resource.canSpend(amount: 1)) {
+                    resource.spend(amount: 1)
+                    let roll = Randomizer.rollDie(100)
+                    if(accuracy >= roll) {
+                        targetStrategy.chooseDamageable()?.damage(amount: damage)
+                    }
+                }
             }
         } else {
             resource.refresh()

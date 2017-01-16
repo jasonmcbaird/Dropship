@@ -11,6 +11,19 @@ import Foundation
 class Squad {
     
     var readyables: [Readyable]
+    var relationships: [Relationship]
+    var enemySquads: [Squad] {
+        var result: [Squad] = []
+        for relationship in relationships {
+            switch relationship {
+            case .enemy(let otherSquad):
+                result.append(otherSquad)
+            case .ally(_):
+                break
+            }
+        }
+        return result
+    }
     var ready: Bool {
         for activatable in readyables {
             if(activatable.ready) {
@@ -20,8 +33,16 @@ class Squad {
         return false
     }
     
-    init(readyables: [Readyable]) {
+    init(readyables: [Readyable], relationships: [Relationship] = [], setRandomTargetStrategy: Bool = false) {
         self.readyables = readyables
+        self.relationships = relationships
+        if(setRandomTargetStrategy) {
+            for readyable in readyables {
+                if let creature = readyable as? Creature {
+                    creature.targetStrategy = RandomTargetStrategy(squad: self)
+                }
+            }
+        }
     }
     
     func startNext() {

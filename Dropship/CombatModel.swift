@@ -2,8 +2,8 @@
 //  CombatModel.swift
 //  Dropship
 //
-//  Created by dev1 on 1/4/17.
-//  Copyright © 2017 North Forge. All rights reserved.
+//  Created by Jason Baird on 12/23/16.
+//  Copyright © 2016 North Forge. All rights reserved.
 //
 
 import Foundation

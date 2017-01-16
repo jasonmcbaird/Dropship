@@ -10,7 +10,6 @@ import Foundation
 
 class CombatFactory {
     
-    
     func createCombat(type: CombatType, delayer: Delayer = DelayTimer(loopTime: 1)) -> Initiative {
         switch(type) {
         case .gulch:
@@ -42,5 +41,4 @@ class CombatFactory {
             return Initiative(squads: [redSquad, blueSquad], delayer: delayer)
         }
     }
-    
 }

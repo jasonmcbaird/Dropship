@@ -58,6 +58,16 @@ class Initiative {
             return true
         }
     }
+    
+    func setAllSquadsAreEnemies() {
+        for squad in squads {
+            for enemy in squads {
+                if(enemy !== squad) {
+                    squad.relationships.append(Relationship.enemy(enemy))
+                }
+            }
+        }
+    }
 }
 
 extension Initiative: CombatModel {

@@ -1,0 +1,24 @@
+{
+    "Trooper": {
+        "health": "15",
+        "weapon": "Assault Rifle"
+    },
+    "Commando": {
+        "health": "30",
+        "shields": "20",
+        "weapon": "Assault Rifle"
+    },
+    "Sniper": {
+        "health": "12",
+        "weapon": "Sniper Rifle"
+    },
+    "Heavy": {
+        "health": "15",
+        "armor": "1",
+        "weapon": "Light Machine Gun"
+    },
+    "Assault": {
+        "health": "12",
+        "weapon": "Shotgun"
+    }
+}

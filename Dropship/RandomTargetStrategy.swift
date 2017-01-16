@@ -1,16 +1,28 @@
 //
-//  RandomTargetStrategy.swift
+//  InitiativeRandomTargetStrategy.swift
 //  Dropship
 //
-//  Created by dev1 on 1/4/17.
-//  Copyright © 2017 North Forge. All rights reserved.
+//  Created by Jason Baird on 12/23/16.
+//  Copyright © 2016 North Forge. All rights reserved.
 //
 
 import Foundation
 
 class RandomTargetStrategy: TargetStrategy {
+
+    private var damageables: [Damageable]
     
-    var damageables: [Damageable]
+    convenience init(squad: Squad) {
+        var possibleTargets: [Damageable] = []
+        for enemySquad in squad.enemySquads {
+            for enemy in enemySquad.readyables {
+                if let enemy = enemy as? Damageable {
+                    possibleTargets.append(enemy)
+                }
+            }
+        }
+        self.init(damageables: possibleTargets)
+    }
     
     init(damageables: [Damageable]) {
         self.damageables = damageables

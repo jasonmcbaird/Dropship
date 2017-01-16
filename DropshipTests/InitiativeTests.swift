@@ -13,14 +13,14 @@ import XCTest
 class InitiativeTests: XCTestCase {
     
     var testObject: Initiative!
-    var mock: MockUnreadyReadyable!
-    var mock2: MockUnreadyReadyable!
+    var mock: MockUnreadySquad!
+    var mock2: MockUnreadySquad!
     
     override func setUp() {
         super.setUp()
-        mock = MockUnreadyReadyable(activationsAvailable: 3)
-        mock2 = MockUnreadyReadyable(activationsAvailable: 6)
-        testObject = Initiative(squads: [Squad(readyables: [mock]), Squad(readyables: [mock2])], delayer: FakeDelayer())
+        mock = MockUnreadySquad(activationsAvailable: 3)
+        mock2 = MockUnreadySquad(activationsAvailable: 6)
+        testObject = Initiative(squads: [mock, mock2], delayer: FakeDelayer())
     }
     
     func testPlayInitiativeLoopsAndResetsActivatablesUntilNoneAreReady() {
@@ -30,6 +30,20 @@ class InitiativeTests: XCTestCase {
         XCTAssertEqual(mock.resetCount, 4)
         XCTAssertFalse(mock2.ready)
         XCTAssertEqual(mock2.resetCount, 4)
+    }
+}
+
+class MockUnreadySquad: Squad {
+    
+    var activationCount: Int {
+        return (readyables[0] as! MockUnreadyReadyable).activationCount
+    }
+    var resetCount: Int {
+        return (readyables[0] as! MockUnreadyReadyable).resetCount
+    }
+    
+    convenience init(activationsAvailable: Int) {
+        self.init(readyables: [MockUnreadyReadyable(activationsAvailable: activationsAvailable)])
     }
 }
 
