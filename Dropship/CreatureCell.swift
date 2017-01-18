@@ -20,6 +20,16 @@ class CreatureCell: UITableViewCell {
     var bars: [UIColor: BarVisualizer] = [:]
     var teamColor: UIColor?
     
+    convenience init(teamColor: UIColor, name: String, bars: [String: Float], reuseIdentifier: String?) {
+        self.init(style: UITableViewCellStyle.default, reuseIdentifier: reuseIdentifier)
+        textLabel?.text = name
+        for barName in bars.keys {
+            createBar(name: barName, fraction: bars[barName]!)
+        }
+        self.teamColor = teamColor
+        backgroundColor = teamColor
+    }
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
         
@@ -33,15 +43,6 @@ class CreatureCell: UITableViewCell {
     override func layoutSubviews() {
         textLabel?.frame = CGRect(x: 0, y: frame.height - 40, width: frame.width, height: 20)
         textLabel?.textAlignment = NSTextAlignment.center
-    }
-    
-    func set(teamColor: UIColor, name: String, bars: [String: Float]) {
-        textLabel?.text = name
-        for barName in bars.keys {
-            createBar(name: barName, fraction: bars[barName]!)
-        }
-        self.teamColor = teamColor
-        backgroundColor = teamColor
     }
     
     func update(barName: String, fraction: Float) {
@@ -74,6 +75,7 @@ class CreatureCell: UITableViewCell {
             self.bars[color] = GenericBarVisualizer(progressView: progressView, fraction: fraction)
         }
         contentView.addSubview(progressView)
+        update(barName: name, fraction: fraction)
     }
     
     required init?(coder aDecoder: NSCoder) {

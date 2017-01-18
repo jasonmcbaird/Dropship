@@ -83,18 +83,20 @@ extension CombatController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CreatureCell") as! CreatureCell
-        if let creature = squads[tableView]?.creatures[indexPath.row], cell.bars.count == 0 {
+        if let creature = squads[tableView]?.creatures[indexPath.row] {
             var bars: [String: Float] = [:]
             for bar in creature.bars {
                 bars[bar.name] = bar.fraction
+            }
+            let cell = CreatureCell(teamColor: teamColors[tableView] ?? UIColor.darkGray, name: creature.name, bars: bars, reuseIdentifier: "Creature Cell")
+            for bar in creature.bars {
                 NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "Current Changed"), object: bar, queue: nil) { _ in
                     cell.update(barName: bar.name, fraction: bar.fraction)
                 }
             }
-            cell.set(teamColor: teamColors[tableView] ?? UIColor.darkGray, name: creature.name, bars: bars)
+            return cell
         }
-        return cell
+        return CreatureCell(style: UITableViewCellStyle.default, reuseIdentifier: "Creature Cell")
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
