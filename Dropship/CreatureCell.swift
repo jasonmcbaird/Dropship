@@ -48,9 +48,9 @@ class CreatureCell: UITableViewCell {
     func update(barName: String, fraction: Float) {
         let color = colors[barName] ?? UIColor.gray
         if let visualizer = bars[color] {
-            visualizer.changeTo(fraction: fraction, colorChange: { [unowned self] color in
+            visualizer.changeTo(fraction: fraction) { [unowned self] color in
                 self.backgroundColor = color ?? self.teamColor
-            })
+            }
         } else {
             createBar(name: barName, fraction: fraction)
         }
