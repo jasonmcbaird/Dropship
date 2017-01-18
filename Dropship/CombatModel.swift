@@ -10,6 +10,9 @@ import Foundation
 
 protocol CombatModel {
     
-    var teams: [SquadModel] { get }
+    var squadModels: [SquadModel] { get }
+    var victory: Bool { get }
+    
+    func playCombat()
     
 }

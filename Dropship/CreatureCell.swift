@@ -25,6 +25,14 @@ class CreatureCell: UITableViewCell {
         
         textLabel?.textColor = UIColor.lightText
         backgroundColor = UIColor.darkGray
+        layer.masksToBounds = true
+        layer.borderColor = UIColor.black.cgColor
+        layer.borderWidth = 2.0
+    }
+    
+    override func layoutSubviews() {
+        textLabel?.frame = CGRect(x: 0, y: frame.height - 40, width: frame.width, height: 20)
+        textLabel?.textAlignment = NSTextAlignment.center
     }
     
     func set(teamColor: UIColor, name: String, bars: [String: Float]) {
@@ -65,15 +73,6 @@ class CreatureCell: UITableViewCell {
             self.bars[color] = GenericBarVisualizer(progressView: progressView, fraction: fraction)
         }
         contentView.addSubview(progressView)
-    }
-    
-    private func changeBackground(color: UIColor, until: Double) {
-        backgroundColor = color
-        if(until > 0) {
-            Timer.scheduledTimer(withTimeInterval: until, repeats: false) { _ in
-                self.backgroundColor = self.teamColor ?? UIColor.darkGray
-            }
-        }
     }
     
     required init?(coder aDecoder: NSCoder) {

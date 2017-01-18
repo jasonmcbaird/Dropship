@@ -62,7 +62,7 @@ class Initiative {
 
 extension Initiative: CombatModel {
     
-    var teams: [SquadModel] {
+    var squadModels: [SquadModel] {
         return squads as [SquadModel]
     }
 }
