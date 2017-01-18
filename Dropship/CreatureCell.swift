@@ -57,11 +57,12 @@ class CreatureCell: UITableViewCell {
     
     private func createBar(name: String, fraction: Float) {
         let color = colors[name] ?? UIColor.gray
-        let barLabel = UILabel(frame: CGRect(x: 20, y: 30 * bars.keys.count + 5, width: 65, height: 30))
+        let barLabel = UILabel(frame: CGRect(x: 25, y: 20 * bars.keys.count, width: 25, height: 15))
+        barLabel.adjustsFontSizeToFitWidth = true
         barLabel.text = name
         contentView.addSubview(barLabel)
         let progressView = UIProgressView()
-        progressView.frame = CGRect(x: 100, y: 30 * bars.keys.count + 15, width: 100, height: 10)
+        progressView.frame = CGRect(x: 20, y: 20 * bars.keys.count + 15, width: 100, height: 10)
         switch(name) {
         case "Health":
             self.bars[color] = HealthBarVisualizer(progressView: progressView, fraction: fraction)

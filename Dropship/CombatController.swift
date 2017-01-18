@@ -18,9 +18,11 @@ class CombatController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
         startButton.setTitle("Start", for: UIControlState.normal)
-        startButton.frame = CGRect(x: view.frame.width / 2 - 25, y: 50, width: 100, height: 50)
+        startButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
         startButton.addTarget(self, action: #selector(self.startCombat), for: .touchUpInside)
+        alignElements()
         view.addSubview(startButton)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.alignElements), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
 	}
     
     func startCombat(sender: UIButton?) {
@@ -41,7 +43,7 @@ class CombatController: UIViewController {
             }
             teamCount += 1
         }
-        alignTableViews()
+        alignElements()
     }
     
     func clearTableViews() {
@@ -59,14 +61,17 @@ class CombatController: UIViewController {
         tableView.dataSource = self
         tableView.register(CreatureCell.self, forCellReuseIdentifier: "CreatureCell")
         view.addSubview(tableView)
-        tableView.rowHeight = 150
+        tableView.rowHeight = 100
         teamColors[tableView] = color
     }
     
-    func alignTableViews() {
-        let width = view.frame.width / CGFloat(squads.keys.count)
-        for i in 0...squads.keys.count - 1 {
-            Array(squads.keys)[i].frame = CGRect(x: CGFloat(i) * width, y: 150, width: width, height: self.view.frame.height)
+    func alignElements() {
+        startButton.frame = CGRect(x: 0, y: 50, width: view.frame.width, height: 50)
+        if(squads.keys.count > 0) {
+            let width = view.frame.width / CGFloat(squads.keys.count)
+            for i in 0...squads.keys.count - 1 {
+                Array(squads.keys)[i].frame = CGRect(x: CGFloat(i) * width, y: 100, width: width, height: self.view.frame.height)
+            }
         }
     }
 }
