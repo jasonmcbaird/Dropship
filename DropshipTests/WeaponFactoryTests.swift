@@ -12,13 +12,16 @@ import XCTest
 
 class WeaponFactoryTests: XCTestCase {
     
-    func testAssaultRifleIsRapidFire() {
-        let testObject = WeaponFactory()
-        
-        let assaultRifle = testObject.getWeapon(type: "Assault Rifle")
-        
-        XCTAssertNotNil(assaultRifle)
+    func testAssaultRifleIsRapidFireAndInaccurate() {
+        guard let testObject = WeaponFactory() else {
+            XCTFail("Cannot instantiate weapon factory")
+            return
+        }
+        guard let assaultRifle = testObject.getWeapon(type: "Assault Rifle") else {
+            XCTFail("Cannot instantiate assault rifle")
+            return
+        }
         XCTAssertGreaterThan(assaultRifle.rapidFire, 1)
+        XCTAssertLessThan(assaultRifle.accuracy, 85)
     }
-
 }

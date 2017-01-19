@@ -42,7 +42,7 @@ class Weapon: Executable {
     
     func execute(targetStrategy: TargetStrategy) {
         if(resource.canSpend(amount: 1)) {
-            for i in 1...rapidFire {
+            for _ in 1...rapidFire {
                 if(resource.canSpend(amount: 1)) {
                     resource.spend(amount: 1)
                     let roll = Randomizer.rollDie(100)
