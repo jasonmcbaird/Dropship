@@ -67,7 +67,6 @@
 		96026ED21DFF9CAC00535785 /* SquadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96026ED11DFF9CAC00535785 /* SquadTests.swift */; };
 		96026ED41DFFB14700535785 /* Initiative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96026ED31DFFB14700535785 /* Initiative.swift */; };
 		96026ED61DFFB15E00535785 /* InitiativeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96026ED51DFFB15D00535785 /* InitiativeTests.swift */; };
-		96AD742B1E0DD2740038AC62 /* RandomTargetStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD742A1E0DD2740038AC62 /* RandomTargetStrategy.swift */; };
 		96AD74311E0DD44E0038AC62 /* Relationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD74301E0DD44E0038AC62 /* Relationship.swift */; };
 		96AD74331E0DDF7D0038AC62 /* RandomTargetStrategyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD74321E0DDF7D0038AC62 /* RandomTargetStrategyTests.swift */; };
 		96AD74381E0DF77C0038AC62 /* Weapons.json in Resources */ = {isa = PBXBuildFile; fileRef = 96AD74371E0DF77C0038AC62 /* Weapons.json */; };
@@ -151,7 +150,6 @@
 		96026ED11DFF9CAC00535785 /* SquadTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquadTests.swift; sourceTree = "<group>"; };
 		96026ED31DFFB14700535785 /* Initiative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Initiative.swift; sourceTree = "<group>"; };
 		96026ED51DFFB15D00535785 /* InitiativeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitiativeTests.swift; sourceTree = "<group>"; };
-		96AD742A1E0DD2740038AC62 /* RandomTargetStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomTargetStrategy.swift; sourceTree = "<group>"; };
 		96AD74301E0DD44E0038AC62 /* Relationship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Relationship.swift; sourceTree = "<group>"; };
 		96AD74321E0DDF7D0038AC62 /* RandomTargetStrategyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomTargetStrategyTests.swift; sourceTree = "<group>"; };
 		96AD74371E0DF77C0038AC62 /* Weapons.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Weapons.json; sourceTree = "<group>"; };
@@ -286,8 +284,8 @@
 			isa = PBXGroup;
 			children = (
 				5AEF49F51DF8C8B000AD3DF1 /* AppDelegate.swift */,
-				5AEF4A181DF8C8F500AD3DF1 /* Controllers */,
 				5A0CE6981E1ED0CE0046C809 /* Views */,
+				5AEF4A181DF8C8F500AD3DF1 /* Controllers */,
 				5A05EA0C1E0B112600DC2A1C /* Combat */,
 				5A05EA0B1E0B111300DC2A1C /* Creature */,
 				5A05EA0D1E0B114D00DC2A1C /* Executable */,
@@ -297,8 +295,6 @@
 				5AEF4A2C1DF8D17C00AD3DF1 /* Enums */,
 				5A05EA141E0B1EF600DC2A1C /* Utilities */,
 				96AD74361E0DF7640038AC62 /* JSON */,
-				5AEF4A181DF8C8F500AD3DF1 /* Controllers */,
-				5AEF4A191DF8C90300AD3DF1 /* Views */,
 				5AEF4A1A1DF8C91300AD3DF1 /* Support */,
 			);
 			path = Dropship;
@@ -383,15 +379,6 @@
 				96AD743E1E0DFC990038AC62 /* Units.json */,
 			);
 			name = JSON;
-			sourceTree = "<group>";
-		};
-		96AD743B1E0DF94B0038AC62 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				5AEF4A1E1DF8C95500AD3DF1 /* Damageable.swift */,
-				5A05EA101E0B13EA00DC2A1C /* Bar.swift */,
-			);
-			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
