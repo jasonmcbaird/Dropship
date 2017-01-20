@@ -12,28 +12,28 @@ import XCTest
 
 class CreatureFactoryTests: XCTestCase {
 
-    func testCreatedMarineHasHealthAndHasWeapon() {
+    func testCreatedTrooperHas15HealthAndHasLowAccuracyWeapon() {
         let testObject = CreatureFactory()
         
-        let result = testObject.create(type: "Marine", weaponType: "Assault Rifle")
+        let result = testObject?.create(type: "Trooper")
         
         guard let creature = result else {
-            XCTFail("Couldn't create a marine")
+            XCTFail("Couldn't create a trooper")
             return
         }
         XCTAssertEqual(creature.health, 15)
         guard creature.abilities.count > 0,
             let weapon = creature.abilities[0] as? Weapon else {
-            XCTFail("Created marine doesn't have a weapon")
+            XCTFail("Created trooper doesn't have a weapon")
             return
         }
         XCTAssertLessThan(weapon.accuracy, 85)
     }
     
-    func testCreatedCommandoHasHealthAndShields() {
+    func testCreatedCommandoHasMoreHealthAndShieldsAndLowAccuracyWeapon() {
         let testObject = CreatureFactory()
         
-        let result = testObject.create(type: "Commando", weaponType: "Assault Rifle")
+        let result = testObject?.create(type: "Commando")
         
         guard let creature = result else {
             XCTFail("Couldn't create a commando")
@@ -41,13 +41,39 @@ class CreatureFactoryTests: XCTestCase {
         }
         XCTAssertGreaterThan(creature.health, 15)
         XCTAssert(creature.bars.contains(where: { bar in bar.name == "Shields" }))
+        guard creature.abilities.count > 0,
+            let weapon = creature.abilities[0] as? Weapon else {
+                XCTFail("Created marine doesn't have a weapon")
+                return
+        }
+        XCTAssertLessThan(weapon.accuracy, 85)
+    }
+    
+    func testCreatedHeavyHas15HealthAndArmorAndARapidFireWeapon() {
+        let testObject = CreatureFactory()
+        
+        let result = testObject?.create(type: "Heavy")
+        
+        guard let creature = result else {
+            XCTFail("Couldn't create a heavy")
+            return
+        }
+        XCTAssertEqual(creature.health, 15)
+        XCTAssert(creature.bars.contains(where: { bar in bar.name == "Armor" }))
+        guard creature.abilities.count > 0,
+            let weapon = creature.abilities[0] as? Weapon else {
+                XCTFail("Created Heavy doesn't have a weapon")
+                return
+        }
+        XCTAssertGreaterThan(weapon.rapidFire, 2)
     }
     
     func testUnknownTypeReturnsNil() {
         let testObject = CreatureFactory()
         
-        let result = testObject.create(type: "junk")
+        let result = testObject?.create(type: "junk")
         
+        XCTAssertNotNil(testObject)
         XCTAssertNil(result)
     }
 }

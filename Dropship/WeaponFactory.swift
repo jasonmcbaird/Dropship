@@ -37,8 +37,8 @@ class WeaponFactory {
         var result: [String: () -> Weapon] = [:]
         for weaponName in dictionary.keys {
             if let dictionary = dictionary[weaponName] as? [String : Any] {
-                if let weapon = parseWeapon(name: weaponName, dictionary: dictionary) {
-                    result.updateValue(weapon, forKey: weaponName)
+                if let weaponClosure = parseWeapon(name: weaponName, dictionary: dictionary) {
+                    result.updateValue(weaponClosure, forKey: weaponName)
                 }
             }
         }
@@ -46,24 +46,17 @@ class WeaponFactory {
     }
     
     static private func parseWeapon(name: String, dictionary: [String: Any]) -> (() -> Weapon)? {
-        guard let damage = parseToInt(json: dictionary["damage"]) else {
+        guard let damage = dictionary["damage"] as? Int else {
             return nil
         }
-        let rapidFire = parseToInt(json: dictionary["rapidFire"]) ?? 1
-        let accuracy = parseToInt(json: dictionary["accuracy"]) ?? 100
-        if let ammo = parseToInt(json: dictionary["ammo"]) {
+        let rapidFire = dictionary["rapidFire"] as? Int ?? 1
+        let accuracy = dictionary["accuracy"] as? Int ?? 100
+        if let ammo = dictionary["ammo"] as? Int {
             return { return Weapon(damage: damage, ammo: ammo, rapidFire: rapidFire, accuracy: accuracy) }
-        } else if let battery = parseToInt(json: dictionary["battery"]), let rechargeAmount = parseToInt(json: dictionary["rechargeAmount"]) {
+        } else if let battery = dictionary["battery"] as? Int, let rechargeAmount = dictionary["rechargeAmount"] as? Int {
             return { return Weapon(damage: damage, battery: battery, rechargeAmount: rechargeAmount, rapidFire: rapidFire, accuracy: accuracy) }
         } else {
             return { return Weapon(damage: damage, rapidFire: rapidFire, accuracy: accuracy) }
         }
-    }
-    
-    static private func parseToInt(json: Any?) -> Int? {
-        guard let string = json as? String else {
-            return nil
-        }
-        return Int(string) ?? nil
     }
 }

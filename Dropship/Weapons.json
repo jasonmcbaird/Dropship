@@ -1,41 +1,41 @@
 {
     "Assault Rifle": {
-        "damage": "3",
-        "rapidFire": "3",
-        "accuracy": "75",
-        "ammo": "12"
+        "damage": 3,
+        "rapidFire": 3,
+        "accuracy": 75,
+        "ammo": 12
     },
     "SMG": {
-        "damage": "2",
-        "rapidFire": "4",
-        "accuracy": "55",
-        "ammo": "12"
+        "damage": 2,
+        "rapidFire": 4,
+        "accuracy": 55,
+        "ammo": 12
     },
     "Pistol": {
-        "damage": "6",
-        "accuracy": "65",
-        "ammo": "6"
+        "damage": 6,
+        "accuracy": 65,
+        "ammo": 6
     },
     "Sniper Rifle": {
-        "damage": "12",
-        "accuracy": "90",
-        "ammo": "4"
+        "damage": 12,
+        "accuracy": 90,
+        "ammo": 4
     },
     "Shotgun": {
-        "damage": "7",
-        "rapidFire": "2",
-        "accuracy": "80",
-        "ammo": "6"
+        "damage": 7,
+        "rapidFire": 2,
+        "accuracy": 80,
+        "ammo": 6
     },
     "Light Machine Gun": {
-        "damage": "3",
-        "rapidFire": "4",
-        "accuracy": "65",
-        "ammo": "20"
+        "damage": 3,
+        "rapidFire": 4,
+        "accuracy": 65,
+        "ammo": 20
     },
     "RPG": {
-        "damage": "20",
-        "accuracy": "70",
-        "ammo": "1"
+        "damage": 20,
+        "accuracy": 70,
+        "ammo": 1
     }
 }
