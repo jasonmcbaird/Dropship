@@ -24,11 +24,11 @@ class CombatSystemTests: XCTestCase {
             cody.targetStrategy = RandomTargetStrategy(damageables: [jason])
             combat.playCombat()
             
-            if(!jason.dead) {
+            if !jason.dead {
                 XCTAssert(cody.dead)
                 jasonWins += 1
             }
-            if(!cody.dead) {
+            if !cody.dead {
                 XCTAssert(jason.dead)
                 codyWins += 1
             }

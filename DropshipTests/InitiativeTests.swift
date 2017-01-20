@@ -61,14 +61,14 @@ class MockUnreadyReadyable: Readyable {
     
     func startTurn() {
         activationCount += 1
-        if(activationCount >= activationsAvailable) {
+        if activationCount >= activationsAvailable {
             resetCount += 1
             ready = false
         }
     }
     
     func readyUp() {
-        if(resetCount <= 3) {
+        if resetCount <= 3 {
             ready = true
         }
     }
@@ -78,7 +78,7 @@ class MockUnreadyReadyable: Readyable {
 class FakeDelayer: Delayer {
     
     func executeAfterDelay(completed: @escaping () -> (Bool)) {
-        if(!completed()) {
+        if !completed() {
             executeAfterDelay(completed: completed)
         }
     }

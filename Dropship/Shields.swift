@@ -23,14 +23,14 @@ class Shields: DamageBar, Activatable {
 	}
 	
 	override func damage(damage: Damage) {
-		if(damage.amount > 0) {
+		if damage.amount > 0 {
 			rechargeCounter = rechargeDelay
 		}
         super.damage(damage: damage)
 	}
 	
 	func startTurn() {
-		if(rechargeCounter <= 1) {
+		if rechargeCounter <= 1 {
 			recharge()
 		} else {
 			rechargeCounter -= 1
@@ -39,7 +39,7 @@ class Shields: DamageBar, Activatable {
 	
 	private func recharge() {
 		current += rechargeAmount
-		if(current > max) {
+		if current > max {
 			current = max
 		}
 	}

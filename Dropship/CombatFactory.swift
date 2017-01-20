@@ -10,7 +10,7 @@ import Foundation
 
 class CombatFactory {
     
-    func createCombat(type: CombatType, delayer: Delayer = DelayTimer(loopTime: 1)) -> Initiative {
+    func create(type: CombatType, delayer: Delayer = DelayTimer(loopTime: 1)) -> Initiative {
         switch(type) {
         case .gulch:
             var red: [Creature] = []

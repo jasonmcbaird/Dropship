@@ -14,7 +14,7 @@ class CombatFactoryTests: XCTestCase {
     
     func testGulchFirstCreatureHasA4DamageWeapon() {
         let testObject = CombatFactory()
-        let initiative = testObject.createCombat(type: .gulch)
+        let initiative = testObject.create(type: .gulch)
         
         XCTAssertEqual(((initiative.squads[0].readyables[0] as! Creature).abilities[0] as! Weapon).damage, 4)
     }
@@ -23,13 +23,13 @@ class CombatFactoryTests: XCTestCase {
         var redWins = 0
         var blueWins = 0
         for _ in 1...100 {
-            let initiative = CombatFactory().createCombat(type: .gulch, delayer: FakeDelayer())
+            let initiative = CombatFactory().create(type: .gulch, delayer: FakeDelayer())
             
             initiative.playCombat()
-            if(initiative.squads[0].ready) {
+            if initiative.squads[0].ready {
                 redWins += 1
             }
-            if(initiative.squads[1].ready) {
+            if initiative.squads[1].ready {
                 blueWins += 1
             }
         }

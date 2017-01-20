@@ -52,7 +52,7 @@ class WeaponTests: XCTestCase {
         for _ in 0...100 {
             let old = mockDamageable.current
             testObject.execute(targetStrategy: strategy)
-            if(mockDamageable.current < old) {
+            if mockDamageable.current < old {
                 hitCount += 1
             } else {
                 missCount += 1

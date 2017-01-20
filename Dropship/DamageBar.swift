@@ -37,7 +37,7 @@ class DamageBar: Damageable, Bar {
 	
 	func damage(damage: Damage) {
 		current -= damage.amount
-		if(current < 0) {
+		if current < 0 {
 			let result = -current
 			current = 0
 			damage.amount = result

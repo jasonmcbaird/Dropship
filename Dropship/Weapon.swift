@@ -41,12 +41,12 @@ class Weapon: Ability {
     }
     
     func execute(targetStrategy: TargetStrategy) {
-        if(resource.canSpend(amount: 1)) {
+        if resource.canSpend(amount: 1) {
             for _ in 1...rapidFire {
-                if(resource.canSpend(amount: 1)) {
+                if resource.canSpend(amount: 1) {
                     resource.spend(amount: 1)
                     let roll = Randomizer.rollDie(100)
-                    if(accuracy >= roll) {
+                    if accuracy >= roll {
                         targetStrategy.chooseDamageable()?.damage(amount: damage)
                     }
                 }

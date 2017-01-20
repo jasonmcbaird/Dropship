@@ -35,7 +35,7 @@ class Battery: Resource, Activatable, Bar {
     
     func spend(amount: Int) {
         self.current -= amount
-        if(self.current < 0) {
+        if self.current < 0 {
             self.current = 0
         }
     }
@@ -46,7 +46,7 @@ class Battery: Resource, Activatable, Bar {
     
     func startTurn() {
         current += rechargeAmount
-        if(current > max) {
+        if current > max {
             current = max
         }
     }

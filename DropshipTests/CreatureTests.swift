@@ -154,7 +154,7 @@ class MockAbility: Ability {
 class MockExecutionStrategy: ExecutionStrategy {
     
     func chooseAbility(abilities: [Ability]) -> Ability? {
-        if(abilities.count > 0) {
+        if abilities.count > 0 {
             return abilities[0]
         } else {
             return nil

@@ -35,6 +35,8 @@
 		5A0CE6AB1E25753C0046C809 /* AmmoBarVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE6AA1E25753C0046C809 /* AmmoBarVisualizer.swift */; };
 		5A0CE6AD1E2576010046C809 /* GenericBarVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE6AC1E2576010046C809 /* GenericBarVisualizer.swift */; };
 		5A0CE6AF1E25779C0046C809 /* ShieldBarVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE6AE1E25779C0046C809 /* ShieldBarVisualizer.swift */; };
+		5A0CE6B11E3279950046C809 /* CreatureFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE6B01E3279950046C809 /* CreatureFactory.swift */; };
+		5A0CE6B31E3279B30046C809 /* CreatureFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE6B21E3279B30046C809 /* CreatureFactoryTests.swift */; };
 		5A8AC2FB1E04700A00BCB35B /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC2FA1E04700A00BCB35B /* Ability.swift */; };
 		5A8AC2FD1E04703700BCB35B /* TargetStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC2FC1E04703700BCB35B /* TargetStrategy.swift */; };
 		5A8AC3031E049B6100BCB35B /* ExecutionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC3021E049B6100BCB35B /* ExecutionStrategy.swift */; };
@@ -70,7 +72,7 @@
 		96AD74311E0DD44E0038AC62 /* Relationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD74301E0DD44E0038AC62 /* Relationship.swift */; };
 		96AD74331E0DDF7D0038AC62 /* RandomTargetStrategyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD74321E0DDF7D0038AC62 /* RandomTargetStrategyTests.swift */; };
 		96AD74381E0DF77C0038AC62 /* Weapons.json in Resources */ = {isa = PBXBuildFile; fileRef = 96AD74371E0DF77C0038AC62 /* Weapons.json */; };
-		96AD743F1E0DFC990038AC62 /* Units.json in Resources */ = {isa = PBXBuildFile; fileRef = 96AD743E1E0DFC990038AC62 /* Units.json */; };
+		96AD743F1E0DFC990038AC62 /* Creatures.json in Resources */ = {isa = PBXBuildFile; fileRef = 96AD743E1E0DFC990038AC62 /* Creatures.json */; };
 		96AD74411E0DFDB50038AC62 /* WeaponFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD74401E0DFDB50038AC62 /* WeaponFactory.swift */; };
 		96AD74431E0E01600038AC62 /* WeaponFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD74421E0E01600038AC62 /* WeaponFactoryTests.swift */; };
 /* End PBXBuildFile section */
@@ -114,6 +116,8 @@
 		5A0CE6AA1E25753C0046C809 /* AmmoBarVisualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmmoBarVisualizer.swift; sourceTree = "<group>"; };
 		5A0CE6AC1E2576010046C809 /* GenericBarVisualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericBarVisualizer.swift; sourceTree = "<group>"; };
 		5A0CE6AE1E25779C0046C809 /* ShieldBarVisualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShieldBarVisualizer.swift; sourceTree = "<group>"; };
+		5A0CE6B01E3279950046C809 /* CreatureFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatureFactory.swift; sourceTree = "<group>"; };
+		5A0CE6B21E3279B30046C809 /* CreatureFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatureFactoryTests.swift; sourceTree = "<group>"; };
 		5A8AC2FA1E04700A00BCB35B /* Ability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ability.swift; sourceTree = "<group>"; };
 		5A8AC2FC1E04703700BCB35B /* TargetStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetStrategy.swift; sourceTree = "<group>"; };
 		5A8AC3021E049B6100BCB35B /* ExecutionStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutionStrategy.swift; sourceTree = "<group>"; };
@@ -153,7 +157,7 @@
 		96AD74301E0DD44E0038AC62 /* Relationship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Relationship.swift; sourceTree = "<group>"; };
 		96AD74321E0DDF7D0038AC62 /* RandomTargetStrategyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomTargetStrategyTests.swift; sourceTree = "<group>"; };
 		96AD74371E0DF77C0038AC62 /* Weapons.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Weapons.json; sourceTree = "<group>"; };
-		96AD743E1E0DFC990038AC62 /* Units.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Units.json; sourceTree = "<group>"; };
+		96AD743E1E0DFC990038AC62 /* Creatures.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Creatures.json; sourceTree = "<group>"; };
 		96AD74401E0DFDB50038AC62 /* WeaponFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeaponFactory.swift; sourceTree = "<group>"; };
 		96AD74421E0E01600038AC62 /* WeaponFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeaponFactoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -198,6 +202,7 @@
 		5A05EA0B1E0B111300DC2A1C /* Creature */ = {
 			isa = PBXGroup;
 			children = (
+				5A0CE6B01E3279950046C809 /* CreatureFactory.swift */,
 				5AEF4A1B1DF8C94000AD3DF1 /* Creature.swift */,
 				5AEF4A2A1DF8D14E00AD3DF1 /* Damage.swift */,
 				5AEF4A281DF8C9D100AD3DF1 /* DamageBar.swift */,
@@ -211,23 +216,23 @@
 		5A05EA0C1E0B112600DC2A1C /* Combat */ = {
 			isa = PBXGroup;
 			children = (
-				96026ED31DFFB14700535785 /* Initiative.swift */,
 				5A0CE68C1E1D72300046C809 /* CombatFactory.swift */,
+				96026ED31DFFB14700535785 /* Initiative.swift */,
 				96026ECF1DFF9C9E00535785 /* Squad.swift */,
 			);
 			name = Combat;
 			sourceTree = "<group>";
 		};
-		5A05EA0D1E0B114D00DC2A1C /* Executable */ = {
+		5A05EA0D1E0B114D00DC2A1C /* Ability */ = {
 			isa = PBXGroup;
 			children = (
-				5A8AC3041E04A39B00BCB35B /* Weapon.swift */,
 				96AD74401E0DFDB50038AC62 /* WeaponFactory.swift */,
+				5A8AC3041E04A39B00BCB35B /* Weapon.swift */,
 				5A8AC30A1E04A91200BCB35B /* BasicResource.swift */,
 				5A8AC3131E04AD1500BCB35B /* BatteryResource.swift */,
 				5A8AC30C1E04AA2600BCB35B /* FreeResource.swift */,
 			);
-			name = Executable;
+			name = Ability;
 			sourceTree = "<group>";
 		};
 		5A05EA141E0B1EF600DC2A1C /* Utilities */ = {
@@ -288,7 +293,7 @@
 				5AEF4A181DF8C8F500AD3DF1 /* Controllers */,
 				5A05EA0C1E0B112600DC2A1C /* Combat */,
 				5A05EA0B1E0B111300DC2A1C /* Creature */,
-				5A05EA0D1E0B114D00DC2A1C /* Executable */,
+				5A05EA0D1E0B114D00DC2A1C /* Ability */,
 				5A05E9FD1E0AF03C00DC2A1C /* Strategies */,
 				5AEF4A1D1DF8C94C00AD3DF1 /* Protocols */,
 				5A0CE69B1E2018560046C809 /* ProtocolExtensions */,
@@ -304,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				5A0CE6961E1DBE2F0046C809 /* CombatSystemTests.swift */,
+				5A0CE6B21E3279B30046C809 /* CreatureFactoryTests.swift */,
 				5A0CE68E1E1D724C0046C809 /* CombatFactoryTests.swift */,
 				96026ED51DFFB15D00535785 /* InitiativeTests.swift */,
 				96026ED11DFF9CAC00535785 /* SquadTests.swift */,
@@ -376,7 +382,7 @@
 			isa = PBXGroup;
 			children = (
 				96AD74371E0DF77C0038AC62 /* Weapons.json */,
-				96AD743E1E0DFC990038AC62 /* Units.json */,
+				96AD743E1E0DFC990038AC62 /* Creatures.json */,
 			);
 			name = JSON;
 			sourceTree = "<group>";
@@ -467,7 +473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AEF4A031DF8C8B000AD3DF1 /* LaunchScreen.storyboard in Resources */,
-				96AD743F1E0DFC990038AC62 /* Units.json in Resources */,
+				96AD743F1E0DFC990038AC62 /* Creatures.json in Resources */,
 				96AD74381E0DF77C0038AC62 /* Weapons.json in Resources */,
 				5AEF4A001DF8C8B000AD3DF1 /* Assets.xcassets in Resources */,
 				5A05EA0A1E0B0F8E00DC2A1C /* Project Goals in Resources */,
@@ -490,6 +496,7 @@
 			files = (
 				5A0CE6AF1E25779C0046C809 /* ShieldBarVisualizer.swift in Sources */,
 				96026ED01DFF9C9E00535785 /* Squad.swift in Sources */,
+				5A0CE6B11E3279950046C809 /* CreatureFactory.swift in Sources */,
 				5A0CE69F1E2563BE0046C809 /* DelayTimer.swift in Sources */,
 				5AEF4A2E1DF8D18300AD3DF1 /* DamageType.swift in Sources */,
 				5AEF49FE1DF8C8B000AD3DF1 /* Dropship.xcdatamodeld in Sources */,
@@ -544,6 +551,7 @@
 				5A0CE6A11E2568030046C809 /* DelayTimerTests.swift in Sources */,
 				5A05EA181E0B1F3D00DC2A1C /* RandomizerTests.swift in Sources */,
 				5A8AC3091E04A8A800BCB35B /* BasicResourceTests.swift in Sources */,
+				5A0CE6B31E3279B30046C809 /* CreatureFactoryTests.swift in Sources */,
 				96026ECE1DFF96D900535785 /* ArmorTests.swift in Sources */,
 				96026ED61DFFB15E00535785 /* InitiativeTests.swift in Sources */,
 				5A0CE68F1E1D724C0046C809 /* CombatFactoryTests.swift in Sources */,

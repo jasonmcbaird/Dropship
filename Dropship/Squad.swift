@@ -26,7 +26,7 @@ class Squad {
     }
     var ready: Bool {
         for activatable in readyables {
-            if(activatable.ready) {
+            if activatable.ready {
                 return true
             }
         }
@@ -36,7 +36,7 @@ class Squad {
     init(readyables: [Readyable], relationships: [Relationship] = [], setRandomTargetStrategy: Bool = false) {
         self.readyables = readyables
         self.relationships = relationships
-        if(setRandomTargetStrategy) {
+        if setRandomTargetStrategy {
             for readyable in readyables {
                 if let creature = readyable as? Creature {
                     creature.targetStrategy = RandomTargetStrategy(squad: self)
@@ -47,7 +47,7 @@ class Squad {
     
     func startNext() {
         for activatable in readyables {
-            if(activatable.ready) {
+            if activatable.ready {
                 activatable.startTurn()
                 return
             }

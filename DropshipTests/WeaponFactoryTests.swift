@@ -16,7 +16,7 @@ class WeaponFactoryTests: XCTestCase {
             XCTFail("Cannot instantiate weapon factory")
             return
         }
-        guard let assaultRifle = testObject.getWeapon(type: "Assault Rifle") else {
+        guard let assaultRifle = testObject.create(type: "Assault Rifle") else {
             XCTFail("Cannot instantiate assault rifle")
             return
         }

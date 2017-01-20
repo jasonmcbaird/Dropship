@@ -14,7 +14,7 @@ class Initiative {
     let delayer: Delayer
     var ready: Bool {
         for squad in squads {
-            if(squad.ready) {
+            if squad.ready {
                 return true
             }
         }
@@ -23,7 +23,7 @@ class Initiative {
     var victory: Bool {
         var readyCount = 0
         for squad in squads {
-            if(squad.ready) {
+            if squad.ready {
                 readyCount += 1
             }
         }
@@ -41,9 +41,9 @@ class Initiative {
     
     func playCombat() {
         delayer.executeAfterDelay {
-            if(self.ready) {
+            if self.ready {
                 for squad in self.squads {
-                    if(squad.ready) {
+                    if squad.ready {
                         squad.startNext()
                         return false
                     }
@@ -52,7 +52,7 @@ class Initiative {
             for activatable in self.squads {
                 activatable.readyUp()
             }
-            if(!self.victory) {
+            if !self.victory {
                 self.playCombat()
             }
             return true
@@ -62,7 +62,7 @@ class Initiative {
     func setAllSquadsAreEnemies() {
         for squad in squads {
             for enemy in squads {
-                if(enemy !== squad) {
+                if enemy !== squad {
                     squad.relationships.append(Relationship.enemy(enemy))
                 }
             }

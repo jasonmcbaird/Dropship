@@ -29,7 +29,7 @@ class WeaponFactory {
         }
     }
     
-    func getWeapon(type: String) -> Weapon? {
+    func create(type: String) -> Weapon? {
         return weaponDictionary[type]?()
     }
     

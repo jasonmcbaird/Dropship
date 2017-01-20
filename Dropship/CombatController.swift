@@ -32,7 +32,7 @@ class CombatController: UIViewController {
     
     func newCombat() {
         clearTableViews()
-        combat = CombatFactory().createCombat(type: .gulch)
+        combat = CombatFactory().create(type: .gulch)
         var teamCount = 0
         for squad in combat.squadModels {
             switch(teamCount) {
@@ -67,7 +67,7 @@ class CombatController: UIViewController {
     
     func alignElements() {
         startButton.frame = CGRect(x: 0, y: 50, width: view.frame.width, height: 50)
-        if(squads.keys.count > 0) {
+        if squads.keys.count > 0 {
             let width = view.frame.width / CGFloat(squads.keys.count)
             for i in 0...squads.keys.count - 1 {
                 Array(squads.keys)[i].frame = CGRect(x: CGFloat(i) * width, y: 100, width: width, height: self.view.frame.height)

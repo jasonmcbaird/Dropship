@@ -4,8 +4,8 @@
         "weapon": "Assault Rifle"
     },
     "Commando": {
-        "health": "30",
-        "shields": "20",
+        "health": "20",
+        "shields": "10",
         "weapon": "Assault Rifle"
     },
     "Sniper": {
@@ -18,7 +18,7 @@
         "weapon": "Light Machine Gun"
     },
     "Assault": {
-        "health": "12",
+        "health": "15",
         "weapon": "Shotgun"
     }
 }

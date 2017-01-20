@@ -18,7 +18,7 @@ class Randomizer {
     
     static func rollRange(_ min: Int, _ max: Int) -> Int {
         let range = RandomRange(min, max)
-        if(ranges[range] == nil) {
+        if ranges[range] == nil {
             let random = GKRandomDistribution(lowestValue: min, highestValue: max)
             ranges.updateValue(random, forKey: range)
         }

@@ -34,7 +34,7 @@ class BasicResource: Resource, Bar {
     
     func spend(amount: Int) {
         self.current -= amount
-        if(self.current < 0) {
+        if self.current < 0 {
             self.current = 0
         }
     }
