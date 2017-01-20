@@ -40,9 +40,7 @@ class ShieldBarVisualizer: BarVisualizer {
     
     func updateTint(fraction: Float) {
         switch(fraction) {
-        case 0..<0.25:
-            progressView.progressTintColor = UIColor.orange
-        case 0.25..<0.5:
+        case 0..<0.5:
             progressView.progressTintColor = UIColor.cyan
         default:
             progressView.progressTintColor = UIColor.blue
