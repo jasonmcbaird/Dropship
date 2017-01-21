@@ -202,7 +202,6 @@
 		5A05EA0B1E0B111300DC2A1C /* Creature */ = {
 			isa = PBXGroup;
 			children = (
-				5A0CE6B01E3279950046C809 /* CreatureFactory.swift */,
 				5AEF4A1B1DF8C94000AD3DF1 /* Creature.swift */,
 				5AEF4A2A1DF8D14E00AD3DF1 /* Damage.swift */,
 				5AEF4A281DF8C9D100AD3DF1 /* DamageBar.swift */,
@@ -216,7 +215,6 @@
 		5A05EA0C1E0B112600DC2A1C /* Combat */ = {
 			isa = PBXGroup;
 			children = (
-				5A0CE68C1E1D72300046C809 /* CombatFactory.swift */,
 				96026ED31DFFB14700535785 /* Initiative.swift */,
 				96026ECF1DFF9C9E00535785 /* Squad.swift */,
 			);
@@ -226,7 +224,6 @@
 		5A05EA0D1E0B114D00DC2A1C /* Ability */ = {
 			isa = PBXGroup;
 			children = (
-				96AD74401E0DFDB50038AC62 /* WeaponFactory.swift */,
 				5A8AC3041E04A39B00BCB35B /* Weapon.swift */,
 				5A8AC30A1E04A91200BCB35B /* BasicResource.swift */,
 				5A8AC3131E04AD1500BCB35B /* BatteryResource.swift */,
@@ -294,6 +291,7 @@
 				5A05EA0C1E0B112600DC2A1C /* Combat */,
 				5A05EA0B1E0B111300DC2A1C /* Creature */,
 				5A05EA0D1E0B114D00DC2A1C /* Ability */,
+				96E00B7E1E340F870062CCDC /* Factories */,
 				5A05E9FD1E0AF03C00DC2A1C /* Strategies */,
 				5AEF4A1D1DF8C94C00AD3DF1 /* Protocols */,
 				5A0CE69B1E2018560046C809 /* ProtocolExtensions */,
@@ -385,6 +383,16 @@
 				96AD743E1E0DFC990038AC62 /* Creatures.json */,
 			);
 			name = JSON;
+			sourceTree = "<group>";
+		};
+		96E00B7E1E340F870062CCDC /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				5A0CE68C1E1D72300046C809 /* CombatFactory.swift */,
+				96AD74401E0DFDB50038AC62 /* WeaponFactory.swift */,
+				5A0CE6B01E3279950046C809 /* CreatureFactory.swift */,
+			);
+			name = Factories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

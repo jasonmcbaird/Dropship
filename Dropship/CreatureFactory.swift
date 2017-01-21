@@ -50,6 +50,9 @@ class CreatureFactory {
         var abilities: [Ability] = []
         var damageables: [Damageable] = []
         var activatables: [Activatable] = []
+        if let armorAmount = dictionary["armor"] as? Int {
+            damageables.append(Armor(amount: armorAmount))
+        }
         if let shieldsDictionary = dictionary["shields"] as? [String: Any],
             let maxShields = shieldsDictionary["maxShields"] as? Int,
             let rechargeDelay = shieldsDictionary["rechargeDelay"] as? Int,
