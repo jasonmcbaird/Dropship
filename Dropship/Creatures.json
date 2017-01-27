@@ -13,7 +13,7 @@
         "weapon": "Assault Rifle"
     },
     "Sniper": {
-        "health": 12,
+        "health": 15,
         "weapon": "Sniper Rifle"
     },
     "Heavy": {

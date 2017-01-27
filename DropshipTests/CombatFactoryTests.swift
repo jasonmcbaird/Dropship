@@ -14,16 +14,34 @@ class CombatFactoryTests: XCTestCase {
     
     func testGulchFirstCreatureHasA4DamageWeapon() {
         let testObject = CombatFactory()
-        let initiative = testObject.create(type: .gulch)
+        guard let initiative = testObject.create(type: .gulch) else {
+            XCTFail("Failed to make a Gulch")
+            return
+        }
         
-        XCTAssertEqual(((initiative.squads[0].readyables[0] as! Creature).abilities[0] as! Weapon).damage, 4)
+        XCTAssertEqual(((initiative.squads[0].readyables[0] as! Creature).abilities[0] as! Weapon).damage, 3)
+    }
+    
+    func testGulchIs4v4() {
+        let testObject = CombatFactory()
+        guard let initiative = testObject.create(type: .gulch) else {
+            XCTFail("Failed to make a Gulch")
+            return
+        }
+        
+        XCTAssertEqual(initiative.squads[0].readyables.count, 4)
+        XCTAssertEqual(initiative.squads[1].readyables.count, 4)
     }
     
     func testGulchBothWinSometimes() {
+        let testObject = CombatFactory()
         var redWins = 0
         var blueWins = 0
         for _ in 1...100 {
-            let initiative = CombatFactory().create(type: .gulch, delayer: FakeDelayer())
+            guard let initiative = testObject.create(type: .gulch, delayer: FakeDelayer()) else {
+                XCTFail("Failed to make a Gulch")
+                return
+            }
             
             initiative.playCombat()
             if initiative.squads[0].ready {
