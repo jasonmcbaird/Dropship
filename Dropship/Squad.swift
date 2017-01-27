@@ -25,8 +25,8 @@ class Squad {
         return result
     }
     var ready: Bool {
-        for activatable in readyables {
-            if activatable.ready {
+        for readyable in readyables {
+            if readyable.ready {
                 return true
             }
         }
@@ -46,17 +46,17 @@ class Squad {
     }
     
     func startNext() {
-        for activatable in readyables {
-            if activatable.ready {
-                activatable.startTurn()
+        for readyable in readyables {
+            if readyable.ready {
+                readyable.startTurn()
                 return
             }
         }
     }
     
     func readyUp() {
-        for activatable in readyables {
-            activatable.readyUp()
+        for readyable in readyables {
+            readyable.readyUp()
         }
     }
 }
