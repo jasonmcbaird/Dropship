@@ -9,7 +9,7 @@
 import Foundation
 
 class Initiative {
-
+    
     var squads: [Squad]
     let delayer: Delayer
     var ready: Bool {
@@ -41,6 +41,7 @@ class Initiative {
     
     func playCombat() {
         delayer.executeAfterDelay {
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "New Turn"), object: self)
             if self.ready {
                 for squad in self.squads {
                     if squad.ready {
@@ -49,8 +50,8 @@ class Initiative {
                     }
                 }
             }
-            for activatable in self.squads {
-                activatable.readyUp()
+            for squad in self.squads {
+                squad.readyUp()
             }
             if !self.victory {
                 self.playCombat()

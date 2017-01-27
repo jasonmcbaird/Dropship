@@ -104,6 +104,7 @@ extension CombatController: UITableViewDelegate, UITableViewDataSource {
                 cell.update(barName: bar.name, fraction: bar.fraction)
             }
         }
+        NotificationCenter.default.addObserver(cell, selector: #selector(cell.resetColor), name: NSNotification.Name(rawValue: "New Turn"), object: combat)
         return cell
     }
     

@@ -25,14 +25,8 @@ class HealthBarVisualizer: BarVisualizer {
             colorChange(UIColor.black)
         case _ where fraction > 0 && fraction < progressView.progress:
             colorChange(UIColor.red)
-            Timer.scheduledTimer(withTimeInterval: 0.7, repeats: false) { _ in
-                colorChange(nil)
-            }
         case _ where fraction > progressView.progress:
             colorChange(UIColor.green)
-            Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { _ in
-                colorChange(nil)
-            }
         default:
             break
         }

@@ -23,14 +23,8 @@ class ShieldBarVisualizer: BarVisualizer {
         switch (fraction) {
         case 0..<progressView.progress:
             colorChange(UIColor.cyan)
-            Timer.scheduledTimer(withTimeInterval: 0.7, repeats: false) { _ in
-                colorChange(nil)
-            }
         case _ where fraction > progressView.progress:
             colorChange(UIColor.blue)
-            Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { _ in
-                colorChange(nil)
-            }
         default:
             break
         }

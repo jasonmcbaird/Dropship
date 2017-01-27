@@ -23,14 +23,8 @@ class AmmoBarVisualizer: BarVisualizer {
         switch (fraction) {
         case 0..<progressView.progress:
             colorChange(UIColor.lightGray)
-            Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false) { _ in
-                colorChange(nil)
-            }
         case progressView.progress...1:
             colorChange(UIColor.brown)
-            Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
-                colorChange(nil)
-            }
         default:
             break
         }

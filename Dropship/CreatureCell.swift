@@ -56,6 +56,12 @@ class CreatureCell: UITableViewCell {
         }
     }
     
+    func resetColor() {
+        if(backgroundColor != UIColor.black) {
+            backgroundColor = teamColor
+        }
+    }
+    
     private func createBar(name: String, fraction: Float) {
         let color = colors[name] ?? UIColor.gray
         let barLabel = UILabel(frame: CGRect(x: 25, y: 20 * bars.keys.count, width: 25, height: 15))
