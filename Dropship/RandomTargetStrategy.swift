@@ -1,5 +1,5 @@
 //
-//  InitiativeRandomTargetStrategy.swift
+//  CombatRandomTargetStrategy.swift
 //  Dropship
 //
 //  Created by Jason Baird on 12/23/16.

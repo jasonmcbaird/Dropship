@@ -10,7 +10,7 @@ import Foundation
 
 class CombatFactory {
     
-    func create(type: CombatType, delayer: Delayer = DelayTimer(loopTime: 1)) -> Initiative? {
+    func create(type: CombatType, delayer: Delayer = DelayTimer(loopTime: 1)) -> Combat? {
         switch(type) {
         case .gulch:
             guard let creatureFactory = CreatureFactory() else {
@@ -51,7 +51,7 @@ class CombatFactory {
             }
             let redSquad = Squad(readyables: red)
             let blueSquad = Squad(readyables: blue)
-            return Initiative(squads: [redSquad, blueSquad], delayer: delayer)
+            return Combat(squads: [redSquad, blueSquad], delayer: delayer)
         }
     }
 }

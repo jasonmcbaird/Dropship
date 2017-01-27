@@ -1,5 +1,5 @@
 //
-//  InitiativeTests.swift
+//  CombatTests.swift
 //  Dropship
 //
 //  Created by Jason Baird on 12/12/16.
@@ -10,9 +10,9 @@ import Foundation
 import XCTest
 @testable import Dropship
 
-class InitiativeTests: XCTestCase {
+class CombatTests: XCTestCase {
     
-    var testObject: Initiative!
+    var testObject: Combat!
     var mock: MockUnreadySquad!
     var mock2: MockUnreadySquad!
     
@@ -20,10 +20,10 @@ class InitiativeTests: XCTestCase {
         super.setUp()
         mock = MockUnreadySquad(activationsAvailable: 3)
         mock2 = MockUnreadySquad(activationsAvailable: 6)
-        testObject = Initiative(squads: [mock, mock2], delayer: FakeDelayer())
+        testObject = Combat(squads: [mock, mock2], delayer: FakeDelayer())
     }
     
-    func testPlayInitiativeLoopsAndResetsActivatablesUntilNoneAreReady() {
+    func testPlayCombatLoopsAndResetsActivatablesUntilNoneAreReady() {
         testObject.playCombat()
         
         XCTAssertFalse(mock.ready)

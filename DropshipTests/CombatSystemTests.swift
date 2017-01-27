@@ -19,7 +19,7 @@ class CombatSystemTests: XCTestCase {
             let jason = Creature(name: "Jason", maxHealth: 5, abilities: [pistol])
             let pistol2 = Weapon(damage: 3, ammo: 3, accuracy: 65)
             let cody = Creature(name: "Cody", maxHealth: 5, abilities: [pistol2])
-            let combat = Initiative(squads: [Squad(readyables: [jason]), Squad(readyables: [cody])], delayer: FakeDelayer())
+            let combat = Combat(squads: [Squad(readyables: [jason]), Squad(readyables: [cody])], delayer: FakeDelayer())
             jason.targetStrategy = RandomTargetStrategy(damageables: [cody])
             cody.targetStrategy = RandomTargetStrategy(damageables: [jason])
             combat.playCombat()
