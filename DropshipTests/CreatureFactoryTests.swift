@@ -53,13 +53,13 @@ class CreatureFactoryTests: XCTestCase {
         let testObject = CreatureFactory()
         
         let result = testObject?.create(type: "Heavy")
+        result?.damage(amount: 1)
         
         guard let creature = result else {
             XCTFail("Couldn't create a heavy")
             return
         }
         XCTAssertEqual(creature.health, 15)
-        XCTAssert(creature.bars.contains(where: { bar in bar.name == "Armor" }))
         guard creature.abilities.count > 0,
             let weapon = creature.abilities[0] as? Weapon else {
                 XCTFail("Created Heavy doesn't have a weapon")
