@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5A05E9FC1E0AE93400DC2A1C /* Readyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05E9FB1E0AE93400DC2A1C /* Readyable.swift */; };
-		5A05E9FF1E0AF1AE00DC2A1C /* RandomExecutionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05E9FE1E0AF1AE00DC2A1C /* RandomExecutionStrategy.swift */; };
+		5A05E9FF1E0AF1AE00DC2A1C /* RandomAbilityStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05E9FE1E0AF1AE00DC2A1C /* RandomAbilityStrategy.swift */; };
 		5A05EA011E0AF86400DC2A1C /* EmptyTargetStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05EA001E0AF86400DC2A1C /* EmptyTargetStrategy.swift */; };
 		5A05EA051E0B092600DC2A1C /* Vulnerability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05EA041E0B092600DC2A1C /* Vulnerability.swift */; };
 		5A05EA071E0B09C600DC2A1C /* VulnerabilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05EA061E0B09C600DC2A1C /* VulnerabilityTests.swift */; };
@@ -33,6 +33,8 @@
 		5A0CE6B11E3279950046C809 /* CreatureFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE6B01E3279950046C809 /* CreatureFactory.swift */; };
 		5A0CE6B31E3279B30046C809 /* CreatureFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE6B21E3279B30046C809 /* CreatureFactoryTests.swift */; };
 		5A65D26F1E3C0EAC001E0201 /* BarVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A65D26E1E3C0EAC001E0201 /* BarVisualizer.swift */; };
+		5A65D2731E3FF70C001E0201 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A65D2721E3FF70C001E0201 /* Position.swift */; };
+		5A65D27D1E3FFD31001E0201 /* PositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A65D27C1E3FFD31001E0201 /* PositionTests.swift */; };
 		5A8AC2FB1E04700A00BCB35B /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC2FA1E04700A00BCB35B /* Ability.swift */; };
 		5A8AC2FD1E04703700BCB35B /* TargetStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC2FC1E04703700BCB35B /* TargetStrategy.swift */; };
 		5A8AC3031E049B6100BCB35B /* ExecutionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC3021E049B6100BCB35B /* ExecutionStrategy.swift */; };
@@ -85,7 +87,7 @@
 
 /* Begin PBXFileReference section */
 		5A05E9FB1E0AE93400DC2A1C /* Readyable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Readyable.swift; sourceTree = "<group>"; };
-		5A05E9FE1E0AF1AE00DC2A1C /* RandomExecutionStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomExecutionStrategy.swift; sourceTree = "<group>"; };
+		5A05E9FE1E0AF1AE00DC2A1C /* RandomAbilityStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomAbilityStrategy.swift; sourceTree = "<group>"; };
 		5A05EA001E0AF86400DC2A1C /* EmptyTargetStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyTargetStrategy.swift; sourceTree = "<group>"; };
 		5A05EA041E0B092600DC2A1C /* Vulnerability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vulnerability.swift; sourceTree = "<group>"; };
 		5A05EA061E0B09C600DC2A1C /* VulnerabilityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VulnerabilityTests.swift; sourceTree = "<group>"; };
@@ -110,6 +112,8 @@
 		5A0CE6B01E3279950046C809 /* CreatureFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatureFactory.swift; sourceTree = "<group>"; };
 		5A0CE6B21E3279B30046C809 /* CreatureFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatureFactoryTests.swift; sourceTree = "<group>"; };
 		5A65D26E1E3C0EAC001E0201 /* BarVisualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarVisualizer.swift; sourceTree = "<group>"; };
+		5A65D2721E3FF70C001E0201 /* Position.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		5A65D27C1E3FFD31001E0201 /* PositionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionTests.swift; sourceTree = "<group>"; };
 		5A8AC2FA1E04700A00BCB35B /* Ability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ability.swift; sourceTree = "<group>"; };
 		5A8AC2FC1E04703700BCB35B /* TargetStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetStrategy.swift; sourceTree = "<group>"; };
 		5A8AC3021E049B6100BCB35B /* ExecutionStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutionStrategy.swift; sourceTree = "<group>"; };
@@ -175,7 +179,7 @@
 		5A05E9FD1E0AF03C00DC2A1C /* Strategies */ = {
 			isa = PBXGroup;
 			children = (
-				5A05E9FE1E0AF1AE00DC2A1C /* RandomExecutionStrategy.swift */,
+				5A05E9FE1E0AF1AE00DC2A1C /* RandomAbilityStrategy.swift */,
 				5A05EA001E0AF86400DC2A1C /* EmptyTargetStrategy.swift */,
 				5A0CE6921E1D7E120046C809 /* RandomTargetStrategy.swift */,
 			);
@@ -208,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				96026ED31DFFB14700535785 /* Initiative.swift */,
+				5A65D2721E3FF70C001E0201 /* Position.swift */,
 				96026ECF1DFF9C9E00535785 /* Squad.swift */,
 			);
 			name = Combat;
@@ -313,6 +318,7 @@
 				5A05EA191E0B20F100DC2A1C /* RandomExecutionStrategyTests.swift */,
 				5A0CE6A01E2568030046C809 /* DelayTimerTests.swift */,
 				96AD74321E0DDF7D0038AC62 /* RandomTargetStrategyTests.swift */,
+				5A65D27C1E3FFD31001E0201 /* PositionTests.swift */,
 				5AEF4A0F1DF8C8B000AD3DF1 /* Info.plist */,
 			);
 			path = DropshipTests;
@@ -493,6 +499,7 @@
 				96026ED01DFF9C9E00535785 /* Squad.swift in Sources */,
 				5A0CE6B11E3279950046C809 /* CreatureFactory.swift in Sources */,
 				5A0CE69F1E2563BE0046C809 /* DelayTimer.swift in Sources */,
+				5A65D2731E3FF70C001E0201 /* Position.swift in Sources */,
 				5AEF4A2E1DF8D18300AD3DF1 /* DamageType.swift in Sources */,
 				5AEF49FE1DF8C8B000AD3DF1 /* Dropship.xcdatamodeld in Sources */,
 				5AEF4A231DF8C98C00AD3DF1 /* Activatable.swift in Sources */,
@@ -515,7 +522,7 @@
 				96026ECC1DFF968A00535785 /* Armor.swift in Sources */,
 				5A05EA161E0B1F0100DC2A1C /* Randomizer.swift in Sources */,
 				5A05E9FC1E0AE93400DC2A1C /* Readyable.swift in Sources */,
-				5A05E9FF1E0AF1AE00DC2A1C /* RandomExecutionStrategy.swift in Sources */,
+				5A05E9FF1E0AF1AE00DC2A1C /* RandomAbilityStrategy.swift in Sources */,
 				5A8AC30D1E04AA2600BCB35B /* FreeResource.swift in Sources */,
 				5A0CE69D1E2563610046C809 /* Delayer.swift in Sources */,
 				5A0CE69A1E1ED0DD0046C809 /* CreatureCell.swift in Sources */,
@@ -551,6 +558,7 @@
 				5A8AC3181E04AED000BCB35B /* WeaponTests.swift in Sources */,
 				96AD74431E0E01600038AC62 /* WeaponFactoryTests.swift in Sources */,
 				5A05EA1A1E0B20F100DC2A1C /* RandomExecutionStrategyTests.swift in Sources */,
+				5A65D27D1E3FFD31001E0201 /* PositionTests.swift in Sources */,
 				96AD74331E0DDF7D0038AC62 /* RandomTargetStrategyTests.swift in Sources */,
 				96026ECA1DFF94E300535785 /* ShieldTests.swift in Sources */,
 				5AEF4A0E1DF8C8B000AD3DF1 /* CreatureTests.swift in Sources */,

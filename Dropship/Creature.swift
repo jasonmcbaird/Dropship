@@ -25,13 +25,12 @@ class Creature: Readyable {
     }
     var targetStrategy: TargetStrategy
     var abilities: [Ability]
+    var position: Position = Position(x: 0, y: 0)
     
     private var readyPrivate = true
-	
 	private var healthBar: DamageBar
 	fileprivate var damageables: [Damageable]
 	private var activatables: [Activatable]
-    
     private var executionStrategy: ExecutionStrategy
 	
     init(name: String, maxHealth: Int, damageables: [Damageable] = [], activatables: [Activatable] = [], abilities: [Ability] = [], executionStrategy: ExecutionStrategy = RandomExecutionStrategy(), targetStrategy: TargetStrategy = EmptyTargetStrategy()) {

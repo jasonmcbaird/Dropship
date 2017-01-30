@@ -8,7 +8,7 @@
 
 import Foundation
 
-class RandomExecutionStrategy: ExecutionStrategy {
+class RandomAbilityStrategy: ExecutionStrategy {
     
     func chooseAbility(abilities: [Ability]) -> Ability? {
         if abilities.count > 0 {
