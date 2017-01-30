@@ -19,6 +19,7 @@ class CreatureCell: UITableViewCell {
     
     var bars: [UIColor: BarVisualizer] = [:]
     var teamColor: UIColor?
+    var locked = false
     
     convenience init(teamColor: UIColor, name: String, bars: [String: Float], reuseIdentifier: String?) {
         self.init(style: UITableViewCellStyle.default, reuseIdentifier: reuseIdentifier)
@@ -68,20 +69,57 @@ class CreatureCell: UITableViewCell {
         barLabel.adjustsFontSizeToFitWidth = true
         barLabel.text = name
         contentView.addSubview(barLabel)
-        let progressView = UIProgressView()
-        progressView.frame = CGRect(x: 20, y: 20 * bars.keys.count + 15, width: 100, height: 10)
+        let barVisualizer = createBarVisualizer(name: name, fraction: fraction)
+        self.bars[color] = barVisualizer
+        barVisualizer.progressView.frame = CGRect(x: 20, y: 20 * bars.keys.count - 5, width: 100, height: 10)
+        contentView.addSubview(barVisualizer.progressView)
+        update(barName: name, fraction: fraction)
+    }
+    
+    func setColor(_ color: UIColor) {
+        if !locked {
+            backgroundColor = color
+        }
+    }
+    
+    private func createBarVisualizer(name: String, fraction: Float) -> BarVisualizer {
         switch(name) {
         case "Health":
-            self.bars[color] = HealthBarVisualizer(progressView: progressView, fraction: fraction)
+            return BarVisualizer(
+                defaultBarColor: UIColor.green,
+                fraction: fraction,
+                barColorThresholds: [0.25: UIColor.red, 0.5: UIColor.yellow],
+                increaseClosure: { [weak self] _ in self?.setColor(UIColor.green) },
+                decreaseClosure: { [weak self] _ in self?.setColor(UIColor.red) },
+                zeroClosure: { [weak self] _ in
+                    self?.setColor(UIColor.black)
+                    self?.locked = true
+                })
         case "Ammo":
-            self.bars[color] = AmmoBarVisualizer(progressView: progressView, fraction: fraction)
+            return BarVisualizer(
+                defaultBarColor: UIColor.brown,
+                fraction: fraction,
+                barColorThresholds: [0.25: UIColor.gray],
+                increaseClosure: { [weak self] _ in self?.setColor(UIColor.brown) },
+                decreaseClosure: { [weak self] _ in self?.setColor(UIColor.lightGray) },
+                zeroClosure: { _ in })
         case "Shields":
-            self.bars[color] = ShieldBarVisualizer(progressView: progressView, fraction: fraction)
+            return BarVisualizer(
+                defaultBarColor: UIColor.cyan,
+                fraction: fraction,
+                barColorThresholds: [0.25: UIColor.blue],
+                increaseClosure: { [weak self] _ in self?.setColor(UIColor.cyan) },
+                decreaseClosure: { [weak self] _ in self?.setColor(UIColor.red) },
+                zeroClosure: { _ in })
         default:
-            self.bars[color] = GenericBarVisualizer(progressView: progressView, fraction: fraction)
+            return BarVisualizer(
+                defaultBarColor: UIColor.lightGray,
+                fraction: fraction,
+                barColorThresholds: [:],
+                increaseClosure: { _ in },
+                decreaseClosure: { _ in },
+                zeroClosure: { _ in })
         }
-        contentView.addSubview(progressView)
-        update(barName: name, fraction: fraction)
     }
     
     required init?(coder aDecoder: NSCoder) {
