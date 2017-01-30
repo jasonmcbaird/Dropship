@@ -66,11 +66,11 @@ class CombatController: UIViewController {
     }
     
     func alignElements() {
-        startButton.frame = CGRect(x: 0, y: 50, width: view.frame.width, height: 50)
+        startButton.frame = CGRect(x: 0, y: 10, width: view.frame.width, height: 30)
         if squads.keys.count > 0 {
             let width = view.frame.width / CGFloat(squads.keys.count)
             for i in 0...squads.keys.count - 1 {
-                Array(squads.keys)[i].frame = CGRect(x: CGFloat(i) * width, y: 100, width: width, height: self.view.frame.height)
+                Array(squads.keys)[i].frame = CGRect(x: CGFloat(i) * width, y: 50, width: width, height: self.view.frame.height)
             }
         }
     }
