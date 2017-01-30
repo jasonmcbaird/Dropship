@@ -30,13 +30,9 @@
 		5A0CE6A11E2568030046C809 /* DelayTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE6A01E2568030046C809 /* DelayTimerTests.swift */; };
 		5A0CE6A31E256C5C0046C809 /* SquadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE6A21E256C5C0046C809 /* SquadModel.swift */; };
 		5A0CE6A51E256C650046C809 /* CreatureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE6A41E256C650046C809 /* CreatureModel.swift */; };
-		5A0CE6A71E256DC40046C809 /* BarVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE6A61E256DC40046C809 /* BarVisualizer.swift */; };
-		5A0CE6A91E256DD20046C809 /* HealthBarVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE6A81E256DD20046C809 /* HealthBarVisualizer.swift */; };
-		5A0CE6AB1E25753C0046C809 /* AmmoBarVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE6AA1E25753C0046C809 /* AmmoBarVisualizer.swift */; };
-		5A0CE6AD1E2576010046C809 /* GenericBarVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE6AC1E2576010046C809 /* GenericBarVisualizer.swift */; };
-		5A0CE6AF1E25779C0046C809 /* ShieldBarVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE6AE1E25779C0046C809 /* ShieldBarVisualizer.swift */; };
 		5A0CE6B11E3279950046C809 /* CreatureFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE6B01E3279950046C809 /* CreatureFactory.swift */; };
 		5A0CE6B31E3279B30046C809 /* CreatureFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE6B21E3279B30046C809 /* CreatureFactoryTests.swift */; };
+		5A65D26F1E3C0EAC001E0201 /* BarVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A65D26E1E3C0EAC001E0201 /* BarVisualizer.swift */; };
 		5A8AC2FB1E04700A00BCB35B /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC2FA1E04700A00BCB35B /* Ability.swift */; };
 		5A8AC2FD1E04703700BCB35B /* TargetStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC2FC1E04703700BCB35B /* TargetStrategy.swift */; };
 		5A8AC3031E049B6100BCB35B /* ExecutionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC3021E049B6100BCB35B /* ExecutionStrategy.swift */; };
@@ -111,13 +107,9 @@
 		5A0CE6A01E2568030046C809 /* DelayTimerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelayTimerTests.swift; sourceTree = "<group>"; };
 		5A0CE6A21E256C5C0046C809 /* SquadModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquadModel.swift; sourceTree = "<group>"; };
 		5A0CE6A41E256C650046C809 /* CreatureModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatureModel.swift; sourceTree = "<group>"; };
-		5A0CE6A61E256DC40046C809 /* BarVisualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarVisualizer.swift; sourceTree = "<group>"; };
-		5A0CE6A81E256DD20046C809 /* HealthBarVisualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthBarVisualizer.swift; sourceTree = "<group>"; };
-		5A0CE6AA1E25753C0046C809 /* AmmoBarVisualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmmoBarVisualizer.swift; sourceTree = "<group>"; };
-		5A0CE6AC1E2576010046C809 /* GenericBarVisualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericBarVisualizer.swift; sourceTree = "<group>"; };
-		5A0CE6AE1E25779C0046C809 /* ShieldBarVisualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShieldBarVisualizer.swift; sourceTree = "<group>"; };
 		5A0CE6B01E3279950046C809 /* CreatureFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatureFactory.swift; sourceTree = "<group>"; };
 		5A0CE6B21E3279B30046C809 /* CreatureFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatureFactoryTests.swift; sourceTree = "<group>"; };
+		5A65D26E1E3C0EAC001E0201 /* BarVisualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarVisualizer.swift; sourceTree = "<group>"; };
 		5A8AC2FA1E04700A00BCB35B /* Ability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ability.swift; sourceTree = "<group>"; };
 		5A8AC2FC1E04703700BCB35B /* TargetStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetStrategy.swift; sourceTree = "<group>"; };
 		5A8AC3021E049B6100BCB35B /* ExecutionStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutionStrategy.swift; sourceTree = "<group>"; };
@@ -245,11 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				5A0CE6991E1ED0DD0046C809 /* CreatureCell.swift */,
-				5A0CE6A61E256DC40046C809 /* BarVisualizer.swift */,
-				5A0CE6A81E256DD20046C809 /* HealthBarVisualizer.swift */,
-				5A0CE6AA1E25753C0046C809 /* AmmoBarVisualizer.swift */,
-				5A0CE6AE1E25779C0046C809 /* ShieldBarVisualizer.swift */,
-				5A0CE6AC1E2576010046C809 /* GenericBarVisualizer.swift */,
+				5A65D26E1E3C0EAC001E0201 /* BarVisualizer.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -502,7 +490,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A0CE6AF1E25779C0046C809 /* ShieldBarVisualizer.swift in Sources */,
 				96026ED01DFF9C9E00535785 /* Squad.swift in Sources */,
 				5A0CE6B11E3279950046C809 /* CreatureFactory.swift in Sources */,
 				5A0CE69F1E2563BE0046C809 /* DelayTimer.swift in Sources */,
@@ -513,12 +500,11 @@
 				5AEF49F81DF8C8B000AD3DF1 /* CombatController.swift in Sources */,
 				5A0CE6A31E256C5C0046C809 /* SquadModel.swift in Sources */,
 				5A05EA011E0AF86400DC2A1C /* EmptyTargetStrategy.swift in Sources */,
-				5A0CE6A91E256DD20046C809 /* HealthBarVisualizer.swift in Sources */,
 				5AEF4A291DF8C9D100AD3DF1 /* DamageBar.swift in Sources */,
 				5A05EA051E0B092600DC2A1C /* Vulnerability.swift in Sources */,
 				5A8AC3031E049B6100BCB35B /* ExecutionStrategy.swift in Sources */,
-				5A0CE6AD1E2576010046C809 /* GenericBarVisualizer.swift in Sources */,
 				5AEF4A271DF8C9C000AD3DF1 /* Shields.swift in Sources */,
+				5A65D26F1E3C0EAC001E0201 /* BarVisualizer.swift in Sources */,
 				5AEF49F61DF8C8B000AD3DF1 /* AppDelegate.swift in Sources */,
 				5A0CE6931E1D7E120046C809 /* RandomTargetStrategy.swift in Sources */,
 				5A8AC2FB1E04700A00BCB35B /* Ability.swift in Sources */,
@@ -536,8 +522,6 @@
 				5A05EA111E0B13EA00DC2A1C /* Bar.swift in Sources */,
 				5AEF4A2B1DF8D14E00AD3DF1 /* Damage.swift in Sources */,
 				5A8AC3051E04A39B00BCB35B /* Weapon.swift in Sources */,
-				5A0CE6AB1E25753C0046C809 /* AmmoBarVisualizer.swift in Sources */,
-				5A0CE6A71E256DC40046C809 /* BarVisualizer.swift in Sources */,
 				5A0CE68D1E1D72300046C809 /* CombatFactory.swift in Sources */,
 				5A8AC3141E04AD1500BCB35B /* BatteryResource.swift in Sources */,
 				96026ED41DFFB14700535785 /* Initiative.swift in Sources */,
