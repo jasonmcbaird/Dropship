@@ -13,13 +13,11 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
-    private let navController = UINavigationController()
     private let startupController = CombatController()
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        navController.setViewControllers([startupController], animated: false)
-        window!.rootViewController = navController
+        window!.rootViewController = startupController
         window!.makeKeyAndVisible()
         return true
 	}
