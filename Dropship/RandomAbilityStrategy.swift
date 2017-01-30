@@ -1,5 +1,5 @@
 //
-//  RandomExecutionStrategy.swift
+//  RandomTargetStrategy.swift
 //  Dropship
 //
 //  Created by dev1 on 12/21/16.

@@ -33,7 +33,7 @@ class Creature: Readyable {
 	private var activatables: [Activatable]
     private var executionStrategy: ExecutionStrategy
 	
-    init(name: String, maxHealth: Int, damageables: [Damageable] = [], activatables: [Activatable] = [], abilities: [Ability] = [], executionStrategy: ExecutionStrategy = RandomExecutionStrategy(), targetStrategy: TargetStrategy = EmptyTargetStrategy()) {
+    init(name: String, maxHealth: Int, damageables: [Damageable] = [], activatables: [Activatable] = [], abilities: [Ability] = [], executionStrategy: ExecutionStrategy = RandomAbilityStrategy(), targetStrategy: TargetStrategy = EmptyTargetStrategy()) {
 		self.name = name
         
 		self.damageables = damageables
