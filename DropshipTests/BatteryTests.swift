@@ -12,11 +12,11 @@ import XCTest
 
 class BatteryResourceTests: XCTestCase {
 
-    var testObject: Battery!
+    var testObject: BatteryResource!
     
     override func setUp() {
         super.setUp()
-        testObject = Battery(max: 5, rechargeAmount: 2)
+        testObject = BatteryResource(max: 5, rechargeAmount: 2)
     }
     
     func testCanSpendExactlyAsMuchAsHave() {

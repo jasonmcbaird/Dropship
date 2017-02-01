@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Battery: Resource, Activatable, Bar {
+class BatteryResource: Resource, Activatable, Bar {
     
     var name = "Battery"
     var current: Int {

@@ -13,11 +13,8 @@ class WeaponFactory {
     let weaponDictionary: [String: () -> Weapon]
     
     init?(filename: String = "Weapons") {
-        guard let url = Bundle.main.url(forResource: filename, withExtension: "json") else  {
-            return nil
-        }
-        
-        guard let json = WeaponFactory.deserializeJSON(url: url) else {
+        guard let url = Bundle.main.url(forResource: filename, withExtension: "json"),
+            let json = WeaponFactory.deserializeJSON(url: url) else {
             return nil
         }
         
@@ -40,8 +37,8 @@ class WeaponFactory {
     static private func generateWeaponDictionary(dictionary: [String: Any]) -> [String: () -> Weapon] {
         var result: [String: () -> Weapon] = [:]
         for weaponName in dictionary.keys {
-            if let dictionary = dictionary[weaponName] as? [String : Any] {
-                if let weaponClosure = parseWeapon(name: weaponName, dictionary: dictionary) {
+            if let weaponDictionary = dictionary[weaponName] as? [String: Any] {
+                if let weaponClosure = parseWeapon(name: weaponName, dictionary: weaponDictionary) {
                     result.updateValue(weaponClosure, forKey: weaponName)
                 }
             }
@@ -55,12 +52,14 @@ class WeaponFactory {
         }
         let rapidFire = dictionary["rapidFire"] as? Int ?? 1
         let accuracy = dictionary["accuracy"] as? Int ?? 100
+        var resource: Resource
         if let ammo = dictionary["ammo"] as? Int {
-            return { return Weapon(damage: damage, ammo: ammo, rapidFire: rapidFire, accuracy: accuracy) }
+            resource = BasicResource(max: ammo)
         } else if let battery = dictionary["battery"] as? Int, let rechargeAmount = dictionary["rechargeAmount"] as? Int {
-            return { return Weapon(damage: damage, battery: battery, rechargeAmount: rechargeAmount, rapidFire: rapidFire, accuracy: accuracy) }
+            resource = BatteryResource(max: battery, rechargeAmount: rechargeAmount)
         } else {
-            return { return Weapon(damage: damage, rapidFire: rapidFire, accuracy: accuracy) }
+            resource = FreeResource()
         }
+        return { return Weapon(damage: damage, resource: resource, rapidFire: rapidFire, accuracy: accuracy) }
     }
 }
