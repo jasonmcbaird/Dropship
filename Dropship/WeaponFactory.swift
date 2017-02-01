@@ -19,10 +19,9 @@ class WeaponFactory {
     private func generateWeaponDictionary(dictionary: [String: Any]) -> [String: () -> Weapon] {
         var result: [String: () -> Weapon] = [:]
         for weaponName in dictionary.keys {
-            if let weaponDictionary = dictionary[weaponName] as? [String: Any] {
-                if let weaponClosure = parseWeapon(name: weaponName, dictionary: weaponDictionary) {
-                    result.updateValue(weaponClosure, forKey: weaponName)
-                }
+            if let weaponDictionary = dictionary[weaponName] as? [String: Any],
+                let weaponClosure = parseWeapon(name: weaponName, dictionary: weaponDictionary) {
+                result.updateValue(weaponClosure, forKey: weaponName)
             }
         }
         return result

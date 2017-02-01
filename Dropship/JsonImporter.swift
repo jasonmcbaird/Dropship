@@ -1,5 +1,5 @@
 //
-//  JSONImporter.swift
+//  JsonImporter.swift
 //  Dropship
 //
 //  Created by dev1 on 2/1/17.

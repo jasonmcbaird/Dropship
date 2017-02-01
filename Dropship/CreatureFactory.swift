@@ -19,10 +19,9 @@ class CreatureFactory {
     private func generateCreatureDictionary(dictionary: [String: Any]) -> [String: () -> Creature] {
         var result: [String: () -> Creature] = [:]
         for creatureName in dictionary.keys {
-            if let dictionary = dictionary[creatureName] as? [String : Any] {
-                if let creatureClosure = parseCreature(name: creatureName, dictionary: dictionary) {
-                    result.updateValue(creatureClosure, forKey: creatureName)
-                }
+            if let dictionary = dictionary[creatureName] as? [String : Any],
+                let creatureClosure = parseCreature(name: creatureName, dictionary: dictionary) {
+                result.updateValue(creatureClosure, forKey: creatureName)
             }
         }
         return result
