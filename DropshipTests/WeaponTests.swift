@@ -33,7 +33,7 @@ class WeaponTests: XCTestCase {
     }
     
     func testExecuteSpendsOneResourceIfPossible() {
-        let mockResource = MockFreeResource()
+        let mockResource = MockUnlimitedResource()
         let testObject = Weapon(damage: 3, resource: mockResource)
         let mockDamageable = DamageBar(max: 4)
         
@@ -71,7 +71,7 @@ class WeaponTests: XCTestCase {
         
         XCTAssertEqual(mockDamageable.damageTaken, 6)
         XCTAssertEqual(mockDamageable.callCount, 3)
-        XCTAssertEqual((testObject.resource as? BasicResource)?.current, 1)
+        XCTAssertEqual((testObject.resource as? AmmoResource)?.current, 1)
     }
     
     func testRapidFireSpendsAllAmmoAndHitsThatManyTimesIfNotEnough() {
@@ -80,7 +80,7 @@ class WeaponTests: XCTestCase {
         
         testObject.execute(targetStrategy: MockTargetStrategy(damageable: mockDamageable))
         
-        XCTAssertEqual((testObject.resource as? BasicResource)?.current, 0)
+        XCTAssertEqual((testObject.resource as? AmmoResource)?.current, 0)
         XCTAssertEqual(mockDamageable.damageTaken, 6)
         XCTAssertEqual(mockDamageable.callCount, 3)
     }
@@ -115,7 +115,7 @@ class MockEmptyResource: Resource {
     }
 }
 
-class MockFreeResource: FreeResource {
+class MockUnlimitedResource: UnlimitedResource {
     var spending: [Int] = []
     
     override func spend(amount: Int) {

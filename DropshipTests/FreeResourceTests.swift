@@ -1,5 +1,5 @@
 //
-//  FreeResourceTests.swift
+//  UnlimitedResourceTests.swift
 //  Dropship
 //
 //  Created by dev1 on 12/16/16.
@@ -10,13 +10,13 @@ import Foundation
 import XCTest
 @testable import Dropship
 
-class FreeResourceTests: XCTestCase {
+class UnlimitedResourceTests: XCTestCase {
     
     var testObject: Resource!
     
     override func setUp() {
         super.setUp()
-        testObject = FreeResource()
+        testObject = UnlimitedResource()
     }
     
     func testCanSpendAnyAmount() {

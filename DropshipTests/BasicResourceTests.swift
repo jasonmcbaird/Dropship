@@ -10,13 +10,13 @@ import Foundation
 import XCTest
 @testable import Dropship
 
-class BasicResourceTests: XCTestCase {
+class AmmoResourceTests: XCTestCase {
     
     var testObject: Resource!
     
     override func setUp() {
         super.setUp()
-        testObject = BasicResource(max: 5)
+        testObject = AmmoResource(max: 5)
     }
     
     func testCanSpendExactlyAsMuchAsHave() {

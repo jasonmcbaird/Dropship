@@ -16,7 +16,7 @@ class Weapon: Ability {
     var rapidFire: Int
     
     convenience init(damage: Int, rapidFire: Int = 1, accuracy: Int = 100) {
-        self.init(damage: damage, resource: FreeResource(), rapidFire: rapidFire, accuracy: accuracy)
+        self.init(damage: damage, resource: UnlimitedResource(), rapidFire: rapidFire, accuracy: accuracy)
     }
     
     convenience init(damage: Int, battery: Int, rechargeAmount: Int, rapidFire: Int = 1, accuracy: Int = 100) {
@@ -25,7 +25,7 @@ class Weapon: Ability {
     }
     
     convenience init(damage: Int, ammo: Int, rapidFire: Int = 1, accuracy: Int = 100) {
-        let resource = BasicResource(max: ammo)
+        let resource = AmmoResource(max: ammo)
         self.init(damage: damage, resource: resource, rapidFire: rapidFire, accuracy: accuracy)
     }
     

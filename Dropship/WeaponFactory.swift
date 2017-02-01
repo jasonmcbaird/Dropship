@@ -54,11 +54,11 @@ class WeaponFactory {
         let accuracy = dictionary["accuracy"] as? Int ?? 100
         var resource: Resource
         if let ammo = dictionary["ammo"] as? Int {
-            resource = BasicResource(max: ammo)
+            resource = AmmoResource(max: ammo)
         } else if let battery = dictionary["battery"] as? Int, let rechargeAmount = dictionary["rechargeAmount"] as? Int {
             resource = BatteryResource(max: battery, rechargeAmount: rechargeAmount)
         } else {
-            resource = FreeResource()
+            resource = UnlimitedResource()
         }
         return { return Weapon(damage: damage, resource: resource, rapidFire: rapidFire, accuracy: accuracy) }
     }

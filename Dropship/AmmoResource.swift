@@ -1,5 +1,5 @@
 //
-//  BasicResource.swift
+//  AmmoResource.swift
 //  Dropship
 //
 //  Created by dev1 on 12/16/16.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BasicResource: Resource, Bar {
+class AmmoResource: Resource, Bar {
     
     var name: String
     var current: Int {

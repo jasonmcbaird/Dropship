@@ -1,5 +1,5 @@
 //
-//  FreeResource.swift
+//  UnlimitedResource.swift
 //  Dropship
 //
 //  Created by dev1 on 12/16/16.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FreeResource: Resource {
+class UnlimitedResource: Resource {
     
     func canSpend(amount: Int) -> Bool {
         return true
