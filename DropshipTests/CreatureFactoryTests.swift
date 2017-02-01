@@ -15,7 +15,7 @@ class CreatureFactoryTests: XCTestCase {
     func testCreatedTrooperHas15HealthAndHasLowAccuracyWeapon() {
         let testObject = CreatureFactory()
         
-        let result = testObject?.create(type: "Trooper")
+        let result = testObject.create(type: "Trooper")
         
         guard let creature = result else {
             XCTFail("Couldn't create a trooper")
@@ -33,7 +33,7 @@ class CreatureFactoryTests: XCTestCase {
     func testCreatedCommandoHasMoreHealthAndShieldsAndLowAccuracyWeapon() {
         let testObject = CreatureFactory()
         
-        let result = testObject?.create(type: "Commando")
+        let result = testObject.create(type: "Commando")
         
         guard let creature = result else {
             XCTFail("Couldn't create a commando")
@@ -52,7 +52,7 @@ class CreatureFactoryTests: XCTestCase {
     func testCreatedHeavyHas15HealthAndArmorAndARapidFireWeapon() {
         let testObject = CreatureFactory()
         
-        let result = testObject?.create(type: "Heavy")
+        let result = testObject.create(type: "Heavy")
         result?.damage(amount: 1)
         
         guard let creature = result else {
@@ -71,7 +71,7 @@ class CreatureFactoryTests: XCTestCase {
     func testUnknownTypeReturnsNil() {
         let testObject = CreatureFactory()
         
-        let result = testObject?.create(type: "junk")
+        let result = testObject.create(type: "junk")
         
         XCTAssertNotNil(testObject)
         XCTAssertNil(result)

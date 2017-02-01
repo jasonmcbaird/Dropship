@@ -13,8 +13,7 @@ import XCTest
 class CombatFactoryTests: XCTestCase {
     
     func testGulchFirstCreatureHasA4DamageWeapon() {
-        let testObject = CombatFactory()
-        guard let combat = testObject.create(type: .gulch) else {
+        guard let combat = CombatFactory().create(type: .gulch) else {
             XCTFail("Failed to make a Gulch")
             return
         }

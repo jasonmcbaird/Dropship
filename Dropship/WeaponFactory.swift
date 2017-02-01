@@ -10,31 +10,13 @@ import Foundation
 
 class WeaponFactory {
     
-    let weaponDictionary: [String: () -> Weapon]
-    
-    init?(filename: String = "Weapons") {
-        guard let url = Bundle.main.url(forResource: filename, withExtension: "json"),
-            let json = WeaponFactory.deserializeJSON(url: url) else {
-            return nil
-        }
-        
-        weaponDictionary = WeaponFactory.generateWeaponDictionary(dictionary: json as [String : Any])
-    }
+    lazy var weaponDictionary: [String: () -> Weapon]? = self.generateWeaponDictionary(dictionary: JsonImporter().getDictionary(filename: "Weapons") ?? [:])
     
     func create(type: String) -> Weapon? {
-        return weaponDictionary[type]?()
+        return weaponDictionary?[type]?()
     }
     
-    static private func deserializeJSON(url: URL) -> [String: Any]? {
-        do {
-            return try JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any]
-        } catch let error {
-            print(error)
-            return nil
-        }
-    }
-    
-    static private func generateWeaponDictionary(dictionary: [String: Any]) -> [String: () -> Weapon] {
+    private func generateWeaponDictionary(dictionary: [String: Any]) -> [String: () -> Weapon] {
         var result: [String: () -> Weapon] = [:]
         for weaponName in dictionary.keys {
             if let weaponDictionary = dictionary[weaponName] as? [String: Any] {
@@ -46,7 +28,7 @@ class WeaponFactory {
         return result
     }
     
-    static private func parseWeapon(name: String, dictionary: [String: Any]) -> (() -> Weapon)? {
+    private func parseWeapon(name: String, dictionary: [String: Any]) -> (() -> Weapon)? {
         guard let damage = dictionary["damage"] as? Int else {
             return nil
         }

@@ -10,30 +10,13 @@ import Foundation
 
 class CreatureFactory {
     
-    let creatureDictionary: [String: () -> Creature]
-    
-    init?(filename: String = "Creatures") {
-        if let url = Bundle.main.url(forResource: filename, withExtension: "json") {
-            do {
-                if let json = try JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any] {
-                    creatureDictionary = CreatureFactory.generateCreatureDictionary(dictionary: json as [String : Any])
-                } else {
-                    return nil
-                }
-            } catch let error {
-                print(error)
-                return nil
-            }
-        } else {
-            return nil
-        }
-    }
+    lazy var creatureDictionary: [String: () -> Creature]? = self.generateCreatureDictionary(dictionary: JsonImporter().getDictionary(filename: "Creatures") ?? [:])
     
     func create(type: String) -> Creature? {
-        return creatureDictionary[type]?()
+        return creatureDictionary?[type]?()
     }
     
-    static private func generateCreatureDictionary(dictionary: [String: Any]) -> [String: () -> Creature] {
+    private func generateCreatureDictionary(dictionary: [String: Any]) -> [String: () -> Creature] {
         var result: [String: () -> Creature] = [:]
         for creatureName in dictionary.keys {
             if let dictionary = dictionary[creatureName] as? [String : Any] {
@@ -45,7 +28,7 @@ class CreatureFactory {
         return result
     }
     
-    static func parseCreature(name: String, dictionary: [String: Any]) -> (() -> Creature)? {
+    func parseCreature(name: String, dictionary: [String: Any]) -> (() -> Creature)? {
         return {
             let health = dictionary["health"] as? Int ?? 15
             var abilities: [Ability] = []
@@ -63,7 +46,7 @@ class CreatureFactory {
                 activatables.append(shields)
             }
             if let weaponType = dictionary["weapon"] as? String,
-                let weapon = WeaponFactory()?.create(type: weaponType) {
+                let weapon = WeaponFactory().create(type: weaponType) {
                 abilities.append(weapon)
             }
             return Creature(name: name, maxHealth: health, damageables: damageables, activatables: activatables, abilities: abilities)

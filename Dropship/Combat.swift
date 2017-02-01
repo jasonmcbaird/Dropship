@@ -12,9 +12,6 @@ class Combat {
     
     var squads: [Squad]
     let delayer: Delayer
-    var ready: Bool {
-        return squads.map({ return $0.ready }).count > 0
-    }
     var victory: Bool {
         return squads.filter({ return $0.ready }).count <= 1
     }

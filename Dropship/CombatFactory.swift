@@ -13,9 +13,7 @@ class CombatFactory {
     func create(type: CombatType, delayer: Delayer = DelayTimer(loopTime: 1)) -> Combat? {
         switch(type) {
         case .gulch:
-            guard let creatureFactory = CreatureFactory() else {
-                return nil
-            }
+            let creatureFactory = CreatureFactory()
             
             var red: [Creature] = []
             if let commando = creatureFactory.create(type: "Commando") {

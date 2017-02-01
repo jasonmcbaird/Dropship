@@ -12,11 +12,7 @@ import XCTest
 class WeaponFactoryTests: XCTestCase {
     
     func testAssaultRifleIsRapidFireAndInaccurate() {
-        guard let testObject = WeaponFactory() else {
-            XCTFail("Cannot instantiate weapon factory")
-            return
-        }
-        guard let assaultRifle = testObject.create(type: "Assault Rifle") else {
+        guard let assaultRifle = WeaponFactory().create(type: "Assault Rifle") else {
             XCTFail("Cannot instantiate assault rifle")
             return
         }
