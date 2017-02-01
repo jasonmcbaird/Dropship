@@ -17,19 +17,24 @@ class WeaponFactory {
             return nil
         }
         
-        do {
-            guard let json = try JSONSerialization.jsonObject(with: Data(contentsOf: url))  as? [String: Any] else {
-                return nil
-            }
-            weaponDictionary = WeaponFactory.generateWeaponDictionary(dictionary: json as [String : Any])
-        } catch let error {
-            print(error)
+        guard let json = WeaponFactory.deserializeJSON(url: url) else {
             return nil
         }
+        
+        weaponDictionary = WeaponFactory.generateWeaponDictionary(dictionary: json as [String : Any])
     }
     
     func create(type: String) -> Weapon? {
         return weaponDictionary[type]?()
+    }
+    
+    static private func deserializeJSON(url: URL) -> [String: Any]? {
+        do {
+            return try JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any]
+        } catch let error {
+            print(error)
+            return nil
+        }
     }
     
     static private func generateWeaponDictionary(dictionary: [String: Any]) -> [String: () -> Weapon] {
