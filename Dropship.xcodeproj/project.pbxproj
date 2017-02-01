@@ -40,10 +40,10 @@
 		5A8AC3031E049B6100BCB35B /* ExecutionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC3021E049B6100BCB35B /* ExecutionStrategy.swift */; };
 		5A8AC3051E04A39B00BCB35B /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC3041E04A39B00BCB35B /* Weapon.swift */; };
 		5A8AC3071E04A85000BCB35B /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC3061E04A85000BCB35B /* Resource.swift */; };
-		5A8AC3091E04A8A800BCB35B /* BasicResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC3081E04A8A800BCB35B /* BasicResourceTests.swift */; };
+		5A8AC3091E04A8A800BCB35B /* AmmoResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC3081E04A8A800BCB35B /* AmmoResourceTests.swift */; };
 		5A8AC30B1E04A91200BCB35B /* AmmoResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC30A1E04A91200BCB35B /* AmmoResource.swift */; };
 		5A8AC30D1E04AA2600BCB35B /* UnlimitedResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC30C1E04AA2600BCB35B /* UnlimitedResource.swift */; };
-		5A8AC30F1E04AA4200BCB35B /* FreeResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC30E1E04AA4200BCB35B /* FreeResourceTests.swift */; };
+		5A8AC30F1E04AA4200BCB35B /* UnlimitedResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC30E1E04AA4200BCB35B /* UnlimitedResourceTests.swift */; };
 		5A8AC3141E04AD1500BCB35B /* BatteryResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC3131E04AD1500BCB35B /* BatteryResource.swift */; };
 		5A8AC3161E04AD4300BCB35B /* BatteryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC3151E04AD4300BCB35B /* BatteryTests.swift */; };
 		5A8AC3181E04AED000BCB35B /* WeaponTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AC3171E04AED000BCB35B /* WeaponTests.swift */; };
@@ -119,10 +119,10 @@
 		5A8AC3021E049B6100BCB35B /* ExecutionStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutionStrategy.swift; sourceTree = "<group>"; };
 		5A8AC3041E04A39B00BCB35B /* Weapon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 		5A8AC3061E04A85000BCB35B /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
-		5A8AC3081E04A8A800BCB35B /* BasicResourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicResourceTests.swift; sourceTree = "<group>"; };
+		5A8AC3081E04A8A800BCB35B /* AmmoResourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmmoResourceTests.swift; sourceTree = "<group>"; };
 		5A8AC30A1E04A91200BCB35B /* AmmoResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmmoResource.swift; sourceTree = "<group>"; };
 		5A8AC30C1E04AA2600BCB35B /* UnlimitedResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlimitedResource.swift; sourceTree = "<group>"; };
-		5A8AC30E1E04AA4200BCB35B /* FreeResourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeResourceTests.swift; sourceTree = "<group>"; };
+		5A8AC30E1E04AA4200BCB35B /* UnlimitedResourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlimitedResourceTests.swift; sourceTree = "<group>"; };
 		5A8AC3131E04AD1500BCB35B /* BatteryResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryResource.swift; sourceTree = "<group>"; };
 		5A8AC3151E04AD4300BCB35B /* BatteryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryTests.swift; sourceTree = "<group>"; };
 		5A8AC3171E04AED000BCB35B /* WeaponTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeaponTests.swift; sourceTree = "<group>"; };
@@ -301,8 +301,9 @@
 			isa = PBXGroup;
 			children = (
 				5A0CE6961E1DBE2F0046C809 /* CombatSystemTests.swift */,
-				5A0CE6B21E3279B30046C809 /* CreatureFactoryTests.swift */,
 				5A0CE68E1E1D724C0046C809 /* CombatFactoryTests.swift */,
+				5A0CE6B21E3279B30046C809 /* CreatureFactoryTests.swift */,
+				96AD74421E0E01600038AC62 /* WeaponFactoryTests.swift */,
 				96026ED51DFFB15D00535785 /* InitiativeTests.swift */,
 				96026ED11DFF9CAC00535785 /* SquadTests.swift */,
 				5AEF4A0D1DF8C8B000AD3DF1 /* CreatureTests.swift */,
@@ -311,9 +312,8 @@
 				5A05EA061E0B09C600DC2A1C /* VulnerabilityTests.swift */,
 				96026EC91DFF94E300535785 /* ShieldTests.swift */,
 				5A8AC3171E04AED000BCB35B /* WeaponTests.swift */,
-				5A8AC3081E04A8A800BCB35B /* BasicResourceTests.swift */,
-				96AD74421E0E01600038AC62 /* WeaponFactoryTests.swift */,
-				5A8AC30E1E04AA4200BCB35B /* FreeResourceTests.swift */,
+				5A8AC3081E04A8A800BCB35B /* AmmoResourceTests.swift */,
+				5A8AC30E1E04AA4200BCB35B /* UnlimitedResourceTests.swift */,
 				5A8AC3151E04AD4300BCB35B /* BatteryTests.swift */,
 				5A05EA171E0B1F3D00DC2A1C /* RandomizerTests.swift */,
 				5A0CE6A01E2568030046C809 /* DelayTimerTests.swift */,
@@ -550,7 +550,7 @@
 				96026ED21DFF9CAC00535785 /* SquadTests.swift in Sources */,
 				5A0CE6A11E2568030046C809 /* DelayTimerTests.swift in Sources */,
 				5A05EA181E0B1F3D00DC2A1C /* RandomizerTests.swift in Sources */,
-				5A8AC3091E04A8A800BCB35B /* BasicResourceTests.swift in Sources */,
+				5A8AC3091E04A8A800BCB35B /* AmmoResourceTests.swift in Sources */,
 				5A0CE6B31E3279B30046C809 /* CreatureFactoryTests.swift in Sources */,
 				96026ECE1DFF96D900535785 /* ArmorTests.swift in Sources */,
 				96026ED61DFFB15E00535785 /* InitiativeTests.swift in Sources */,
@@ -563,7 +563,7 @@
 				96026ECA1DFF94E300535785 /* ShieldTests.swift in Sources */,
 				5AEF4A0E1DF8C8B000AD3DF1 /* CreatureTests.swift in Sources */,
 				5A8AC3161E04AD4300BCB35B /* BatteryTests.swift in Sources */,
-				5A8AC30F1E04AA4200BCB35B /* FreeResourceTests.swift in Sources */,
+				5A8AC30F1E04AA4200BCB35B /* UnlimitedResourceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
