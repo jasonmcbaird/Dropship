@@ -16,12 +16,12 @@ class WeaponFactory {
         guard let url = Bundle.main.url(forResource: filename, withExtension: "json") else  {
             return nil
         }
+        
         do {
-            if let json = try JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any] {
-                weaponDictionary = WeaponFactory.generateWeaponDictionary(dictionary: json as [String : Any])
-            } else {
+            guard let json = try JSONSerialization.jsonObject(with: Data(contentsOf: url))  as? [String: Any] else {
                 return nil
             }
+            weaponDictionary = WeaponFactory.generateWeaponDictionary(dictionary: json as [String : Any])
         } catch let error {
             print(error)
             return nil
