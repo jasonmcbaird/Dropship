@@ -13,18 +13,17 @@ class WeaponFactory {
     let weaponDictionary: [String: () -> Weapon]
     
     init?(filename: String = "Weapons") {
-        if let url = Bundle.main.url(forResource: filename, withExtension: "json") {
-            do {
-                if let json = try JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any] {
-                    weaponDictionary = WeaponFactory.generateWeaponDictionary(dictionary: json as [String : Any])
-                } else {
-                    return nil
-                }
-            } catch let error {
-                print(error)
+        guard let url = Bundle.main.url(forResource: filename, withExtension: "json") else  {
+            return nil
+        }
+        do {
+            if let json = try JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any] {
+                weaponDictionary = WeaponFactory.generateWeaponDictionary(dictionary: json as [String : Any])
+            } else {
                 return nil
             }
-        } else {
+        } catch let error {
+            print(error)
             return nil
         }
     }

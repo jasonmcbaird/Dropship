@@ -27,9 +27,9 @@ class Creature: Readyable {
     var abilities: [Ability]
     var position: Position = Position(x: 0, y: 0)
     
-    private var readyPrivate = true
+    fileprivate var damageables: [Damageable]
+    private var readyPrivate: Bool = true
 	private var healthBar: DamageBar
-	fileprivate var damageables: [Damageable]
 	private var activatables: [Activatable]
     private var executionStrategy: ExecutionStrategy
 	
@@ -48,18 +48,20 @@ class Creature: Readyable {
 	}
 	
 	func startTurn() {
-		for activatable in activatables {
-			activatable.startTurn()
-		}
+        _ = activatables.map({ $0.startTurn() })
         let possibleAbilities = abilities.filter() { ability in
             return ability.canExecute(targetStrategy: targetStrategy)
         }
         executionStrategy.chooseAbility(abilities: possibleAbilities)?.execute(targetStrategy: targetStrategy)
-        readyPrivate = false
+        readyDown()
 	}
     
     func readyUp() {
         readyPrivate = true
+    }
+    
+    private func readyDown() {
+        readyPrivate = false
     }
 }
 

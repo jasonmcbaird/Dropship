@@ -13,21 +13,10 @@ class Combat {
     var squads: [Squad]
     let delayer: Delayer
     var ready: Bool {
-        for squad in squads {
-            if squad.ready {
-                return true
-            }
-        }
-        return false
+        return squads.map({ return $0.ready }).count > 0
     }
     var victory: Bool {
-        var readyCount = 0
-        for squad in squads {
-            if squad.ready {
-                readyCount += 1
-            }
-        }
-        return readyCount <= 1
+        return squads.filter({ return $0.ready }).count <= 1
     }
     
     convenience init(squads: [Squad], loopTime: Int = 1) {
@@ -40,14 +29,12 @@ class Combat {
     }
     
     func playCombat() {
-        delayer.executeAfterDelay {
+        delayer.executeAfterDelay() {
             NotificationCenter.default.post(name: Notification.Name(rawValue: "New Turn"), object: self)
-            if self.ready {
-                for squad in self.squads {
-                    if squad.ready {
-                        squad.startNext()
-                        return false
-                    }
+            for squad in self.squads {
+                if squad.ready {
+                    squad.startNext()
+                    return false
                 }
             }
             for squad in self.squads {
@@ -59,16 +46,6 @@ class Combat {
             return true
         }
     }
-    
-    func setAllSquadsAreEnemies() {
-        for squad in squads {
-            for enemy in squads {
-                if enemy !== squad {
-                    squad.relationships.append(Relationship.enemy(enemy))
-                }
-            }
-        }
-    }
 }
 
 extension Combat: CombatModel {
@@ -76,4 +53,5 @@ extension Combat: CombatModel {
     var squadModels: [SquadModel] {
         return squads as [SquadModel]
     }
+    
 }
