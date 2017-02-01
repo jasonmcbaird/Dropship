@@ -26,21 +26,22 @@ class Combat {
     }
     
     func playCombat() {
-        delayer.executeAfterDelay() {
+        delayer.executeAfterDelay() { [weak self] _ in
             NotificationCenter.default.post(name: Notification.Name(rawValue: "New Turn"), object: self)
-            for squad in self.squads {
-                if squad.ready {
-                    squad.startNext()
-                    return false
+            guard let combat = self,
+                let readySquads = self?.squads.filter({ return $0.ready }) else {
+                return false
+            }
+            if readySquads.count >= 1 {
+                readySquads[0].startNext()
+                return true
+            } else {
+                _ = combat.squads.map({ squad in squad.readyUp() })
+                if !combat.victory {
+                    combat.playCombat()
                 }
+                return false
             }
-            for squad in self.squads {
-                squad.readyUp()
-            }
-            if !self.victory {
-                self.playCombat()
-            }
-            return true
         }
     }
 }

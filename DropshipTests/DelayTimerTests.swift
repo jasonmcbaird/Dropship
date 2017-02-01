@@ -23,13 +23,13 @@ class DelayTimerTests: XCTestCase {
         let expect = expectation(description: "Wait for timer")
         testObject.executeAfterDelay() {
             callCount += 1
-            return true
+            return false
         }
         XCTAssertEqual(callCount, 0)
         DelayTimer(loopTime: 0).executeAfterDelay() {
             XCTAssertEqual(callCount, 1)
             expect.fulfill()
-            return true
+            return false
         }
         waitForExpectations(timeout: 1, handler: { error in XCTAssertNil(error) })
     }
@@ -40,16 +40,16 @@ class DelayTimerTests: XCTestCase {
         testObject.executeAfterDelay() {
             callCount += 1
             if callCount > 2 {
-                return true
-            } else {
                 return false
+            } else {
+                return true
             }
         }
         XCTAssertEqual(callCount, 0)
         DelayTimer(loopTime: 1).executeAfterDelay() {
             XCTAssertEqual(callCount, 3)
             expect.fulfill()
-            return true
+            return false
         }
         waitForExpectations(timeout: 1.1, handler: { error in XCTAssertNil(error) })
     }

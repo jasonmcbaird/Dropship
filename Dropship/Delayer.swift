@@ -10,6 +10,6 @@ import Foundation
 
 protocol Delayer {
     
-    func executeAfterDelay(completed: @escaping () -> (Bool))
+    func executeAfterDelay(closure: @escaping () -> (Bool))
     
 }

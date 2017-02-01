@@ -16,9 +16,9 @@ class DelayTimer: Delayer {
         self.loopTime = loopTime
     }
     
-    func executeAfterDelay(completed: @escaping () -> (Bool)) {
+    func executeAfterDelay(closure: @escaping () -> (Bool)) {
         Timer.scheduledTimer(withTimeInterval: TimeInterval(loopTime), repeats: true) { timer in
-            if completed() {
+            if !closure() {
                 timer.invalidate()
             }
         }

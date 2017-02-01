@@ -77,9 +77,9 @@ class MockUnreadyReadyable: Readyable {
 
 class FakeDelayer: Delayer {
     
-    func executeAfterDelay(completed: @escaping () -> (Bool)) {
-        if !completed() {
-            executeAfterDelay(completed: completed)
+    func executeAfterDelay(closure: @escaping () -> (Bool)) {
+        if closure() {
+            executeAfterDelay(closure: closure)
         }
     }
     
