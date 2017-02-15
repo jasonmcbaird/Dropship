@@ -13,6 +13,7 @@ protocol Bar {
     var name: String { get }
     var current: Int { get }
     var max: Int { get }
+    
     var empty: Bool { get }
     var full: Bool { get }
     var fraction: Float { get }

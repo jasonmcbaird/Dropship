@@ -11,6 +11,6 @@ import Foundation
 protocol CreatureModel {
     
     var name: String { get }
-    var bars: [Bar] { get }
+    var bars: [BarModel] { get }
     
 }

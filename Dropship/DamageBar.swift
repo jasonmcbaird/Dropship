@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
-class DamageBar: Damageable, Bar {
+class DamageBar: Damageable, Bar, BarModel {
 	
     var name: String
+    var color = UIColor.red
     var current: Int {
         didSet {
             NotificationCenter.default.post(name: Notification.Name(rawValue: "Current Changed"), object: self)

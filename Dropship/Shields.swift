@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Shields: DamageBar, Activatable {
     
@@ -19,7 +20,7 @@ class Shields: DamageBar, Activatable {
 		self.rechargeAmount = rechargeAmount
 		self.rechargeCounter = 0
         super.init(name: "Shields", max: maxShields)
-        
+        color = UIColor.blue
 	}
 	
 	override func damage(damage: Damage) {

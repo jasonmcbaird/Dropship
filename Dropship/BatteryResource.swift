@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
-class BatteryResource: Resource, Activatable, Bar {
+class BatteryResource: Resource, Activatable, Bar, BarModel {
     
     var name = "Battery"
+    var color = UIColor.brown
     var current: Int {
         didSet {
             NotificationCenter.default.post(name: Notification.Name(rawValue: "Current Changed"), object: self)

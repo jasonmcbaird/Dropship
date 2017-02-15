@@ -71,15 +71,15 @@ extension Creature: CreatureModel, Damageable {
         return !dead
     }
     
-    var bars: [Bar] {
-        var result: [Bar] = []
+    var bars: [BarModel] {
+        var result: [BarModel] = []
         for damageable in damageables {
-            if let bar = damageable as? Bar {
-                result.append(bar)
+            if let bar = damageable as? BarModel {
+                result.insert(bar, at: 0)
             }
         }
         for ability in abilities {
-            if let weapon = ability as? Weapon, let ammo = weapon.resource as? Bar {
+            if let weapon = ability as? Weapon, let ammo = weapon.resource as? BarModel {
                 result.append(ammo)
             }
         }

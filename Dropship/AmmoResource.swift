@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
-class AmmoResource: Resource, Bar {
+class AmmoResource: Resource, Bar, BarModel {
     
     var name: String
+    var color = UIColor.brown
     var current: Int {
         didSet {
             NotificationCenter.default.post(name: Notification.Name(rawValue: "Current Changed"), object: self)
