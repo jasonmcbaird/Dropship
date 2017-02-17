@@ -26,12 +26,12 @@ class MapController: UIViewController {
     
     private func initializeViews() {
         view.backgroundColor = UIColor.lightGray
-        var teamColor = UIColor.orange
+        var teamColor = UIColor.red
         for squad in combatModel.squads {
             for creature in squad.creatures {
                 initializeCreatureView(creature: creature, teamColor: teamColor)
             }
-            teamColor = UIColor.green
+            teamColor = UIColor.blue
         }
     }
     

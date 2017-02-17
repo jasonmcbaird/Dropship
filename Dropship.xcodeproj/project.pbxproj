@@ -12,7 +12,7 @@
 		5A05EA011E0AF86400DC2A1C /* EmptyTargetStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05EA001E0AF86400DC2A1C /* EmptyTargetStrategy.swift */; };
 		5A05EA051E0B092600DC2A1C /* Vulnerability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05EA041E0B092600DC2A1C /* Vulnerability.swift */; };
 		5A05EA071E0B09C600DC2A1C /* VulnerabilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05EA061E0B09C600DC2A1C /* VulnerabilityTests.swift */; };
-		5A05EA0A1E0B0F8E00DC2A1C /* Project Goals in Resources */ = {isa = PBXBuildFile; fileRef = 5A05EA091E0B0F8E00DC2A1C /* Project Goals */; };
+		5A05EA0A1E0B0F8E00DC2A1C /* Project Goals.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5A05EA091E0B0F8E00DC2A1C /* Project Goals.txt */; };
 		5A05EA0F1E0B120900DC2A1C /* DamageBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05EA0E1E0B120900DC2A1C /* DamageBarTests.swift */; };
 		5A05EA111E0B13EA00DC2A1C /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05EA101E0B13EA00DC2A1C /* Bar.swift */; };
 		5A05EA161E0B1F0100DC2A1C /* Randomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05EA151E0B1F0100DC2A1C /* Randomizer.swift */; };
@@ -50,6 +50,7 @@
 		5AD516951E54F34A00425403 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD516941E54F34A00425403 /* MapController.swift */; };
 		5AD516971E54FAF300425403 /* CreatureSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD516961E54FAF300425403 /* CreatureSprite.swift */; };
 		5AD516991E55007B00425403 /* BarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD516981E55007B00425403 /* BarModel.swift */; };
+		5AD5169B1E578AB400425403 /* Source.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5AD5169A1E578AB400425403 /* Source.txt */; };
 		5AEF49F61DF8C8B000AD3DF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF49F51DF8C8B000AD3DF1 /* AppDelegate.swift */; };
 		5AEF49F81DF8C8B000AD3DF1 /* CombatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF49F71DF8C8B000AD3DF1 /* CombatController.swift */; };
 		5AEF49FE1DF8C8B000AD3DF1 /* Dropship.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF49FC1DF8C8B000AD3DF1 /* Dropship.xcdatamodeld */; };
@@ -94,7 +95,7 @@
 		5A05EA001E0AF86400DC2A1C /* EmptyTargetStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyTargetStrategy.swift; sourceTree = "<group>"; };
 		5A05EA041E0B092600DC2A1C /* Vulnerability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vulnerability.swift; sourceTree = "<group>"; };
 		5A05EA061E0B09C600DC2A1C /* VulnerabilityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VulnerabilityTests.swift; sourceTree = "<group>"; };
-		5A05EA091E0B0F8E00DC2A1C /* Project Goals */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Project Goals"; sourceTree = "<group>"; };
+		5A05EA091E0B0F8E00DC2A1C /* Project Goals.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Project Goals.txt"; sourceTree = "<group>"; };
 		5A05EA0E1E0B120900DC2A1C /* DamageBarTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DamageBarTests.swift; sourceTree = "<group>"; };
 		5A05EA101E0B13EA00DC2A1C /* Bar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
 		5A05EA151E0B1F0100DC2A1C /* Randomizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Randomizer.swift; sourceTree = "<group>"; };
@@ -132,6 +133,7 @@
 		5AD516941E54F34A00425403 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		5AD516961E54FAF300425403 /* CreatureSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatureSprite.swift; sourceTree = "<group>"; };
 		5AD516981E55007B00425403 /* BarModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarModel.swift; sourceTree = "<group>"; };
+		5AD5169A1E578AB400425403 /* Source.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Source.txt; sourceTree = "<group>"; };
 		5AEF49F21DF8C8B000AD3DF1 /* Dropship.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dropship.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AEF49F51DF8C8B000AD3DF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AEF49F71DF8C8B000AD3DF1 /* CombatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatController.swift; sourceTree = "<group>"; };
@@ -195,7 +197,8 @@
 		5A05EA081E0B0F6400DC2A1C /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
-				5A05EA091E0B0F8E00DC2A1C /* Project Goals */,
+				5A05EA091E0B0F8E00DC2A1C /* Project Goals.txt */,
+				5AD5169A1E578AB400425403 /* Source.txt */,
 			);
 			name = Documentation;
 			path = Dropship;
@@ -486,8 +489,9 @@
 				5AEF4A031DF8C8B000AD3DF1 /* LaunchScreen.storyboard in Resources */,
 				96AD743F1E0DFC990038AC62 /* Creatures.json in Resources */,
 				96AD74381E0DF77C0038AC62 /* Weapons.json in Resources */,
+				5AD5169B1E578AB400425403 /* Source.txt in Resources */,
 				5AEF4A001DF8C8B000AD3DF1 /* Assets.xcassets in Resources */,
-				5A05EA0A1E0B0F8E00DC2A1C /* Project Goals in Resources */,
+				5A05EA0A1E0B0F8E00DC2A1C /* Project Goals.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,18 +21,24 @@ class CreatureSprite: UIImageView {
         }
     }
     
-    init(teamColor: UIColor?, bars: [BarVisualizer], imageName: String = "CommandoSprite") {
+    init(teamColor: UIColor?, bars: [BarVisualizer], imageName: String = "Commando") {
         self.bars = bars
-        super.init(image: UIImage(named: imageName))
+        var imageString = imageName
+        if let teamColor = teamColor {
+            if teamColor == UIColor.blue {
+                imageString = "Red" + imageString
+            } else if teamColor == UIColor.red {
+                imageString = "Blue" + imageString
+            }
+        }
+        barBackground.layer.borderColor = UIColor.black.cgColor
+        barBackground.layer.borderWidth = 1
+        super.init(image: UIImage(named: imageString))
         barBackground.backgroundColor = UIColor.white
         addSubview(barBackground)
         backgroundColor = UIColor.clear
         for bar in bars {
             addSubview(bar.progressView)
-        }
-        if let borderColor = teamColor {
-            barBackground.layer.borderColor = borderColor.cgColor
-            barBackground.layer.borderWidth = 1
         }
         updateBarFrames()
     }
@@ -48,6 +54,14 @@ class CreatureSprite: UIImageView {
                 bars[i].progressView.frame = CGRect(x: barPadding + 2, y: frame.height - CGFloat(4 * i + 4) - barPadding, width: frame.width - barPadding * 2 - 4, height: 2)
             }
         }
+    }
+    
+    func animateAttack() {
+        
+    }
+    
+    func animateDamage() {
+        
     }
     
 }
